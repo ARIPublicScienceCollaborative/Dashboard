@@ -3,7 +3,7 @@
     <html>
 
         <head>
-        
+            
             <meta name="description" content="ARI Exploration">
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width">
@@ -12,12 +12,13 @@
             
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css">
-            <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-                 crossorigin=""></script> 
-            
+
+            <!--Add Leaflet CSS-->
             <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
             <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+            <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
             
             <!--Load in Heat plugin -->
             <script src="https://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>
@@ -31,7 +32,23 @@
             <script src="cedar_rapids_2018_crime_geoc%20(1).geojson"></script>
             <script src="Outlets_FeaturesToJSON.geojson"></script>
             <script src="Sales_FeaturesToJson20210922.geojson"></script>
-    
+            
+            <div class="navbar">
+                <a href="file:///c:/Users/kvansel/Box/Public Science Collaborative Admin/ABD Admin/Analytics/ARIWebMapping/Home/index.html">Home</a>
+                <a href="file:///c:/Users/kvansel/Box/Public Science Collaborative Admin/ABD Admin/Analytics/ARIWebMapping/Home/Dev1/index.html">Dev1</a>
+                <a href="file:///c:/Users/kvansel/Box/Public Science Collaborative Admin/ABD Admin/Analytics/ARIWebMapping/Home/Dev1/index.html">Dev2</a>
+                <a href="file:///c:/Users/kvansel/Box/Public Science Collaborative Admin/ABD Admin/Analytics/ARIWebMapping/Home/index.html">Dev3</a>
+                <a href="file:///c:/Users/kvansel/Box/Public Science Collaborative Admin/ABD Admin/Analytics/ARIWebMapping/Home/Dev1/index.html">Dev4</a>
+                <a href="file:///c:/Users/kvansel/Box/Public Science Collaborative Admin/ABD Admin/Analytics/ARIWebMapping/Home/Dev1/index.html">Dev5</a>
+                <a href="file:///c:/Users/kvansel/Box/Public Science Collaborative Admin/ABD Admin/Analytics/ARIWebMapping/Home/index.html">Dev6</a>
+                <a href="file:///c:/Users/kvansel/Box/Public Science Collaborative Admin/ABD Admin/Analytics/ARIWebMapping/Home/Dev1/index.html">Dev7</a>
+           
+            
+            </div>
+              
+              <div class="main">
+                <p>Some text some text some text some text..</p>
+              </div>
      
                 <style>
  
@@ -53,7 +70,38 @@
                     #map5 {width:50%; height:400px;padding 0;}           
                     #map6 {width:50%; height:400px;padding 0;}    
                     #map7 {width:50%; height:400px;padding 0;}    
-         
+
+
+                    /* The navigation bar */
+                    .navbar {
+                    overflow: hidden;
+                    background-color: #333;
+                    position: absolute; /* Set the navbar to fixed position */
+                    top: 0; /* Position the navbar at the top of the page */
+                    width: 100%; /* Full width */
+                    }
+
+                    /* Links inside the navbar */
+                    .navbar a {
+                    float: left;
+                    display: block;
+                    color: #f2f2f2;
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                    }
+
+                    /* Change background on mouse-over */
+                    .navbar a:hover {
+                    background: #ddd;
+                    color: black;
+                    }
+
+                    /* Main content */
+                    .main {
+                    margin-top: 30px; /* Add a top margin to avoid content overlay */
+                    }
+                            
                 </style>
         
         </head>
@@ -538,7 +586,9 @@
                         id: 'mapbox/streets-v11',
                         accessToken: 'pk.eyJ1Ijoia3ZhbnNlbG91cyIsImEiOiJjazZsbHE2NGwwZDdtM2tvNmRjc2N0NHo5In0.h_W_-4R3haPMK-IDBTcL-w' 
                         }).addTo(map7);      
-		             
+
+
+                   
 		             
             </script>
         
