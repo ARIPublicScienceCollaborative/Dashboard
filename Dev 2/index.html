@@ -1,1 +1,405 @@
-hello
+<!DOCTYPE html>
+
+    <html>
+
+        <head>
+            
+            <meta name="description" content="ARI Exploration">
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+             
+            <title>ARI Prelim</title>
+            
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+            <!--Add Leaflet CSS-->
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+            <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+            <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+            
+            <!--Load in Heat plugin -->
+            <script src="https://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>
+            <script src="https://code.jquery.com/jquery-3.1.0.js"></script>  
+            
+            <!--KVS geoJSON-->    
+            <script src="Sales_FeaturesToJson20210922.geojson"></script>
+
+            <!--Boot Strap-->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+            
+            <div class="navbar">
+                <a href="https://kvanselous.github.io/ARIDashboard/">Home</a>
+                <a href="https://kvanselous.github.io/ARIDashboard/Dev2/index.html">Sales</a>
+                <a href="fhttps://kvanselous.github.io/ARIDashboard/Dev3/index.html">Tobacco</a>
+                <a href="https://kvanselous.github.io/ARIDashboard/Dev4/index.html">Violations</a>
+                <a href="https://kvanselous.github.io/ARIDashboard/Dev7/index.html">Health & Safety</a>
+
+           </div>
+           
+    
+              
+          
+       
+                <style>
+ 
+                    h1 {text-align: center; font-size: 50px}
+                    h2 {text-align: center}
+                    h3 {text-align: center}
+
+                    .center {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: 25%;
+                    } 
+
+                    #map1container {position:absolute; background-color:#ecf7fc; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:600px; height:700px;padding 0; }
+                    #map1 {position: relative; width:1000px; height:700px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
+
+                    /* The navigation bar */
+                    .navbar {
+                    overflow: hidden;
+                    background-color: #333;
+                    position: absolute; /* Set the navbar to fixed position */
+                    top: 0; /* Position the navbar at the top of the page */
+                    width: 100%; /* Full width */
+                    }
+
+                    /* Links inside the navbar */
+                    .navbar a {
+                    float: left;
+                    display: block;
+                    color: #f2f2f2;
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                    }
+
+                    /* Change background on mouse-over */
+                    .navbar a:hover {
+                    background: #ddd;
+                    color: black;
+                    }
+
+                    /* Main content */
+                    .main {
+                    margin-top: 30px; /* Add a top margin to avoid content overlay */
+                    }
+                        
+                   img {
+                      padding-top: 50px;
+                    }  
+
+
+                </style>
+        
+        </head>
+
+    <body>   
+           
+        <!--Title-->
+       
+       
+        <img src="ARI.jpg" height=55% width=55% >
+        <img src="logonew.jpg" height=35% width=35% class="top-left" >
+        
+        <div id='map1container'>
+        <!--Headings and Maps-->
+        <h3>Liquor Sales to The Iowa Alcoholic Beverages Division in Iowa <BR> By Indivdual Retail Location 2010-2020</h3>      
+        <h3>Markers Proportioned Per 10,000 Gallons</h3>
+        <h4> Deliverable 1: Collect and clean the most recent and comprehensive data on liquor sales in Iowa from the state data repository 
+            <br>Deliverable 2: Create an interactive, dynamic map that projects the location and relevant descriptive information (e.g. date, retailer name, sales information) concerning the sale of liquor in Iowa and a single, clean dataset containing all of the data used to create the map.</h4>
+       
+        </div>
+        <div id='map1' class="center"></div>
+ 
+        <script>   
+                  
+                    //Sales Data Maps
+                    var map1 = L.map('map1').setView([42.1, -93.5], 7);
+                        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                        maxZoom: 18,
+                        id: 'mapbox/streets-v11',
+                        accessToken: 'pk.eyJ1Ijoia3ZhbnNlbG91cyIsImEiOiJjazZsbHE2NGwwZDdtM2tvNmRjc2N0NHo5In0.h_W_-4R3haPMK-IDBTcL-w' 
+                        }).addTo(map1);       
+
+                  var circle1 = {
+                        radius: 2,
+                        fillColor: "#00008B",
+                        color: "#000",
+                        weight: 1,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                        };
+         
+               var twenty= L.geoJSON(totsale2, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.year == "2020";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
+                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
+                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
+                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
+                            "<br><b>Year: </b>"+ feature.properties.year )  
+                            },
+                           style: function(feature) {
+                            return {
+                            radius: feature.properties.sale_gallons/10000,
+                            };
+                            } 
+                            });
+                
+                var nineteen= L.geoJSON(totsale2, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.year == "2019";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
+                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
+                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
+                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
+                            "<br><b>Year: </b>"+ feature.properties.year )  
+                            },
+                           style: function(feature) {
+                            return {
+                            radius: feature.properties.sale_gallons/10000,
+                            };
+                            } 
+                            });
+                
+                var eighteen= L.geoJSON(totsale2, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.year == "2018";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
+                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
+                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
+                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
+                            "<br><b>Year: </b>"+ feature.properties.year )  
+                            },
+                           style: function(feature) {
+                            return {
+                            radius: feature.properties.sale_gallons/10000,
+                            };
+                            } 
+                            });
+                
+                var seventeen= L.geoJSON(totsale2, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.year == "2017";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
+                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
+                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
+                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
+                            "<br><b>Year: </b>"+ feature.properties.year )  
+                            },
+                           style: function(feature) {
+                            return {
+                            radius: feature.properties.sale_gallons/10000,
+                            };
+                            } 
+                            });
+              
+                
+                var sixteen= L.geoJSON(totsale2, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.year == "2016";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
+                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
+                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
+                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
+                            "<br><b>Year: </b>"+ feature.properties.year )  
+                            },
+                           style: function(feature) {
+                            return {
+                            radius: feature.properties.sale_gallons/10000,
+                            };
+                            } 
+                            });
+                
+             var fifteen= L.geoJSON(totsale2, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.year == "2015";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
+                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
+                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
+                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
+                            "<br><b>Year: </b>"+ feature.properties.year )  
+                            },
+                           style: function(feature) {
+                            return {
+                            radius: feature.properties.sale_gallons/10000,
+                            };
+                            } 
+                            });
+                
+              var fourteen = L.geoJSON(totsale2, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.year == "2014";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
+                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
+                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
+                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
+                            "<br><b>Year: </b>"+ feature.properties.year )  
+                            },
+                           style: function(feature) {
+                            return {
+                            radius: feature.properties.sale_gallons/10000,
+                            };
+                            } 
+                            });
+
+                var thirteen= L.geoJSON(totsale2, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.year == "2013";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
+                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
+                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
+                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
+                            "<br><b>Year: </b>"+ feature.properties.year )  
+                            },
+                           style: function(feature) {
+                            return {
+                            radius: feature.properties.sale_gallons/10000,
+                            };
+                            } 
+                            });
+                
+                var twelve= L.geoJSON(totsale2, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.year == "2012";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
+                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
+                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
+                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
+                            "<br><b>Year: </b>"+ feature.properties.year )  
+                            },
+                           style: function(feature) {
+                            return {
+                            radius: feature.properties.sale_gallons/10000,
+                            };
+                            } 
+                            });
+                
+                    var eleven= L.geoJSON(totsale2, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.year == "2011";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
+                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
+                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
+                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
+                            "<br><b>Year: </b>"+ feature.properties.year )  
+                            },
+                           style: function(feature) {
+                            return {
+                            radius: feature.properties.sale_gallons/10000,
+                            };
+                            } 
+                            });
+
+                     var ten= L.geoJSON(totsale2, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.year == "2010";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
+                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
+                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
+                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
+                            "<br><b>Year: </b>"+ feature.properties.year )  
+                            },
+                           style: function(feature) {
+                            return {
+                            radius: feature.properties.sale_gallons/10000,
+                            };
+                            } 
+                            });
+                
+                  var overlayMaps1 = {
+                        "2020 Gallons Sold": twenty,
+                        "2019 Gallons Sold": nineteen,
+                        "2018 Gallons Sold": eighteen,
+                        "2017 Gallons Sold": seventeen,
+                        "2016 Gallons Sold": sixteen,
+                        "2015 Gallons Sold": fifteen,
+                        "2014 Gallons Sold": fourteen,
+                        "2013 Gallons Sold": thirteen,
+                        "2012 Gallons Sold": twelve,
+                        "2011 Gallons Sold": eleven,
+                        "2010 Gallons Sold": ten,
+                        };			
+
+                    L.control.layers(overlayMaps1).addTo(map1);	
+	             
+                   
+		             
+            </script>
+        
+        </body>
+        
+</html>

@@ -34,21 +34,20 @@
             <script src="Sales_FeaturesToJson20210922.geojson"></script>
             
             <div class="navbar">
-                <a href="file:///c:/Users/kvansel/Box/Public Science Collaborative Admin/ABD Admin/Analytics/ARIWebMapping/Home/index.html">Home</a>
-                <a href="file:///c:/Users/kvansel/Box/Public Science Collaborative Admin/ABD Admin/Analytics/ARIWebMapping/Home/Dev1/index.html">Dev1</a>
-                <a href="file:///c:/Users/kvansel/Box/Public Science Collaborative Admin/ABD Admin/Analytics/ARIWebMapping/Home/Dev1/index.html">Dev2</a>
-                <a href="file:///c:/Users/kvansel/Box/Public Science Collaborative Admin/ABD Admin/Analytics/ARIWebMapping/Home/index.html">Dev3</a>
-                <a href="file:///c:/Users/kvansel/Box/Public Science Collaborative Admin/ABD Admin/Analytics/ARIWebMapping/Home/Dev1/index.html">Dev4</a>
-                <a href="file:///c:/Users/kvansel/Box/Public Science Collaborative Admin/ABD Admin/Analytics/ARIWebMapping/Home/Dev1/index.html">Dev5</a>
-                <a href="file:///c:/Users/kvansel/Box/Public Science Collaborative Admin/ABD Admin/Analytics/ARIWebMapping/Home/index.html">Dev6</a>
-                <a href="file:///c:/Users/kvansel/Box/Public Science Collaborative Admin/ABD Admin/Analytics/ARIWebMapping/Home/Dev1/index.html">Dev7</a>
+                <a href="https://kvanselous.github.io/ARIDashboard/">Home</a>
+                <a href="https://kvanselous.github.io/ARIDashboard/Dev2/index.html">Sales</a>
+                <a href="fhttps://kvanselous.github.io/ARIDashboard/Dev3/index.html">Tobacco</a>
+                <a href="https://kvanselous.github.io/ARIDashboard/Dev4/index.html">Violations</a>
+                <a href="https://kvanselous.github.io/ARIDashboard/Dev7/index.html">Health & Safety</a>
            
             
             </div>
+
+            <!--Boot Strap-->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
               
-              <div class="main">
-                <p>Some text some text some text some text..</p>
-              </div>
+
      
                 <style>
  
@@ -63,14 +62,6 @@
                     width: 25%;
                     } 
   
-                    #map1 {width:50%; height:400px;padding 0;}           
-                    #map2 {width:50%; height:400px;padding 0;}    
-                    #map3 {width:50%; height:400px;padding 0;}           
-                    #map4 {width:50%; height:400px;padding 0;}    
-                    #map5 {width:50%; height:400px;padding 0;}           
-                    #map6 {width:50%; height:400px;padding 0;}    
-                    #map7 {width:50%; height:400px;padding 0;}    
-
 
                     /* The navigation bar */
                     .navbar {
@@ -101,7 +92,13 @@
                     .main {
                     margin-top: 30px; /* Add a top margin to avoid content overlay */
                     }
-                            
+                    
+                    img {
+                      padding-top: 50px;
+                    }  
+
+                
+
                 </style>
         
         </head>
@@ -109,488 +106,13 @@
     <body>   
            
         <!--Title-->
-        <img src="ARI.jpg" height="200" width="1300">
-        <h1><b>Exploration of Liquor Sales, Crime, Health, Safety, & Alcohol Outlets in Iowa </b> </h1>
-        <img src="logonew.jpg" class="center" >
-      
-        <!--Headings and Maps-->
-        <h2>Liquor Sales to The Iowa Alcoholic Beverages Division in Iowa By Indivdual Retail Location 2010-2020</h2>      
-        <h3>Markers Proportioned Per 10,000 Gallons</h3>
-        <div id='map1' class="center"></div>
-    
-        <h2>Cedar Rapids Alcohol Outlets, Call for Service, & Densities </h2>   
-        <div id='map2' class="center"></div>
-    
-        <h2>Des Moines Call for Service </h2>   
-        <div id='map3' class="center"></div>
-            
-        <h2>Muscatine Call for Service </h2>   
-        <div id='map4' class="center"></div>
-        
-        <h2>Marshalltown Call for Service </h2>   
-        <div id='map5' class="center"></div>
-    
-        <h2>Burlington Call for Service </h2>   
-        <div id='map6' class="center"></div>
-    
-        <h2>Iowa City Call for Service </h2>   
-        <div id='map7' class="center"></div>
-
-        
-
        
-            <script>   
-                  
-                    //Sales Data Maps
-                    var map1 = L.map('map1').setView([42.1, -93.5], 7);
-                        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                        maxZoom: 18,
-                        id: 'mapbox/streets-v11',
-                        accessToken: 'pk.eyJ1Ijoia3ZhbnNlbG91cyIsImEiOiJjazZsbHE2NGwwZDdtM2tvNmRjc2N0NHo5In0.h_W_-4R3haPMK-IDBTcL-w' 
-                        }).addTo(map1);       
-
-                  var circle1 = {
-                        radius: 2,
-                        fillColor: "#00008B",
-                        color: "#000",
-                        weight: 1,
-                        opacity: 1,
-                        fillOpacity: 0.8
-                        };
-         
-               var twenty= L.geoJSON(totsale2, { 
-                            filter: function(feature, layer) {
-                                return feature.properties.year == "2020";
-                            },
-                            pointToLayer: function(feature, coordinates) {
-                            return L.circleMarker(coordinates,circle1);
-                            },
-                            onEachFeature: function (feature, layer) {
-                            popupOptions = {maxWidth: 200}; 
-                            layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
-                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
-                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
-                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
-                            "<br><b>Year: </b>"+ feature.properties.year )  
-                            },
-                           style: function(feature) {
-                            return {
-                            radius: feature.properties.sale_gallons/10000,
-                            };
-                            } 
-                            });
-                
-                var nineteen= L.geoJSON(totsale2, { 
-                            filter: function(feature, layer) {
-                                return feature.properties.year == "2019";
-                            },
-                            pointToLayer: function(feature, coordinates) {
-                            return L.circleMarker(coordinates,circle1);
-                            },
-                            onEachFeature: function (feature, layer) {
-                            popupOptions = {maxWidth: 200}; 
-                            layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
-                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
-                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
-                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
-                            "<br><b>Year: </b>"+ feature.properties.year )  
-                            },
-                           style: function(feature) {
-                            return {
-                            radius: feature.properties.sale_gallons/10000,
-                            };
-                            } 
-                            });
-                
-                var eighteen= L.geoJSON(totsale2, { 
-                            filter: function(feature, layer) {
-                                return feature.properties.year == "2018";
-                            },
-                            pointToLayer: function(feature, coordinates) {
-                            return L.circleMarker(coordinates,circle1);
-                            },
-                            onEachFeature: function (feature, layer) {
-                            popupOptions = {maxWidth: 200}; 
-                            layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
-                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
-                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
-                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
-                            "<br><b>Year: </b>"+ feature.properties.year )  
-                            },
-                           style: function(feature) {
-                            return {
-                            radius: feature.properties.sale_gallons/10000,
-                            };
-                            } 
-                            });
-                
-                var seventeen= L.geoJSON(totsale2, { 
-                            filter: function(feature, layer) {
-                                return feature.properties.year == "2017";
-                            },
-                            pointToLayer: function(feature, coordinates) {
-                            return L.circleMarker(coordinates,circle1);
-                            },
-                            onEachFeature: function (feature, layer) {
-                            popupOptions = {maxWidth: 200}; 
-                            layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
-                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
-                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
-                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
-                            "<br><b>Year: </b>"+ feature.properties.year )  
-                            },
-                           style: function(feature) {
-                            return {
-                            radius: feature.properties.sale_gallons/10000,
-                            };
-                            } 
-                            });
-              
-                
-                var sixteen= L.geoJSON(totsale2, { 
-                            filter: function(feature, layer) {
-                                return feature.properties.year == "2016";
-                            },
-                            pointToLayer: function(feature, coordinates) {
-                            return L.circleMarker(coordinates,circle1);
-                            },
-                            onEachFeature: function (feature, layer) {
-                            popupOptions = {maxWidth: 200}; 
-                            layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
-                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
-                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
-                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
-                            "<br><b>Year: </b>"+ feature.properties.year )  
-                            },
-                           style: function(feature) {
-                            return {
-                            radius: feature.properties.sale_gallons/10000,
-                            };
-                            } 
-                            });
-                
-             var fifteen= L.geoJSON(totsale2, { 
-                            filter: function(feature, layer) {
-                                return feature.properties.year == "2015";
-                            },
-                            pointToLayer: function(feature, coordinates) {
-                            return L.circleMarker(coordinates,circle1);
-                            },
-                            onEachFeature: function (feature, layer) {
-                            popupOptions = {maxWidth: 200}; 
-                            layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
-                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
-                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
-                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
-                            "<br><b>Year: </b>"+ feature.properties.year )  
-                            },
-                           style: function(feature) {
-                            return {
-                            radius: feature.properties.sale_gallons/10000,
-                            };
-                            } 
-                            });
-                
-              var fourteen = L.geoJSON(totsale2, { 
-                            filter: function(feature, layer) {
-                                return feature.properties.year == "2014";
-                            },
-                            pointToLayer: function(feature, coordinates) {
-                            return L.circleMarker(coordinates,circle1);
-                            },
-                            onEachFeature: function (feature, layer) {
-                            popupOptions = {maxWidth: 200}; 
-                            layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
-                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
-                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
-                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
-                            "<br><b>Year: </b>"+ feature.properties.year )  
-                            },
-                           style: function(feature) {
-                            return {
-                            radius: feature.properties.sale_gallons/10000,
-                            };
-                            } 
-                            });
-
-                var thirteen= L.geoJSON(totsale2, { 
-                            filter: function(feature, layer) {
-                                return feature.properties.year == "2013";
-                            },
-                            pointToLayer: function(feature, coordinates) {
-                            return L.circleMarker(coordinates,circle1);
-                            },
-                            onEachFeature: function (feature, layer) {
-                            popupOptions = {maxWidth: 200}; 
-                            layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
-                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
-                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
-                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
-                            "<br><b>Year: </b>"+ feature.properties.year )  
-                            },
-                           style: function(feature) {
-                            return {
-                            radius: feature.properties.sale_gallons/10000,
-                            };
-                            } 
-                            });
-                
-                var twelve= L.geoJSON(totsale2, { 
-                            filter: function(feature, layer) {
-                                return feature.properties.year == "2012";
-                            },
-                            pointToLayer: function(feature, coordinates) {
-                            return L.circleMarker(coordinates,circle1);
-                            },
-                            onEachFeature: function (feature, layer) {
-                            popupOptions = {maxWidth: 200}; 
-                            layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
-                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
-                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
-                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
-                            "<br><b>Year: </b>"+ feature.properties.year )  
-                            },
-                           style: function(feature) {
-                            return {
-                            radius: feature.properties.sale_gallons/10000,
-                            };
-                            } 
-                            });
-                
-                    var eleven= L.geoJSON(totsale2, { 
-                            filter: function(feature, layer) {
-                                return feature.properties.year == "2011";
-                            },
-                            pointToLayer: function(feature, coordinates) {
-                            return L.circleMarker(coordinates,circle1);
-                            },
-                            onEachFeature: function (feature, layer) {
-                            popupOptions = {maxWidth: 200}; 
-                            layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
-                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
-                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
-                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
-                            "<br><b>Year: </b>"+ feature.properties.year )  
-                            },
-                           style: function(feature) {
-                            return {
-                            radius: feature.properties.sale_gallons/10000,
-                            };
-                            } 
-                            });
-
-                     var ten= L.geoJSON(totsale2, { 
-                            filter: function(feature, layer) {
-                                return feature.properties.year == "2010";
-                            },
-                            pointToLayer: function(feature, coordinates) {
-                            return L.circleMarker(coordinates,circle1);
-                            },
-                            onEachFeature: function (feature, layer) {
-                            popupOptions = {maxWidth: 200}; 
-                            layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
-                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
-                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
-                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
-                            "<br><b>Year: </b>"+ feature.properties.year )  
-                            },
-                           style: function(feature) {
-                            return {
-                            radius: feature.properties.sale_gallons/10000,
-                            };
-                            } 
-                            });
-                
-                  var overlayMaps1 = {
-                        "2020 Gallons Sold": twenty,
-                        "2019 Gallons Sold": nineteen,
-                        "2018 Gallons Sold": eighteen,
-                        "2017 Gallons Sold": seventeen,
-                        "2016 Gallons Sold": sixteen,
-                        "2015 Gallons Sold": fifteen,
-                        "2014 Gallons Sold": fourteen,
-                        "2013 Gallons Sold": thirteen,
-                        "2012 Gallons Sold": twelve,
-                        "2011 Gallons Sold": eleven,
-                        "2010 Gallons Sold": ten,
-                        };			
-
-                    L.control.layers(overlayMaps1).addTo(map1);	
-	             
-                //Cedar Rapids Maps, Marker Information, Layers, & Layer Control
-                    var map2 = L.map('map2').setView([41.9779, -91.6656], 12);
-                        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                        maxZoom: 18,
-                        id: 'mapbox/streets-v11',
-                        accessToken: 'pk.eyJ1Ijoia3ZhbnNlbG91cyIsImEiOiJjazZsbHE2NGwwZDdtM2tvNmRjc2N0NHo5In0.h_W_-4R3haPMK-IDBTcL-w' 
-                        }).addTo(map2);      
-
-        
-                    var circle = {
-                        radius: 2,
-                        fillColor: "#00008B",
-                        color: "#000",
-                        weight: 1,
-                        opacity: 1,
-                        fillOpacity: 0.8
-                        };
-                
-                var circle3 = {
-                        radius: 1,
-                        fillColor: "#8b0000",
-                        color: "#8b0000",
-                        weight: .5,
-                        opacity: 1,
-                        fillOpacity: 0.8
-                        };
-            
-                    var CRO =L.geoJSON(crout, {
-                        pointToLayer: function (feature, latlng) {
-                            return L.circleMarker(latlng, circle);
-                            },
-                        onEachFeature: function (feature, layer) {
-                            popupOptions = {maxWidth: 200}; 
-                            layer.bindPopup("<b>Address: </b>" + feature.properties.address +  
-                            "<br><b>License Number: </b>" + feature.properties.license_nu +
-                            "<br><b>Classification: </b>" + feature.properties.classifica +
-                            "<br><b>Premise Type: </b>"+ feature.properties.premise_ty )
-                            }
-                        }) ;
-                
-                   var CFSCR =L.geoJSON(cfscr, {
-                        pointToLayer: function (feature, latlng) {
-                            return L.circleMarker(latlng, circle3);
-                            },
-                        onEachFeature: function (feature, layer) {
-                            popupOptions = {maxWidth: 200}; 
-                            layer.bindPopup("<b>Call Description: </b>" + feature.properties.call_desc )
-                            }
-                        }) ;
-                    
-    //            var heat1 = $.getJSON("Outlets_FeaturesToJSON.geojson", function(data) {
-      //                      var coords = data.features.map(feat => feat.geometry.coordinates.slice().reverse())
-        //                    var heat = L.heatLayer(coords, {
-          //                      minOpacity: 0.3, //the minimum opacity the heat will start at
-            //                    maxZoom: 19, //zoom level where the points reach maximum intensity (as intensity scales with zoom), equals maxZoom of the map by default
-              //                  max: 1.0, //maximum point intensity, 1.0 by default
-                //                radius: 25, //radius of each "point" of the heatmap, 25 by default
-                  //              blur: 15, //amount of blur, 15 by default
-                    //            gradient: {
-                      //            0.2: 'green',
-                        //          0.65: 'yellow',
-                          //        1: 'red'
-                            //    }
-                        //    })
-                    //    });
-
-
-                    
-                var CROP= L.geoJSON(crout, { 
-                            filter: function(feature, layer) {
-                                return feature.properties.offpremise == "Off-Premise";
-                            },
-                            pointToLayer: function(feature, latlng) {
-                            return L.circleMarker(latlng,circle1);
-                            },
-                            onEachFeature: function (feature, layer) {
-                            popupOptions = {maxWidth: 200}; 
-                            layer.bindPopup("<b>Address: </b>" + feature.properties.address +  
-                                            "<br><b>License Number: </b>" + feature.properties.license_nu +
-                                            "<br><b>Classification: </b>" + feature.properties.classifica +
-                                            "<br><b>Premise Type: </b>"+ feature.properties.premise_ty ) 
-                            },
-                            }); 
-                                           
-                
-                    var CROOP =L.geoJSON(crout, {
-                        filter: function(feature, layer) {
-                            return feature.properties.onpremiseI == "On-Premise";
-                                },
-                        pointToLayer: function (feature, latlng) {
-                            return L.circleMarker(latlng, circle);
-                            },
-                        onEachFeature: function (feature, layer) {
-                            popupOptions = {maxWidth: 200}; 
-                            layer.bindPopup("<b>Address: </b>" + feature.properties.address +  
-                                            "<br><b>License Number: </b>" + feature.properties.license_nu +
-                                            "<br><b>Classification: </b>" + feature.properties.classifica +
-                                            "<br><b>Premise Type: </b>"+ feature.properties. premise_ty )
-                                            }
-                                            })
-                    
-            var OSM = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-   		           attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
-    		          maxZoom: 18
-                        });
-                
-              var baseMap = {
-		      "OpenStreetMap": OSM
-                };
-            
-                    var overlaymap2 = {
-                        "Cedar Rapids Licenses": CRO,
-                        "Cedar Rapids Licenses: Off Premise": CROP,
-                        "Cedar Rapids Licenses: On Premise": CROOP,
-                        "Cedar Rapids Calls For Service": CFSCR,
-                   //     "Heat Map Licenses": heat1,
-                        };			
-
-                    L.control.layers(baseMap, overlaymap2).addTo(map2);	
-	     
-                
-        
-                
-                    //Des Moines Maps
-                    var map3 = L.map('map3').setView([41.5868, -93.6250], 12);
-                        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                        maxZoom: 18,
-                        id: 'mapbox/streets-v11',
-                        accessToken: 'pk.eyJ1Ijoia3ZhbnNlbG91cyIsImEiOiJjazZsbHE2NGwwZDdtM2tvNmRjc2N0NHo5In0.h_W_-4R3haPMK-IDBTcL-w' 
-                        }).addTo(map3);       
-
-                    //Muscatine Maps
-                    var map4 = L.map('map4').setView([41.4245, -91.0432], 12);
-                        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                        maxZoom: 18,
-                        id: 'mapbox/streets-v11',
-                        accessToken: 'pk.eyJ1Ijoia3ZhbnNlbG91cyIsImEiOiJjazZsbHE2NGwwZDdtM2tvNmRjc2N0NHo5In0.h_W_-4R3haPMK-IDBTcL-w' 
-                        }).addTo(map4);     
-
-                    //Marshalltown Maps
-                    var map5 = L.map('map5').setView([42.0495, -92.9080], 12);
-                        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                        maxZoom: 18,
-                        id: 'mapbox/streets-v11',
-                        accessToken: 'pk.eyJ1Ijoia3ZhbnNlbG91cyIsImEiOiJjazZsbHE2NGwwZDdtM2tvNmRjc2N0NHo5In0.h_W_-4R3haPMK-IDBTcL-w' 
-                        }).addTo(map5);       
-
-                    //Burlington Maps
-                    var map6 = L.map('map6').setView([40.8077, -91.1129], 12);
-                        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                        maxZoom: 18,
-                        id: 'mapbox/streets-v11',
-                        accessToken: 'pk.eyJ1Ijoia3ZhbnNlbG91cyIsImEiOiJjazZsbHE2NGwwZDdtM2tvNmRjc2N0NHo5In0.h_W_-4R3haPMK-IDBTcL-w' 
-                        }).addTo(map6);      
-		          
-                    //Iowa city Maps
-                    var map7 = L.map('map7').setView([41.6611, -91.5302], 12);
-                        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                        maxZoom: 18,
-                        id: 'mapbox/streets-v11',
-                        accessToken: 'pk.eyJ1Ijoia3ZhbnNlbG91cyIsImEiOiJjazZsbHE2NGwwZDdtM2tvNmRjc2N0NHo5In0.h_W_-4R3haPMK-IDBTcL-w' 
-                        }).addTo(map7);      
-
-
-                   
-		             
-            </script>
+        <img src="ARI.jpg" height=55% width=55% >
+        <img src="logonew.jpg" height=35% width=35% class="top-left" >
+        <br>
+        <br>
+        <br>
+        <h4> Home Page Text Here </h4>
         
         </body>
         
