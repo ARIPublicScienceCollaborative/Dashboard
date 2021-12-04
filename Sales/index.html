@@ -8,7 +8,7 @@
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width">
              
-            <title>ARI Prelim</title>
+            <title>ARI</title>
             
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,20 +23,21 @@
             <!--Load in Heat plugin -->
             <script src="https://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>
             <script src="https://code.jquery.com/jquery-3.1.0.js"></script>  
-            
+
             <!--KVS geoJSON-->    
             <script src="Sales_FeaturesToJson20210922.geojson"></script>
 
-            <!--Boot Strap-->
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+             <!--Boot Strap-->
+             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
             
             <div class="navbar">
                 <a href="https://kvanselous.github.io/ARIDashboard/">Home</a>
                 <a href="https://kvanselous.github.io/ARIDashboard/Sales/">Sales</a>
-                <a href="fhttps://kvanselous.github.io/ARIDashboard/Tobacco/">Tobacco</a>
+                <a href="https://publicsciencecollaborative.shinyapps.io/abd_tobacco/">Tobacco</a>
                 <a href="https://kvanselous.github.io/ARIDashboard/Violations/">Violations</a>
                 <a href="https://kvanselous.github.io/ARIDashboard/Health/">Health & Safety</a>
+                <a href="https://kvanselous.github.io/ARIDashboard/Deliverables/">Deliverale List</a>
            
             
             </div>
@@ -61,11 +62,11 @@
                     #map1container {position:absolute; background-color:#ecf7fc; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:600px; height:700px;padding 0; }
                     #map1 {position: relative; width:1000px; height:700px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
 
-                    /* The navigation bar */
-                    .navbar {
+                     /* The navigation bar */
+                     .navbar {
                     overflow: hidden;
                     background-color: #333;
-                    position: absolute; /* Set the navbar to fixed position */
+                    position: relative; /* Set the navbar to fixed position */
                     top: 0; /* Position the navbar at the top of the page */
                     width: 100%; /* Full width */
                     }
@@ -90,10 +91,6 @@
                     .main {
                     margin-top: 30px; /* Add a top margin to avoid content overlay */
                     }
-                        
-                   img {
-                      padding-top: 50px;
-                    }  
 
 
                 </style>
@@ -109,14 +106,15 @@
         <img src="logonew.jpg" height=35% width=35% class="top-left" >
         
         <div id='map1container'>
-        <!--Headings and Maps-->
-        <h3>Liquor Sales to The Iowa Alcoholic Beverages Division in Iowa <BR> By Indivdual Retail Location 2010-2020</h3>      
+        <h3>Liquor Sales<BR> By Indivdual Retail Location 2010-2020</h3>      
         <h3>Markers Proportioned Per 10,000 Gallons</h3>
         <h4> Deliverable 1: Collect and clean the most recent and comprehensive data on liquor sales in Iowa from the state data repository 
-            <br>Deliverable 2: Create an interactive, dynamic map that projects the location and relevant descriptive information (e.g. date, retailer name, sales information) concerning the sale of liquor in Iowa and a single, clean dataset containing all of the data used to create the map.</h4>
-       
+        <br> Deliverable 2: Create an interactive, dynamic map that projects the location and relevant descriptive information (e.g. date, retailer name, sales information) concerning the sale of liquor in Iowa and a single, clean dataset containing all of the data used to create the map.</h4>
+        <br> Dataset description from website: This dataset contains the spirits purchase information of Iowa Class “E” liquor licensees by product and date of purchase from January 1, 2012 to current. The dataset can be used to analyze total spirits sales in Iowa of individual products at the store level. Class E liquor license, for grocery stores, liquor stores, convenience stores, etc., allows commercial establishments to sell liquor for off-premises consumption in original unopened containers." (https://data.iowa.gov/Sales-Distribution/Iowa-Liquor-Sales/m3tr-qhgy)
         </div>
         <div id='map1' class="center"></div>
+
+
  
         <script>   
                   
@@ -127,7 +125,13 @@
                         maxZoom: 18,
                         id: 'mapbox/streets-v11',
                         accessToken: 'pk.eyJ1Ijoia3ZhbnNlbG91cyIsImEiOiJjazZsbHE2NGwwZDdtM2tvNmRjc2N0NHo5In0.h_W_-4R3haPMK-IDBTcL-w' 
-                        }).addTo(map1);       
+                        }).addTo(map1);      
+                
+                var osm1 = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
+                        maxZoom: 18
+                        }).addTo(map1);
+
 
                   var circle1 = {
                         radius: 2,
@@ -148,10 +152,10 @@
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
-                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
-                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
-                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
-                            "<br><b>Year: </b>"+ feature.properties.year )  
+                            "<br><b>Year: </b>"+ feature.properties.year +  
+                            "<br><b>Dollars Sold: </b> $" + feature.properties.sale_dollars +
+                            "<br><b>Gallons Sold: </b>"+ feature.properties.sale_gallons +
+                            "<br><b>Liters Sold: </b>" + feature.properties.sale_liters )
                             },
                            style: function(feature) {
                             return {
@@ -170,10 +174,10 @@
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
-                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
-                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
-                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
-                            "<br><b>Year: </b>"+ feature.properties.year )  
+                            "<br><b>Year: </b>"+ feature.properties.year +  
+                            "<br><b>Dollars Sold </b> $" + feature.properties.sale_dollars +
+                            "<br><b>Gallons Sold: </b>"+ feature.properties.sale_gallons +
+                            "<br><b>Liters Sold: </b>" + feature.properties.sale_liters )
                             },
                            style: function(feature) {
                             return {
@@ -192,10 +196,10 @@
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
-                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
-                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
-                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
-                            "<br><b>Year: </b>"+ feature.properties.year )  
+                            "<br><b>Year: </b> $"+ feature.properties.year +  
+                            "<br><b>Dollars Sold: </b>" + feature.properties.sale_dollars +
+                            "<br><b>Gallons Sold: </b>"+ feature.properties.sale_gallons +
+                            "<br><b>Liters Sold: </b>" + feature.properties.sale_liters )
                             },
                            style: function(feature) {
                             return {
@@ -214,10 +218,10 @@
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
-                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
-                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
-                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
-                            "<br><b>Year: </b>"+ feature.properties.year )  
+                            "<br><b>Year: </b>"+ feature.properties.year +  
+                            "<br><b>Dollars Sold </b> $" + feature.properties.sale_dollars +
+                            "<br><b>Gallons Sold: </b>"+ feature.properties.sale_gallons +
+                            "<br><b>Liters Sold: </b>" + feature.properties.sale_liters )
                             },
                            style: function(feature) {
                             return {
@@ -237,10 +241,10 @@
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
-                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
-                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
-                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
-                            "<br><b>Year: </b>"+ feature.properties.year )  
+                            "<br><b>Year: </b>"+ feature.properties.year +  
+                            "<br><b>Dollars Sold: </b> $" + feature.properties.sale_dollars +
+                            "<br><b>Gallons Sold: </b>"+ feature.properties.sale_gallons +
+                            "<br><b>Liters Sold: </b>" + feature.properties.sale_liters )
                             },
                            style: function(feature) {
                             return {
@@ -259,10 +263,10 @@
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
-                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
-                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
-                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
-                            "<br><b>Year: </b>"+ feature.properties.year )  
+                            "<br><b>Year: </b>"+ feature.properties.year +  
+                            "<br><b>Dollars Sold: </b> $" + feature.properties.sale_dollars +
+                            "<br><b>Gallons Sold: </b>"+ feature.properties.sale_gallons +
+                            "<br><b>Liters Sold: </b>" + feature.properties.sale_liters )
                             },
                            style: function(feature) {
                             return {
@@ -281,10 +285,10 @@
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
-                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
-                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
-                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
-                            "<br><b>Year: </b>"+ feature.properties.year )  
+                            "<br><b>Year: </b>"+ feature.properties.year +  
+                            "<br><b>Dollars Sold: </b> $" + feature.properties.sale_dollars +
+                            "<br><b>Gallons Sold: </b>"+ feature.properties.sale_gallons +
+                            "<br><b>Liters Sold: </b>" + feature.properties.sale_liters )
                             },
                            style: function(feature) {
                             return {
@@ -303,10 +307,10 @@
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
-                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
-                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
-                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
-                            "<br><b>Year: </b>"+ feature.properties.year )  
+                            "<br><b>Year: </b>"+ feature.properties.year +  
+                            "<br><b>Dollars Sold: </b> $" + feature.properties.sale_dollars +
+                            "<br><b>Gallons Sold: </b>"+ feature.properties.sale_gallons +
+                            "<br><b>Liters Sold: </b>" + feature.properties.sale_liters )
                             },
                            style: function(feature) {
                             return {
@@ -325,10 +329,10 @@
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
-                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
-                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
-                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
-                            "<br><b>Year: </b>"+ feature.properties.year )  
+                            "<br><b>Year: </b>"+ feature.properties.year +  
+                            "<br><b>Dollars Sold: </b> $" + feature.properties.sale_dollars +
+                            "<br><b>Gallons Sold: </b>"+ feature.properties.sale_gallons +
+                            "<br><b>Liters Sold: </b>" + feature.properties.sale_liters )
                             },
                            style: function(feature) {
                             return {
@@ -347,10 +351,10 @@
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
-                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
-                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
-                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
-                            "<br><b>Year: </b>"+ feature.properties.year )  
+                            "<br><b>Year: </b>"+ feature.properties.year +  
+                            "<br><b>Dollars Sold: </b> $" + feature.properties.sale_dollars +
+                            "<br><b>Gallons Sold: </b>"+ feature.properties.sale_gallons +
+                            "<br><b>Liters Sold: </b>" + feature.properties.sale_liters )
                             },
                            style: function(feature) {
                             return {
@@ -369,10 +373,10 @@
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<b>Store Name: </b>" + feature.properties.storename +  
-                            "<br><b>Dollar Sales: </b>" + feature.properties.sale_dollars +
-                            "<br><b>Liters: </b>" + feature.properties.sale_liters +
-                            "<br><b>Galls: </b>"+ feature.properties.sale_gallons +
-                            "<br><b>Year: </b>"+ feature.properties.year )  
+                            "<br><b>Year: </b>"+ feature.properties.year +  
+                            "<br><b>Dollars Sold: </b> $" + feature.properties.sale_dollars +
+                            "<br><b>Gallons Sold: </b>"+ feature.properties.sale_gallons +
+                            "<br><b>Liters Sold: </b>" + feature.properties.sale_liters )
                             },
                            style: function(feature) {
                             return {
@@ -393,6 +397,7 @@
                         "2012 Gallons Sold": twelve,
                         "2011 Gallons Sold": eleven,
                         "2010 Gallons Sold": ten,
+                        "Open Street Map": osm1,
                         };			
 
                     L.control.layers(overlayMaps1).addTo(map1);	

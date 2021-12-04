@@ -20,13 +20,16 @@
             integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
             crossorigin=""></script>
             
+            <!--KVS geoJSON-->    
+            <script src="violations.geojson"></script>
             
             <div class="navbar">
                 <a href="https://kvanselous.github.io/ARIDashboard/">Home</a>
                 <a href="https://kvanselous.github.io/ARIDashboard/Sales/">Sales</a>
-                <a href="fhttps://kvanselous.github.io/ARIDashboard/Tobacco/">Tobacco</a>
+                <a href="https://publicsciencecollaborative.shinyapps.io/abd_tobacco/">Tobacco</a>
                 <a href="https://kvanselous.github.io/ARIDashboard/Violations/">Violations</a>
                 <a href="https://kvanselous.github.io/ARIDashboard/Health/">Health & Safety</a>
+                <a href="https://kvanselous.github.io/ARIDashboard/Deliverables/">Deliverale List</a>
            
             
             </div>
@@ -39,7 +42,8 @@
      
                 <style>
  
-                    h1 {text-align: center; font-size: 50px}
+                  
+ h1 {text-align: center; font-size: 50px}
                     h2 {text-align: center}
                     h3 {text-align: center}
 
@@ -49,13 +53,15 @@
                     margin-right: auto;
                     width: 25%;
                     } 
-  
 
-                    /* The navigation bar */
-                    .navbar {
+                    #map1container {position:absolute; background-color:#ecf7fc; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:600px; height:700px;padding 0; }
+                    #map1 {position: relative; width:1000px; height:700px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
+
+                     /* The navigation bar */
+                     .navbar {
                     overflow: hidden;
                     background-color: #333;
-                    position: absolute; /* Set the navbar to fixed position */
+                    position: relative; /* Set the navbar to fixed position */
                     top: 0; /* Position the navbar at the top of the page */
                     width: 100%; /* Full width */
                     }
@@ -80,11 +86,6 @@
                     .main {
                     margin-top: 30px; /* Add a top margin to avoid content overlay */
                     }
-                    
-                    img {
-                      padding-top: 50px;
-                    }  
-
                 
 
                 </style>
@@ -93,15 +94,246 @@
 
     <body>   
            
+       
         <!--Title-->
+       
        
         <img src="ARI.jpg" height=55% width=55% >
         <img src="logonew.jpg" height=35% width=35% class="top-left" >
-        <br>
-        <br>
-        <br>
-        <h4> Violations Text Here </h4>
         
-        </body>
+        <div id='map1container'>
+        <h3>Violation Data <BR>
+        <h4> 3. Create an interactive, dynamic map that projects the location and relevant descriptive information (e.g. date, time, retailer name) for each violation identified in the ABD violations database and a clean dataset for mapping and future analysis.
+        </div>
+        <div id='map1' class="center"></div>
+
+
+ 
+        <script>   
+                  
+                //Violations Data Map 
+                var map1 = L.map('map1').setView([42.1, -93.5], 7);
+                        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                        maxZoom: 18,
+                        id: 'mapbox/streets-v11',
+                        accessToken: 'pk.eyJ1Ijoia3ZhbnNlbG91cyIsImEiOiJjazZsbHE2NGwwZDdtM2tvNmRjc2N0NHo5In0.h_W_-4R3haPMK-IDBTcL-w' 
+                        }).addTo(map1);      
+                
+                var osm1 = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
+                        maxZoom: 18
+                        }).addTo(map1);
+
+
+                var circle1 = {
+                        radius: 2,
+                        fillColor: "#00008B",
+                        color: "#000",
+                        weight: 1,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                        };
+                
+                var nineteen= L.geoJSON(violations, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.year == "2019";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<b>Violation Count: </b>" + feature.properties.violation_count +  
+                            "<br><b>Violation: </b>"+ feature.properties.violation_name+
+                            "<br><b>Year: </b>" +feature.properties.year )
+                            },
+                            }).addTo(map1);
+
+                
+                var eighteen= L.geoJSON(violations, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.year == "2018";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<b>Violation Count: </b>" + feature.properties.violation_count +  
+                            "<br><b>Violation: </b>"+ feature.properties.violation_name+
+                            "<br><b>Year: </b>" +feature.properties.year )
+                            },
+                            }).addTo(map1);
+                
+                var seventeen=  L.geoJSON(violations, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.year == "2017";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<b>Violation Count: </b>" + feature.properties.violation_count +  
+                            "<br><b>Violation: </b>"+ feature.properties.violation_name+
+                            "<br><b>Year: </b>" +feature.properties.year )
+                            },
+                            }).addTo(map1);
+                     
+                var sixteen=  L.geoJSON(violations, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.year == "2016";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<b>Violation Count: </b>" + feature.properties.violation_count +  
+                            "<br><b>Violation: </b>"+ feature.properties.violation_name+
+                            "<br><b>Year: </b>" +feature.properties.year )
+                            },
+                            }).addTo(map1);
+                
+                 var fifteen=  L.geoJSON(violations, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.year == "2015";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<b>Violation Count: </b>" + feature.properties.violation_count +  
+                            "<br><b>Violation: </b>"+ feature.properties.violation_name+
+                            "<br><b>Year: </b>" +feature.properties.year )
+                            },
+                            }).addTo(map1);
+                
+                 var fourteen =  L.geoJSON(violations, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.year == "2014";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<b>Violation Count: </b>" + feature.properties.violation_count +  
+                            "<br><b>Violation: </b>"+ feature.properties.violation_name+
+                            "<br><b>Year: </b>" +feature.properties.year )
+                            },
+                            }).addTo(map1);
+
+                var thirteen=  L.geoJSON(violations, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.year == "2013";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<b>Violation Count: </b>" + feature.properties.violation_count +  
+                            "<br><b>Violation: </b>"+ feature.properties.violation_name+
+                            "<br><b>Year: </b>" +feature.properties.year )
+                            },
+                            }).addTo(map1);
+                
+                var twelve=  L.geoJSON(violations, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.year == "2012";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<b>Violation Count: </b>" + feature.properties.violation_count +  
+                            "<br><b>Violation: </b>"+ feature.properties.violation_name+
+                            "<br><b>Year: </b>" +feature.properties.year )
+                            },
+                            }).addTo(map1);
+                
+                var eleven=  L.geoJSON(violations, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.year == "2011";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<b>Violation Count: </b>" + feature.properties.violation_count +  
+                            "<br><b>Violation: </b>"+ feature.properties.violation_name+
+                            "<br><b>Year: </b>" +feature.properties.year )
+                            },
+                            }).addTo(map1);
+
+                var ten=  L.geoJSON(violations, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.year == "2010";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<b>Violation Count: </b>" + feature.properties.violation_count +  
+                            "<br><b>Violation: </b>"+ feature.properties.violation_name+
+                            "<br><b>Year: </b>" +feature.properties.year )
+                            },
+                            }).addTo(map1);
+
+                var nine =  L.geoJSON(violations, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.year == "2009";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<b>Violation Count: </b>" + feature.properties.violation_count +  
+                            "<br><b>Violation: </b>"+ feature.properties.violation_name+
+                            "<br><b>Year: </b>" +feature.properties.year )
+                            },
+                            }).addTo(map1);
+
+                var eight=  L.geoJSON(violations, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.year == "2008";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<b>Violation Count: </b>" + feature.properties.violation_count +  
+                            "<br><b>Violation: </b>"+ feature.properties.violation_name+
+                            "<br><b>Year: </b>" +feature.properties.year )
+                            },
+                            }).addTo(map1);
+
+
+                var overlayMaps1 = {
+                        "2019 Violations": nineteen,
+                        "2018 Violations": eighteen,
+                        "2017 Violations": seventeen,
+                        "2016 Violations": sixteen,
+                        "2015 Violations": fifteen,
+                        "2014 Violations": fourteen,
+                        "2013 Violations": thirteen,
+                        "2012 Violations": twelve,
+                        "2011 Violations": eleven,
+                        "2010 Violations": ten,
+                        "Open Street Map": osm1
+                        };			
+
+                    L.control.layers(overlayMaps1).addTo(map1);	
+                </script>
         
+    </body>
+    
 </html>

@@ -25,12 +25,12 @@
             <script src="https://code.jquery.com/jquery-3.1.0.js"></script>  
             
             <!--KVS geoJSON-->    
-            <script src="CedarRapidsOutlets.geojson"></script>
-            <script src="BurlingtonOutlets"></script>
             <script src="BurlingtonCountCapitaDistanceSAI.geojson"></script>
             <script src="CedarRapidsCountCapitaDistanceSAI.geojson"></script>
-            
-
+            <script src="IowaCityOutlets2019.geojson"></script>
+            <script src="IowaCityOutlets2008_2021.geojson"></script>
+            <script src="IowaCitySAIChlor.geojson"></script>
+            <script src="StateOutlets.geojson"></script>
 
              <!--Boot Strap-->
              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -39,11 +39,10 @@
              <div class="navbar">
                 <a href="https://kvanselous.github.io/ARIDashboard/">Home</a>
                 <a href="https://kvanselous.github.io/ARIDashboard/Sales/">Sales</a>
-                <a href="fhttps://kvanselous.github.io/ARIDashboard/Tobacco/">Tobacco</a>
+                <a href="https://publicsciencecollaborative.shinyapps.io/abd_tobacco/">Tobacco</a>
                 <a href="https://kvanselous.github.io/ARIDashboard/Violations/">Violations</a>
                 <a href="https://kvanselous.github.io/ARIDashboard/Health/">Health & Safety</a>
-           
-            
+                <a href="https://kvanselous.github.io/ARIDashboard/Deliverables/">Deliverable List</a>
             </div>
               
 
@@ -64,10 +63,10 @@
                     #map1 {position: relative; width:1000px; height:700px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
                     #map2container {position:absolute; background-color:#fdfdfd; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:600px; height:700px;padding 0; }
                     #map2 {position: relative; width:1000px; height:700px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;} 
-                    #map5container {position:absolute; background-color:#ecf7fc; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:600px; height:700px;padding 0; }
-                    #map5 {position: relative; width:1000px; height:700px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
-                    #map7container {position:absolute; background-color:#fdfdfd; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:600px; height:700px;padding 0; }
-                    #map7 {position: relative; width:1000px; height:700px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}         
+                    #map3container {position:absolute; background-color:#ecf7fc; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:600px; height:700px;padding 0; }
+                    #map3 {position: relative; width:1000px; height:700px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
+                    #map4container {position:absolute; background-color:#fdfdfd; color:black; text-align:left; margin-right: 0px; margin-left:0px; width:600px; height:700px;padding 0; }
+                    #map4 {position: relative; width:1000px; height:700px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}         
 
 
                     /* The navigation bar */
@@ -144,58 +143,50 @@
         <h3>Deliverable 7: Create choropleth maps that project spatial variation in health and safety data throughout Iowa. Linking these data with the data described in items 1-6 above, create layered maps that combine point-level data (e.g. the locations of compliance violations) with choropleth data that enable the spatial analysis of patterns of association between health and safety variables and liquor and tobacco data, including the identification of ‘hot spots’</h3>
         <h2>Alcohol Outlets & Call for Service </h2>   
         <div id='map1container'>
-        <h2>Burlington Outlets </h2>   
-        <p><b>Background:</b> Alcohol Outlet Density</p>  
-        <p><b>Map:</b> The map to the right displays.  </p>
-        <p><b>Interactivity:</b> Click on.</p>            
-        </div>
-        <div id='map1' class="center"></div>
-
-        <div id='map2container'>
             <h2>Cedar Rapids Outlets </h2>   
             <p><b>Background:</b> Alcohol Outlet Density</p>  
             <p><b>Map:</b> The map to the right displays.  </p>
             <p><b>Interactivity:</b> Click on.</p>            
             </div>
 
-        <div id='map2' class="center"></div>
-    
-        <div id='map5container'>
-            <h2>Marshalltown Outlets </h2>   
-            <p><b>Background:</b> Alcohol Outlet Density</p>  
-            <p><b>Map:</b> The map to the right displays.  </p>
-            <p><b>Interactivity:</b> Click on.</p>            
-            </div>
-        <div id='map5' class="center"></div>
-    
-        <div id='map7container'>
+        <div id='map1' class="center"></div>
+        
+        <div id='map2container'>
             <h2>Iowa City Outlets </h2>   
             <p><b>Background:</b> Alcohol Outlet Density</p>  
             <p><b>Map:</b> The map to the right displays.  </p>
             <p><b>Interactivity:</b> Click on.</p>            
             </div>
-        <div id='map7' class="center"></div>
-
-        
-
+        <div id='map2' class="center"></div>
        
+        <div id='map3container'>
+            <h2>Marshalltown Outlets </h2>   
+            <p><b>Background:</b> Alcohol Outlet Density</p>  
+            <p><b>Map:</b> The map to the right displays.  </p>
+            <p><b>Interactivity:</b> Click on.</p>            
+            </div>
+        <div id='map3' class="center"></div>
+    
+
+        <div id='map4container'>
+        <h2>Burlington Outlets </h2>   
+        <p><b>Background:</b> Alcohol Outlet Density</p>  
+        <p><b>Map:</b> The map to the right displays.  </p>
+        <p><b>Interactivity:</b> Click on.</p>            
+        </div>
+        <div id='map4' class="center"></div>
+
             <script>   
-                 //Burlington Maps
-                 var map1 = L.map('map1').setView([40.8077, -91.1129], 13);
+                         
+                    //Cedar Rapids Maps, Marker Information, Layers, & Layer Control
+                    var map1 = L.map('map1').setView([41.97, -91.6656], 11.5);
                         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
                         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
                         maxZoom: 18,
                         id: 'mapbox/streets-v11',
                         accessToken: 'pk.eyJ1Ijoia3ZhbnNlbG91cyIsImEiOiJjazZsbHE2NGwwZDdtM2tvNmRjc2N0NHo5In0.h_W_-4R3haPMK-IDBTcL-w' 
                         }).addTo(map1);      
-                
-                var osmb1 = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-                        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
-                        maxZoom: 18
-                        }).addTo(map1);
-
-
-
+                    
                     var circle1 = {
                         radius: 2,
                         fillColor: "#00008B",
@@ -205,7 +196,11 @@
                         fillOpacity: 0.8
                         };       
 
-                var nineteen= L.geoJSON(boutlets, { 
+                    var osmc1 = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
+                        maxZoom: 18
+                        }).addTo(map1);
+                        var nineteen= L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
                                 return feature.properties.sixmosactiveyear == "2019";
                             },
@@ -217,12 +212,12 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics )
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
                             },
-                            } 
-                            );
+                            }
+                            ).addTo(map1);
                 
-                var eighteen= L.geoJSON(boutlets, { 
+                var eighteen= L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
                                 return feature.properties.sixmosactiveyear == "2018";
                             },
@@ -234,12 +229,12 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics )
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
                             },
                             } 
-                            );
+                            ).addTo(map1);
                 
-                var seventeen=  L.geoJSON(boutlets, { 
+                var seventeen=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
                                 return feature.properties.sixmosactiveyear == "2017";
                             },
@@ -251,13 +246,12 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics )
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
                             },
                             } 
-                            );
-              
-                
-                var sixteen=  L.geoJSON(boutlets, { 
+                            ).addTo(map1);
+                     
+                var sixteen=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
                                 return feature.properties.sixmosactiveyear == "2016";
                             },
@@ -269,12 +263,12 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics )
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
                             },
                             } 
-                            );
+                            ).addTo(map1);
                 
-             var fifteen=  L.geoJSON(boutlets, { 
+                 var fifteen=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
                                 return feature.properties.sixmosactiveyear == "2015";
                             },
@@ -286,12 +280,12 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics )
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
                             },
                             } 
-                            );
+                            ).addTo(map1);
                 
-              var fourteen =  L.geoJSON(boutlets, { 
+                 var fourteen =  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
                                 return feature.properties.sixmosactiveyear == "2014";
                             },
@@ -306,9 +300,9 @@
                             "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics )
                             },
                             } 
-                            );
+                            ).addTo(map1);
 
-                var thirteen=  L.geoJSON(boutlets, { 
+                var thirteen=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
                                 return feature.properties.sixmosactiveyear == "2013";
                             },
@@ -320,12 +314,12 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics )
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
                             },
                             } 
-                            );
+                            ).addTo(map1);
                 
-                var twelve=  L.geoJSON(boutlets, { 
+                var twelve=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
                                 return feature.properties.sixmosactiveyear == "2012";
                             },
@@ -337,12 +331,12 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics )
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
                             },
                             } 
-                            );
+                            ).addTo(map1);
                 
-                    var eleven=  L.geoJSON(boutlets, { 
+                var eleven=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
                                 return feature.properties.sixmosactiveyear == "2011";
                             },
@@ -357,9 +351,9 @@
                             "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics )
                             },
                             } 
-                            );
+                            ).addTo(map1);
 
-                     var ten=  L.geoJSON(boutlets, { 
+                var ten=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
                                 return feature.properties.sixmosactiveyear == "2010";
                             },
@@ -374,9 +368,9 @@
                             "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics )
                             },
                             } 
-                            );
+                            ).addTo(map1);
 
-                   var nine =  L.geoJSON(boutlets, { 
+                var nine =  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
                                 return feature.properties.sixmosactiveyear == "2009";
                             },
@@ -388,12 +382,12 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics )
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
                             },
                             } 
-                            );
+                            ).addTo(map1);
 
-                    var eight=  L.geoJSON(boutlets, { 
+                var eight=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
                                 return feature.properties.sixmosactiveyear == "2008";
                             },
@@ -405,84 +399,25 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics )
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
                             },
                             } 
-                            );
-
-    
-
-                        function getColorb1(d) {
-                            return d > 9  ? 'yellow' :
-                                d > 3  ? 'limegreen' :
-                                d > 1   ? 'teal' :
-                                d > 0   ? 'darkblue' :
-                                d == 0   ? 'indigo' :
-                                            '#white';
-                        }
-                            
-                        function getColorb2(d) {
-                            return d > 35  ? 'yellow' :
-                                d > 21.83  ? 'limegreen' :
-                                d > 14.25   ? 'teal' :
-                                d > 0   ? 'darkblue' :
-                                d == 0   ? 'indigo' :
-                                            '#white';
-                        }
+                            ).addTo(map1);
 
 
-                        function getColorb3(d) {
-                            return d > .87  ? 'indigo' :
-                                d > .7  ? 'darkblue' :
-                                d > .52   ? 'teal' :
-                                d > .39   ? 'limegreen' :
-                                d >= 0   ? 'yellow' :
-                                            '#white';
-                                            }
-
-
-                        function getColorb4(d) {
-                            return d > 21.3111  ? 'yellow' :
-                                d > 17.15  ? 'limegreen' :
-                                d > 11.94   ? 'teal' :
-                                d > 9.77   ? 'darkblue' :
+                    function getColorc1(d) {
+                            return d > 19.738366  ? 'yellow' :
+                                d > 13.75994  ? 'limegreen' :
+                                d > 9.988469   ? 'teal' :
+                                d > 7.384746   ? 'darkblue' :
                                 d > 0   ? 'indigo' :
                                             '#white';
                                             }
 
-                        function styleb1(feature) {
-                            return {
-                                fillColor: getColorb1(feature.properties.outlet_count),
-                                weight: 2,
-                                opacity: 1,
-                                color: 'black',
-                                fillOpacity: 0.7
-                            };
-                        }
 
-                        function styleb2(feature) {
+                    function stylec1(feature) {
                             return {
-                                fillColor: getColorb2((feature.properties.outletscapita10)),
-                                weight: 2,
-                                opacity: 1,
-                                color: 'black',
-                                fillOpacity: 0.7
-                            };
-                        }
-
-                        function styleb3(feature) {
-                            return {
-                                fillColor: getColorb3((feature.properties.outlet_miles)),
-                                weight: 2,
-                                opacity: 1,
-                                color: 'black',
-                                fillOpacity: 0.7
-                            };
-                        }
-
-                        function styleb4(feature) {
-                            return {
-                                fillColor: getColorb4((feature.properties.SAIoutlet_miles)),
+                                fillColor: getColorc1((feature.properties.SAIoutlet_miles)),
                                 weight: 2,
                                 opacity: 1,
                                 color: 'black',
@@ -491,18 +426,17 @@
                         }
 
 
-                        var Bcount = L.geoJson(bur, {style: styleb1});
-                        var Bcapita = L.geoJson(bur, {style: styleb2});
-                        var Bdistance = L.geoJson(bur, {style: styleb3});
-                        var BSAI = L.geoJson(bur, {style: styleb4});
+                    var CSAI = L.geoJson(ced, {style: stylec1});
 
+                    var basemapC1 = {
+                        "Open Street Map" : osmc1,
+                          };
 
-                var basemapB1 = {
-                    "Open Street Map" : osmb1,
-                };
+                    var overlayMapsC1 = {
+                         "2019 Inverse Distance Density": CSAI
+                          };			
 
-
-                 var overlayMapsB1 = {
+                    var overlayMapsI1 = {
                         "2019 Outlets": nineteen,
                         "2018 Outlets": eighteen,
                         "2017 Outlets": seventeen,
@@ -515,184 +449,243 @@
                         "2010 Outlets": ten,
                         "2009 Outlets": nine,
                         "2008 Outlets": eight,
-                        "2019 Count Density": Bcount,
-                        "2019 Capita Density": Bcapita,
-                        "2019 Mean Distance Density": Bdistance,
-                        "2019 Inverse Distance Density": BSAI
+                        "2019 Inverse Distance Density": ISAI
                         };			
 
-                    L.control.layers(basemapB1, overlayMapsB1).addTo(map1);	
-                    
-                    var legendb1 = L.control({position: 'bottomleft'});
-                        legendb1.onAdd = function (map1) {
-                        var div = L.DomUtil.create('div', 'info legend'),
-                         bins = [0, 1, 2, 3, 9],
-                         labels = [];
-                        for (var i = 0; i < bins.length; i++) {
-                        div.innerHTML += 
-                            '<i style="background:' + getColorb1(bins[i] + 1) + '"></i> ' +
-                            bins[i] + (bins[i + 1] ? '&ndash;' + bins[i + 1] + '<br>' : '+');
-                          }
-                          return div;
-                          };
+                    L.control.layers(basemapC1, overlayMapsC1).addTo(map1);	
 
-                    var legendb2 = L.control({position: 'bottomleft'});
-                         legendb2.onAdd = function (map1) {
-                        var div = L.DomUtil.create('div', 'info legend'),
-                        bins = [0, 1, 14.25, 21.83, 35],
-                         labels = [];
-                         for (var i = 0; i < bins.length; i++) {
-                        div.innerHTML += 
-                            '<i style="background:' + getColorb2(bins[i] + 1) + '"></i> ' +
-                            bins[i] + (bins[i + 1] ? '&ndash;' + bins[i + 1] + '<br>' : '+');
-                          }
-                          return div;
-                          };
-
-
-                    var legendb3 = L.control({position: 'bottomleft'});
-                         legendb3.onAdd = function (map1) {
-                            var div = L.DomUtil.create('div', 'info legend'),
-                            bins = [0, .39, .52, .7, .87],
-                            labels = [];
-                            for (var i = 0; i < bins.length; i++) {
-                             div.innerHTML += 
-                            '<i style="background:' + getColorb3(bins[i] + 1) + '"></i> ' +
-                            bins[i] + (bins[i + 1] ? '&ndash;' + bins[i + 1] + '<br>' : '+');
-                             }
-                             return div;
-                             };
-                    
-                    var legendb4 = L.control({position: 'bottomleft'});
-                         legendb4.onAdd = function (map1) {
-                            var div = L.DomUtil.create('div', 'info legend'),
-                            bins = [0, 9.77, 11.94, 17.15, 21.3111],
-                            labels = [];
-                            for (var i = 0; i < bins.length; i++) {
-                             div.innerHTML += 
-                            '<i style="background:' + getColorb4(bins[i] + 1) + '"></i> ' +
-                            bins[i] + (bins[i + 1] ? '&ndash;' + bins[i + 1] + '<br>' : '+');
-                             }
-                             return div;
-                             };     
-                          
-
-
-                        // Add and remove legend from layers when selected in control
-                        map1.on('overlayremove', function (eventLayer) {
-                            console.log(eventLayer.name  + " off");
-                            if (eventLayer.name == "2019 Count Density") {
-                                this.removeControl(legendb1);
-                            }else if (eventLayer.name == "2019 Capita Density"){
-                                this.removeControl(legendb2);
-                            }else if (eventLayer.name == "2019 Mean Distance Density"){
-                                this.removeControl(legendb3);
-                            }else if (eventLayer.name == "2019 Inverse Distance Density"){
-                                this.removeControl(legendb4);
-                            }
-                        });
-
-
-
-                        map1.on('overlayadd', function (eventLayer) {
-                            console.log(eventLayer.name + " on");
-                            if (eventLayer.name == "2019 Count Density") {
-                                legendb1.addTo(this);
-                            }else if (eventLayer.name == "2019 Capita Density"){
-                                legendb2.addTo(this);
-                            }else if (eventLayer.name == "2019 Mean Distance Density"){
-                                legendb3.addTo(this);
-                            }else if (eventLayer.name == "2019 Inverse Distance Density"){
-                                legendb4.addTo(this);
-                            }
-                        });
-
-
-                //Cedar Rapids Maps, Marker Information, Layers, & Layer Control
-                    var map2 = L.map('map2').setView([41.9779, -91.6656], 12);
+                //Iowa city Maps
+                var map2 = L.map('map2').setView([41.6611, -91.5302], 12);
                         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
                         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
                         maxZoom: 18,
                         id: 'mapbox/streets-v11',
                         accessToken: 'pk.eyJ1Ijoia3ZhbnNlbG91cyIsImEiOiJjazZsbHE2NGwwZDdtM2tvNmRjc2N0NHo5In0.h_W_-4R3haPMK-IDBTcL-w' 
                         }).addTo(map2);      
-
-                    var osmc1 = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                
+                var osmI1 = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
                         attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
                         maxZoom: 18
-                        }).addTo(map2);
-             
-                        function getColorc1(d) {
-                            return d > 7  ? 'yellow' :
-                                d > 4  ? 'limegreen' :
-                                d > 2   ? 'teal' :
-                                d > 0   ? 'darkblue' :
-                                d == 0   ? 'indigo' :
-                                            '#white';
-                        }
-	
-                        function getColorc2(d) {
-                            return d > 53.097343  ? 'yellow' :
-                                d > 24.271845  ? 'limegreen' :
-                                d > 14.184397   ? 'teal' :
-                                d > 0   ? 'darkblue' :
-                                d == 0   ? 'indigo' :
-                                            '#white';
-                        }
+                        }).addTo(map2);     
+
+                var nineteen= L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2019";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            }
+                            ).addTo(map2);
+                
+                var eighteen= L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2018";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map2);
+                
+                var seventeen=  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2017";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map2);
+                     
+                var sixteen=  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2016";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map2);
+                
+                 var fifteen=  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2015";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map2);
+                
+                 var fourteen =  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2014";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map2);
+
+                var thirteen=  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2013";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map2);
+                
+                var twelve=  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2012";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map2);
+                
+                var eleven=  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2011";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map2);
+
+                var ten=  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2010";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map2);
+
+                var nine =  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2009";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map2);
+
+                var eight=  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2008";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map2);
 
 
-                        function getColorc3(d) {
-                            return d > 1.004596  ? 'indigo' :
-                                d > .757417  ? 'darkblue' :
-                                d > .575045   ? 'teal' :
-                                d > .40877   ? 'limegreen' :
-                                d >= 0   ? 'yellow' :
-                                            '#white';
-                                            }
-
-
-                        function getColorc4(d) {
-                            return d > 19.738366  ? 'yellow' :
-                                d > 13.75994  ? 'limegreen' :
-                                d > 9.988469   ? 'teal' :
-                                d > 7.384746   ? 'darkblue' :
+                        function getColorI1(d) {
+                            return d > 17.351977  ? 'yellow' :
+                                d > 10.687996  ? 'limegreen' :
+                                d > 8.498743  ? 'teal' :
+                                d > 7.168206  ? 'darkblue' :
                                 d > 0   ? 'indigo' :
                                             '#white';
                                             }
 
-                        function stylec1(feature) {
-                            return {
-                                fillColor: getColorc1(feature.properties.outlet_count),
-                                weight: 2,
-                                opacity: 1,
-                                color: 'black',
-                                fillOpacity: 0.7
-                            };
-                        }
 
-                        function stylec2(feature) {
+                        function styleI1(feature) {
                             return {
-                                fillColor: getColorc2((feature.properties.outletscapita10)),
-                                weight: 2,
-                                opacity: 1,
-                                color: 'black',
-                                fillOpacity: 0.7
-                            };
-                        }
-
-                        function stylec3(feature) {
-                            return {
-                                fillColor: getColorc3((feature.properties.outlet_miles)),
-                                weight: 2,
-                                opacity: 1,
-                                color: 'black',
-                                fillOpacity: 0.7
-                            };
-                        }
-
-                        function stylec4(feature) {
-                            return {
-                                fillColor: getColorc4((feature.properties.SAIoutlet_miles)),
+                                fillColor: getColorI1((feature.properties.SAIoutlet_miles)),
                                 weight: 2,
                                 opacity: 1,
                                 color: 'black',
@@ -701,143 +694,569 @@
                         }
 
 
-                        var Ccount = L.geoJson(ced, {style: stylec1});
-                        var Ccapita = L.geoJson(ced, {style: stylec2});
-                        var Cdistance = L.geoJson(ced, {style: stylec3});
-                        var CSAI = L.geoJson(ced, {style: stylec4});
+                        var ISAI = L.geoJson(icchlor, {style: styleI1});
 
-                        var basemapC1 = {
-                    "Open Street Map" : osmc1,
+
+                var basemapI1 = {
+                    "Open Street Map" : osmI1,
+                };
+
+                var overlayMapsI1 = {
+                        "2019 Outlets": nineteen,
+                        "2018 Outlets": eighteen,
+                        "2017 Outlets": seventeen,
+                        "2016 Outlets": sixteen,
+                        "2015 Outlets": fifteen,
+                        "2014 Outlets": fourteen,
+                        "2013 Outlets": thirteen,
+                        "2012 Outletsd": twelve,
+                        "2011 Outlets": eleven,
+                        "2010 Outlets": ten,
+                        "2009 Outlets": nine,
+                        "2008 Outlets": eight,
+                        "2019 Inverse Distance Density": ISAI
+                        };			
+
+                    L.control.layers(basemapI1, overlayMapsI1).addTo(map2);	
+
+                //Marshalltown Maps
+                var map3 = L.map('map3').setView([42.0495, -92.9080], 12);
+                            L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+                            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                            maxZoom: 18,
+                            id: 'mapbox/streets-v11',
+                            accessToken: 'pk.eyJ1Ijoia3ZhbnNlbG91cyIsImEiOiJjazZsbHE2NGwwZDdtM2tvNmRjc2N0NHo5In0.h_W_-4R3haPMK-IDBTcL-w' 
+                            }).addTo(map3);     
+                
+                var osmm1 = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
+                        maxZoom: 18
+                        }).addTo(map3);
+            
+                
+                            var nineteen= L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2019";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            }
+                            ).addTo(map3);
+                
+                var eighteen= L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2018";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map3);
+                
+                var seventeen=  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2017";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map3);
+              
+                
+                var sixteen=  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2016";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map3);
+                
+                 var fifteen=  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2015";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map3);
+                
+                 var fourteen =  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2014";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map3);
+
+                var thirteen=  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2013";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map3);
+                
+                var twelve=  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2012";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map3);
+                
+                var eleven=  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2011";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map3);
+
+                var ten=  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2010";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map3);
+
+                var nine =  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2009";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map3);
+
+                var eight=  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2008";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map3);
+
+
+                        function getColorm1(d) {
+                            return d > 21.3111  ? 'yellow' :
+                                d > 17.15  ? 'limegreen' :
+                                d > 11.94   ? 'teal' :
+                                d > 9.77   ? 'darkblue' :
+                                d > 0   ? 'indigo' :
+                                            '#white';
+                                            }
+
+
+                        function stylem1(feature) {
+                            return {
+                                fillColor: getColorb1((feature.properties.SAIoutlet_miles)),
+                                weight: 2,
+                                opacity: 1,
+                                color: 'black',
+                                fillOpacity: 0.7
+                            };
+                        }
+
+
+                        var BSAI = L.geoJson(bur, {style: stylem1});
+
+
+                var basemapM1 = {
+                    "Open Street Map" : osmm1,
                 };
 
 
+                var overlayMapsM1 = {
+                        "2019 Outlets": nineteen,
+                        "2018 Outlets": eighteen,
+                        "2017 Outlets": seventeen,
+                        "2016 Outlets": sixteen,
+                        "2015 Outlets": fifteen,
+                        "2014 Outlets": fourteen,
+                        "2013 Outlets": thirteen,
+                        "2012 Outletsd": twelve,
+                        "2011 Outlets": eleven,
+                        "2010 Outlets": ten,
+                        "2009 Outlets": nine,
+                        "2008 Outlets": eight,
+                        "2019 Inverse Distance Density": MSAI
+                        };			
 
-
-                        var overlayMapsC1 = {
-                                "2019 Count Density": Ccount,
-                                "2019 Capita Density": Ccapita,
-                                "2019 Mean Distance Density": Cdistance,
-                                "2019 Inverse Distance Density": CSAI
-                                };			
-
-                            L.control.layers(basemapC1, overlayMapsC1).addTo(map2);	
-
+                    L.control.layers(basemapM1, overlayMapsM1).addTo(map3);	
+    
+		             
                  
-
-
-                    
-                    var legendc1 = L.control({position: 'bottomleft'});
-                        legendc1.onAdd = function (map2) {
-                        var div = L.DomUtil.create('div', 'info legend'),
-                         bins = [0, 1, 2, 3, 9],
-                         labels = [];
-                        for (var i = 0; i < bins.length; i++) {
-                        div.innerHTML += 
-                            '<i style="background:' + getColorc1(bins[i] + 1) + '"></i> ' +
-                            bins[i] + (bins[i + 1] ? '&ndash;' + bins[i + 1] + '<br>' : '+');
-                          }
-                          return div;
-                          };
-
-                    var legendc2 = L.control({position: 'bottomleft'});
-                         legendc2.onAdd = function (map2) {
-                        var div = L.DomUtil.create('div', 'info legend'),
-                        bins = [0, 1, 14.25, 21.83, 35],
-                         labels = [];
-                         for (var i = 0; i < bins.length; i++) {
-                        div.innerHTML += 
-                            '<i style="background:' + getColorc2(bins[i] + 1) + '"></i> ' +
-                            bins[i] + (bins[i + 1] ? '&ndash;' + bins[i + 1] + '<br>' : '+');
-                          }
-                          return div;
-                          };
-
-
-                    var legendc3 = L.control({position: 'bottomleft'});
-                         legendc3.onAdd = function (map2) {
-                            var div = L.DomUtil.create('div', 'info legend'),
-                            bins = [0, .39, .52, .7, .87],
-                            labels = [];
-                            for (var i = 0; i < bins.length; i++) {
-                             div.innerHTML += 
-                            '<i style="background:' + getColorc3(bins[i] + 1) + '"></i> ' +
-                            bins[i] + (bins[i + 1] ? '&ndash;' + bins[i + 1] + '<br>' : '+');
-                             }
-                             return div;
-                             };
-                    
-                    var legendc4 = L.control({position: 'bottomleft'});
-                         legendc4.onAdd = function (map2) {
-                            var div = L.DomUtil.create('div', 'info legend'),
-                            bins = [0, 9.77, 11.94, 17.15, 21.3111],
-                            labels = [];
-                            for (var i = 0; i < bins.length; i++) {
-                             div.innerHTML += 
-                            '<i style="background:' + getColorc4(bins[i] + 1) + '"></i> ' +
-                            bins[i] + (bins[i + 1] ? '&ndash;' + bins[i + 1] + '<br>' : '+');
-                             }
-                             return div;
-                             };     
-                          
-
-
-                        // Add and remove legend from layers when selected in control
-                        map2.on('overlayremove', function (eventLayer) {
-                            console.log(eventLayer.name  + " off");
-                            if (eventLayer.name == "2019 Count Density") {
-                                this.removeControl(legendc1);
-                            }else if (eventLayer.name == "2019 Capita Density"){
-                                this.removeControl(legendc2);
-                            }else if (eventLayer.name == "2019 Mean Distance Density"){
-                                this.removeControl(legendc3);
-                            }else if (eventLayer.name == "2019 Inverse Distance Density"){
-                                this.removeControl(legendc4);
-                            }
-                        });
-
-
-
-                        map2.on('overlayadd', function (eventLayer) {
-                            console.log(eventLayer.name + " on");
-                            if (eventLayer.name == "2019 Count Density") {
-                                legendc1.addTo(this);
-                            }else if (eventLayer.name == "2019 Capita Density"){
-                                legendc2.addTo(this);
-                            }else if (eventLayer.name == "2019 Mean Distance Density"){
-                                legendc3.addTo(this);
-                            }else if (eventLayer.name == "2019 Inverse Distance Density"){
-                                legendc4.addTo(this);
-                            }
-                        });
-
-
-
-
-
-
-
-
-                    //Marshalltown Maps
-                    var map5 = L.map('map5').setView([42.0495, -92.9080], 12);
+                 //Burlington Maps
+                 var map4 = L.map('map4').setView([40.8077, -91.1129], 13);
                         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
                         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
                         maxZoom: 18,
                         id: 'mapbox/streets-v11',
                         accessToken: 'pk.eyJ1Ijoia3ZhbnNlbG91cyIsImEiOiJjazZsbHE2NGwwZDdtM2tvNmRjc2N0NHo5In0.h_W_-4R3haPMK-IDBTcL-w' 
-                        }).addTo(map5);       
-                        
-
-                    //Iowa city Maps
-                    var map7 = L.map('map7').setView([41.6611, -91.5302], 12);
-                        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                        maxZoom: 18,
-                        id: 'mapbox/streets-v11',
-                        accessToken: 'pk.eyJ1Ijoia3ZhbnNlbG91cyIsImEiOiJjazZsbHE2NGwwZDdtM2tvNmRjc2N0NHo5In0.h_W_-4R3haPMK-IDBTcL-w' 
-                        }).addTo(map7);      
+                        }).addTo(map4);      
+                
+                var osmb1 = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
+                        maxZoom: 18
+                        }).addTo(map4);
 
 
-                   
+                var nineteen= L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2019";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            }
+                            ).addTo(map4);
+                
+                var eighteen= L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2018";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map4);
+                
+                var seventeen=  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2017";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map4);
+              
+                
+                var sixteen=  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2016";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map4);
+                
+                 var fifteen=  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2015";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map4);
+                
+                 var fourteen =  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2014";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map4);
+
+                var thirteen=  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2013";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map4);
+                
+                var twelve=  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2012";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map4);
+                
+                var eleven=  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2011";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map4);
+
+                var ten=  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2010";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map4);
+
+                var nine =  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2009";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map4);
+
+                var eight=  L.geoJSON(outlets, { 
+                            filter: function(feature, layer) {
+                                return feature.properties.sixmosactiveyear == "2008";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.circleMarker(coordinates,circle1);
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
+                            "<br> <b>Address: </b>" + feature.properties.address +  
+                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
+                            },
+                            } 
+                            ).addTo(map4);
+
+
+                        function getColorb1(d) {
+                            return d > 21.3111  ? 'yellow' :
+                                d > 17.15  ? 'limegreen' :
+                                d > 11.94   ? 'teal' :
+                                d > 9.77   ? 'darkblue' :
+                                d > 0   ? 'indigo' :
+                                            '#white';
+                                            }
+
+
+                        function styleb1(feature) {
+                            return {
+                                fillColor: getColorb1((feature.properties.SAIoutlet_miles)),
+                                weight: 2,
+                                opacity: 1,
+                                color: 'black',
+                                fillOpacity: 0.7
+                            };
+                        }
+
+
+                        var BSAI = L.geoJson(bur, {style: styleb1});
+
+
+                var basemapB1 = {
+                    "Open Street Map" : osmb1,
+                };
+
+
+                var overlayMapsB1 = {
+                        "2019 Outlets": nineteen,
+                        "2018 Outlets": eighteen,
+                        "2017 Outlets": seventeen,
+                        "2016 Outlets": sixteen,
+                        "2015 Outlets": fifteen,
+                        "2014 Outlets": fourteen,
+                        "2013 Outlets": thirteen,
+                        "2012 Outletsd": twelve,
+                        "2011 Outlets": eleven,
+                        "2010 Outlets": ten,
+                        "2009 Outlets": nine,
+                        "2008 Outlets": eight,
+                        "2019 Inverse Distance Density": BSAI
+                        };			
+
+                    L.control.layers(basemapB1, overlayMapsB1).addTo(map4);	
+    
 		             
             </script>
         
