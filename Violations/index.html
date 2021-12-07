@@ -122,15 +122,15 @@
                         accessToken: 'pk.eyJ1Ijoia3ZhbnNlbG91cyIsImEiOiJjazZsbHE2NGwwZDdtM2tvNmRjc2N0NHo5In0.h_W_-4R3haPMK-IDBTcL-w' 
                         }).addTo(map1);      
                 
-                var osm1 = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                var osmS1 = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
                         attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
                         maxZoom: 18
                         }).addTo(map1);
 
 
                 var circle1 = {
-                        radius: 2,
-                        fillColor: "#00008B",
+                        radius: 4,
+                        fillColor: "white",
                         color: "#000",
                         weight: 1,
                         opacity: 1,
@@ -148,9 +148,13 @@
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<b>Violation Count: </b>" + feature.properties.violation_count +  
                             "<br><b>Violation: </b>"+ feature.properties.violation_name+
-                            "<br><b>Year: </b>" +feature.properties.year )
-                            },
-                            }).addTo(map1);
+                            "<br><b>Year: </b>" +feature.properties.year)
+                        }, style: function(feature) {
+                              switch (feature.properties.violation_name) {
+                                 case 'Minors': return {color: "red"};
+                            }
+                        }}).addTo(map1);
+
 
                 
                 var eighteen= L.geoJSON(violations, { 
@@ -164,9 +168,13 @@
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<b>Violation Count: </b>" + feature.properties.violation_count +  
                             "<br><b>Violation: </b>"+ feature.properties.violation_name+
-                            "<br><b>Year: </b>" +feature.properties.year )
-                            },
-                            }).addTo(map1);
+                            "<br><b>Year: </b>" +feature.properties.year 
+                            )
+                        }, style: function(feature) {
+                              switch (feature.properties.violation_name) {
+                                 case 'Minors': return {color: "red"};
+                            }
+                        }}).addTo(map1);
                 
                 var seventeen=  L.geoJSON(violations, { 
                             filter: function(feature, layer) {
@@ -179,9 +187,13 @@
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<b>Violation Count: </b>" + feature.properties.violation_count +  
                             "<br><b>Violation: </b>"+ feature.properties.violation_name+
-                            "<br><b>Year: </b>" +feature.properties.year )
-                            },
-                            }).addTo(map1);
+                            "<br><b>Year: </b>" +feature.properties.year 
+                            )
+                        }, style: function(feature) {
+                              switch (feature.properties.violation_name) {
+                                 case 'Minors': return {color: "red"};
+                            }
+                        }}).addTo(map1);
                      
                 var sixteen=  L.geoJSON(violations, { 
                             filter: function(feature, layer) {
@@ -194,9 +206,13 @@
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<b>Violation Count: </b>" + feature.properties.violation_count +  
                             "<br><b>Violation: </b>"+ feature.properties.violation_name+
-                            "<br><b>Year: </b>" +feature.properties.year )
-                            },
-                            }).addTo(map1);
+                            "<br><b>Year: </b>" +feature.properties.year 
+                            )
+                        }, style: function(feature) {
+                              switch (feature.properties.violation_name) {
+                                 case 'Minors': return {color: "red"};
+                            }
+                        }}).addTo(map1);
                 
                  var fifteen=  L.geoJSON(violations, { 
                             filter: function(feature, layer) {
@@ -209,9 +225,13 @@
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<b>Violation Count: </b>" + feature.properties.violation_count +  
                             "<br><b>Violation: </b>"+ feature.properties.violation_name+
-                            "<br><b>Year: </b>" +feature.properties.year )
-                            },
-                            }).addTo(map1);
+                            "<br><b>Year: </b>" +feature.properties.year
+                            )
+                        }, style: function(feature) {
+                              switch (feature.properties.violation_name) {
+                                 case 'Minors': return {color: "red"};
+                            }
+                        }}).addTo(map1);
                 
                  var fourteen =  L.geoJSON(violations, { 
                             filter: function(feature, layer) {
@@ -225,8 +245,11 @@
                             layer.bindPopup("<b>Violation Count: </b>" + feature.properties.violation_count +  
                             "<br><b>Violation: </b>"+ feature.properties.violation_name+
                             "<br><b>Year: </b>" +feature.properties.year )
-                            },
-                            }).addTo(map1);
+                        }, style: function(feature) {
+                              switch (feature.properties.violation_name) {
+                                 case 'Minors': return {color: "red"};
+                            }
+                        }}).addTo(map1);
 
                 var thirteen=  L.geoJSON(violations, { 
                             filter: function(feature, layer) {
@@ -240,8 +263,11 @@
                             layer.bindPopup("<b>Violation Count: </b>" + feature.properties.violation_count +  
                             "<br><b>Violation: </b>"+ feature.properties.violation_name+
                             "<br><b>Year: </b>" +feature.properties.year )
-                            },
-                            }).addTo(map1);
+                        }, style: function(feature) {
+                              switch (feature.properties.violation_name) {
+                                 case 'Minors': return {color: "red"};
+                            }
+                        }}).addTo(map1);
                 
                 var twelve=  L.geoJSON(violations, { 
                             filter: function(feature, layer) {
@@ -255,8 +281,11 @@
                             layer.bindPopup("<b>Violation Count: </b>" + feature.properties.violation_count +  
                             "<br><b>Violation: </b>"+ feature.properties.violation_name+
                             "<br><b>Year: </b>" +feature.properties.year )
-                            },
-                            }).addTo(map1);
+                        }, style: function(feature) {
+                              switch (feature.properties.violation_name) {
+                                 case 'Minors': return {color: "red"};
+                            }
+                        }}).addTo(map1);
                 
                 var eleven=  L.geoJSON(violations, { 
                             filter: function(feature, layer) {
@@ -270,8 +299,11 @@
                             layer.bindPopup("<b>Violation Count: </b>" + feature.properties.violation_count +  
                             "<br><b>Violation: </b>"+ feature.properties.violation_name+
                             "<br><b>Year: </b>" +feature.properties.year )
-                            },
-                            }).addTo(map1);
+                        }, style: function(feature) {
+                              switch (feature.properties.violation_name) {
+                                 case 'Minors': return {color: "red"};
+                            }
+                        }}).addTo(map1);
 
                 var ten=  L.geoJSON(violations, { 
                             filter: function(feature, layer) {
@@ -285,8 +317,11 @@
                             layer.bindPopup("<b>Violation Count: </b>" + feature.properties.violation_count +  
                             "<br><b>Violation: </b>"+ feature.properties.violation_name+
                             "<br><b>Year: </b>" +feature.properties.year )
-                            },
-                            }).addTo(map1);
+                        }, style: function(feature) {
+                              switch (feature.properties.violation_name) {
+                                 case 'Minors': return {color: "red"};
+                            }
+                        }}).addTo(map1);
 
                 var nine =  L.geoJSON(violations, { 
                             filter: function(feature, layer) {
@@ -300,8 +335,11 @@
                             layer.bindPopup("<b>Violation Count: </b>" + feature.properties.violation_count +  
                             "<br><b>Violation: </b>"+ feature.properties.violation_name+
                             "<br><b>Year: </b>" +feature.properties.year )
-                            },
-                            }).addTo(map1);
+                        }, style: function(feature) {
+                              switch (feature.properties.violation_name) {
+                                 case 'Minors': return {color: "red"};
+                            }
+                        }}).addTo(map1);
 
                 var eight=  L.geoJSON(violations, { 
                             filter: function(feature, layer) {
@@ -315,10 +353,15 @@
                             layer.bindPopup("<b>Violation Count: </b>" + feature.properties.violation_count +  
                             "<br><b>Violation: </b>"+ feature.properties.violation_name+
                             "<br><b>Year: </b>" +feature.properties.year )
-                            },
-                            }).addTo(map1);
+                        }, style: function(feature) {
+                              switch (feature.properties.violation_name) {
+                                 case 'Minors': return {color: "red"};
+                            }
+                        }}).addTo(map1);
 
-
+               var basemapS1 = {
+                    "Open Street Map" : osmS1,
+                };
                 var overlayMaps1 = {
                         "2019 Violations": nineteen,
                         "2018 Violations": eighteen,
@@ -329,11 +372,10 @@
                         "2013 Violations": thirteen,
                         "2012 Violations": twelve,
                         "2011 Violations": eleven,
-                        "2010 Violations": ten,
-                        "Open Street Map": osm1
+                        "2010 Violations": ten
                         };			
 
-                    L.control.layers(overlayMaps1).addTo(map1);	
+                    L.control.layers(basemapS1, overlayMaps1).addTo(map1);	
                 </script>
         
     </body>
