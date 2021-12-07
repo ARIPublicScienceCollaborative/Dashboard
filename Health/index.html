@@ -241,10 +241,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map1);
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics 
+                             )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map1);
                 
                 var eighteen= L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -258,11 +264,17 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map1);
-                
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics   
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map1);
+
                 var seventeen=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
                                 return feature.properties.sixmosactiveyear == "2017";
@@ -275,10 +287,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map1);
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics   
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map1);
                      
                 var sixteen=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -292,10 +310,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map1);
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics   
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map1);
                 
                  var fifteen=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -309,11 +333,17 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map1);
-                
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics   
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map1);
+
                  var fourteen =  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
                                 return feature.properties.sixmosactiveyear == "2014";
@@ -326,10 +356,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map1);
+                            "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics   
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map1);
 
                 var thirteen=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -343,10 +379,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map1);
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics   
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map1);
                 
                 var twelve=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -360,10 +402,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map1);
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics   
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map1);
                 
                 var eleven=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -377,10 +425,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map1);
+                            "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics   
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map1);
 
                 var ten=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -394,10 +448,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map1);
+                            "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics  
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map1);
 
                 var nine =  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -411,10 +471,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map1);
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics   
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map1);
 
                     var eight=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -428,10 +494,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map1);
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics   
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map1);
 
                     var privateschools = L.geoJSON(privateschools,  { 
                             filter: function(feature, layer) {
@@ -541,6 +613,18 @@
                         maxZoom: 18
                         }).addTo(map2);     
 
+                
+                        function styleoutlet(feature) {
+                            return {
+                                fillColor: 'pink' ((feature.properties.OnpremisePSC)),
+                                weight: 2,
+                                opacity: 1,
+                                color: 'black',
+                                fillOpacity: 0.7
+                            };
+                        }
+
+                
                 var nineteen= L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
                                 return feature.properties.sixmosactiveyear == "2019";
@@ -553,10 +637,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics 
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
                             }
-                            ).addTo(map2);
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map2);
                 
                 var eighteen= L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -570,11 +660,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map2);
-                
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics  
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map2);
                 var seventeen=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
                                 return feature.properties.sixmosactiveyear == "2017";
@@ -587,10 +682,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map2);
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics 
+                             )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map2);
                      
                 var sixteen=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -604,10 +705,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map2);
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics 
+                             )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map2);
                 
                  var fifteen=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -621,11 +728,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map2);
-                
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics  )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map2);
+
                  var fourteen =  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
                                 return feature.properties.sixmosactiveyear == "2014";
@@ -638,10 +750,15 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map2);
+                            "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics  )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map2);
 
                 var thirteen=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -655,10 +772,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map2);
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics  
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map2);
                 
                 var twelve=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -672,10 +795,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map2);
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics  
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map2);
                 
                 var eleven=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -689,10 +818,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map2);
+                            "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics  
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map2);
 
                 var ten=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -706,10 +841,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map2);
+                            "<br><b>NumberOfLicenses: </b>" + feature.properties.numlics  
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map2);
 
                 var nine =  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -723,10 +864,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map2);
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics  
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map2);
 
                 var eight=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -740,10 +887,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map2);
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics  
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map2);
 
 
                         function getColorI1(d) {
@@ -772,7 +925,9 @@
 
                         var ISAI = L.geoJson(icchlor, {style: styleI1});
 
-
+                var basemapI1 = {
+                    "Open Street Map" : osmI1,
+                };
 
                 var overlayMapsI1 = {
                         "2019 Outlets": nineteen,
@@ -793,7 +948,7 @@
                         "Alcohol Outlet Density by Census Block in 2019": ISAI
                         };			
 
-                    L.control.layers(overlayMapsI1).addTo(map2);	
+                    L.control.layers(basemapI1, overlayMapsI1).addTo(map2);	
 
                 //Marshalltown Maps
                 var map3 = L.map('map3').setView([42.0495, -92.9080], 12);
@@ -822,44 +977,17 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics  
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
                             }
-                            ).addTo(map3);
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map2);
                 
-                var off= L.geoJSON(offoutlets, { 
-                            filter: function(feature, layer) {
-                                return feature.type == "Feature"
-                            },
-                            pointToLayer: function(feature, coordinates) {
-                            return L.circleMarker(coordinates,circle1);
-                            },
-                            onEachFeature: function (feature, layer) {
-                            popupOptions = {maxWidth: 200}; 
-                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
-                            "<br> <b>Address: </b>" + feature.properties.address +  
-                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            }
-                            );
-
-                 var on= L.geoJSON(onoutlets, { 
-                            filter: function(feature, layer) {
-                                return feature.type == "Feature"
-                            },
-                            pointToLayer: function(feature, coordinates) {
-                            return L.circleMarker(coordinates,circle1);
-                            },
-                            onEachFeature: function (feature, layer) {
-                            popupOptions = {maxWidth: 200}; 
-                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
-                            "<br> <b>Address: </b>" + feature.properties.address +  
-                            "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            }
-                            );
 
                         function getColorm1(d) {
                             return d > 18.748103 ? '#FFFF0080' :
@@ -1004,9 +1132,7 @@
 
 
                 var overlayMapsM1 = {
-                        "All": all,
-                        "On": on,
-                        "Off": off, 
+                        "2019 Outlets": all,
                         "Private Schools": privateschools, 
                         "Public Schools": publicschools, 
                         "Alchol Related Crashes": crashes,
@@ -1050,10 +1176,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics  
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
                             }
-                            ).addTo(map4);
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map4);
                 
                 var eighteen= L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -1067,10 +1199,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map4);
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics  
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map4);
                 
                 var seventeen=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -1084,10 +1222,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map4);
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics  
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map4);
               
                 
                 var sixteen=  L.geoJSON(outlets, { 
@@ -1102,10 +1246,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map4);
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics  
+                             )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map4);
                 
                  var fifteen=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -1119,10 +1269,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map4);
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics   
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map4);
                 
                  var fourteen =  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -1136,10 +1292,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map4);
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics  
+                             )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map4);
 
                 var thirteen=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -1153,10 +1315,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map4);
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics   
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map4);
                 
                 var twelve=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -1170,10 +1338,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map4);
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics   
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map4);
                 
                 var eleven=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -1187,10 +1361,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map4);
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics  
+                             )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map4);
 
                 var ten=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -1204,10 +1384,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map4);
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics  
+                             )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map4);
 
                 var nine =  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -1221,10 +1407,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map4);
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics  
+                             )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map4);
 
                 var eight=  L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -1238,10 +1430,16 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
                             "<br> <b>Address: </b>" + feature.properties.address +  
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics )
-                            },
-                            } 
-                            ).addTo(map4);
+                            "<br><b>Number Of Licenses: </b>" + feature.properties.numlics  
+                            )}, style: function(feature) {
+                              switch (feature.properties.onpremisePSC) {
+                                 case 1: return {color: "#ff0000"};
+                            }
+                            switch (feature.properties.offpremisePSC) {
+                                 case 1: return {color: "#0000ff"};
+                            }
+                            }
+                        }).addTo(map4);
 
 
                         function getColorb1(d) {
@@ -1268,7 +1466,9 @@
 
                         var BSAI = L.geoJson(bur, {style: styleb1});
 
-
+                var basemapB1 = {
+                    "Open Street Map" : osmb1,
+                };
 
 
                 var overlayMapsB1 = {
@@ -1290,7 +1490,7 @@
                         "Alcohol Outlet Density by Census Block in 2019": BSAI
                         };			
 
-                    L.control.layers( overlayMapsB1).addTo(map4);	
+                    L.control.layers(basemapB1, overlayMapsB1).addTo(map4);	
     
 		             
             </script>
