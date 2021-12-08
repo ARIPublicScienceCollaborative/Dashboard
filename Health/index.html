@@ -41,6 +41,22 @@
              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
+      
+            <!--External CSS for Markers -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">	
+            <link rel="stylesheet" href="https://profseeger.github.io/LVM-Code/classes/Leaflet.awesome-markers/leaflet.awesome-markers.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+
+
+            <!--External JS for Markers-->	
+            <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+            <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+            <script src="https://profseeger.github.io/LVM-Code/classes/Leaflet.awesome-markers/leaflet.awesome-markers.js"></script>
+
+
+
              <div class="navbar">
                 <a href="https://kvanselous.github.io/ARIDashboard/">Home</a>
                 <a href="https://kvanselous.github.io/ARIDashboard/Sales/">Sales</a>
@@ -153,18 +169,21 @@
             <h2>Cedar Rapids Outlets </h2>   
             <h4><b>Background:</b> Alcohol Outlet Density </h4>
             <h4><b>Map:</b> The map to the right displays.   </h4>
-            <h4><b>Interactivity:</b> Click on.  </h4>         
-            </div>
+            <h4><b>Interactivity:</b> Click on.  </h4>     
+            <br><img src = "DensityLegend.png" height=75% width=100% class="right" >     
 
-        <div id='map1' class="center"></div>
-        
+            </div>
+            
+        <div id='map1' class="center">
+        </div>
         <div id='map2container'>
             <h2>Iowa City Outlets </h2>   
             <h4><b>Background:</b> Alcohol Outlet Density</h4>  
             <h4><b>Map:</b> The map to the right displays.  </h4>
             <h4><b>Interactivity:</b> Click on.</h4>            
             </div>
-        <div id='map2' class="center"></div>
+        <div id='map2' class="center">
+        </div>
        
         <div id='map3container'>
             <h2>Marshalltown Outlets </h2>   
@@ -222,12 +241,11 @@
                         fillOpacity: 0.8
                         };   
 
+
                     var osmc1 = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
                         attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
                         maxZoom: 18
                         }).addTo(map1);
-
-
                 
                 var nineteen= L.geoJSON(outlets, { 
                             filter: function(feature, layer) {
@@ -510,8 +528,15 @@
                                 return feature.type == "Feature";
                             },
                             pointToLayer: function(feature, coordinates) {
-                            return L.circleMarker(coordinates,circle2);
-                            },
+                            return L.marker(coordinates, {
+		                        icon: L.AwesomeMarkers.icon({
+			                    icon: 'flag', 
+			                    prefix: 'fa', 
+			                    markerColor: 'blue',
+			                    iconColor: 'yellow'
+		                        })
+                            });
+                        },
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.SchoolName +
@@ -526,8 +551,15 @@
                                 return feature.type == "Feature";
                             },
                             pointToLayer: function(feature, coordinates) {
-                            return L.circleMarker(coordinates,circle2);
-                            },
+                            return L.marker(coordinates, {
+		                        icon: L.AwesomeMarkers.icon({
+			                    icon: 'flag', 
+			                    prefix: 'fa', 
+			                    markerColor: 'blue',
+			                    iconColor: 'yellow'
+		                        })
+                            });
+                        },
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.SchoolName +
@@ -542,8 +574,15 @@
                                 return feature.type == "Feature";
                             },
                             pointToLayer: function(feature, coordinates) {
-                            return L.circleMarker(coordinates,circle3);
-                            },
+                            return L.marker(coordinates, {
+		                        icon: L.AwesomeMarkers.icon({
+			                    icon: 'flag', 
+			                    prefix: 'fa', 
+			                    markerColor: 'red',
+			                    iconColor: 'yellow'
+		                        })
+                            });
+                        },
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<br><b> Severity: </b>" + feature.properties.CSEVERITY )
@@ -986,7 +1025,7 @@
                                  case 1: return {color: "#0000ff"};
                             }
                             }
-                        }).addTo(map2);
+                        }).addTo(map3);
                 
 
                         function getColorm1(d) {
@@ -1129,23 +1168,32 @@
                         var MSAI_On= L.geoJson(Mdata, {style: stylem6});
                         var MSAI_Off= L.geoJson(Mdata, {style: stylem7});
 
-
-
-                var overlayMapsM1 = {
-                        "2019 Outlets": all,
-                        "Private Schools": privateschools, 
-                        "Public Schools": publicschools, 
-                        "Alchol Related Crashes": crashes,
+                        var basemapM1 = {
                         "Family Calls for Service": MSAI_family,
                         "Violent Crime Calls for Service": MSAI_violent,
                         "Alcohol Calls for Service": MSAI_alc,
                         "Narrowed Alcohol Calls for Service": MSAI_narralc,
                         "Alcohol Outlet Density by Census Block in 2019": MSAI,
                         "On Premise Alcohol Outlet Density by Census Block in 2019 ": MSAI_On,
-                        "Off Premise Alcohol Outlet Density by Census Block in 2019": MSAI_Off
+                        "Off Premise Alcohol Outlet Density by Census Block in 2019": MSAI_Off,
+                        "Family Calls for Service": MSAI_family,
+                        "Violent Crime Calls for Service": MSAI_violent,
+                        "Alcohol Calls for Service": MSAI_alc,
+                        "Narrowed Alcohol Calls for Service": MSAI_narralc,
+                        "Alcohol Outlet Density by Census Block in 2019": MSAI,
+                        "On Premise Alcohol Outlet Density by Census Block in 2019 ": MSAI_On,
+                        "Off Premise Alcohol Outlet Density by Census Block in 2019": MSAI_Off,
+                           };  
+
+                var overlayMapsM1 = {
+                        "2019 Outlets": all,
+                        "Private Schools": privateschools, 
+                        "Public Schools": publicschools, 
+                        "Alchol Related Crashes": crashes,
+                        "Open Street Map" : osmm1
                         };			
 
-                    L.control.layers( overlayMapsM1).addTo(map3);	
+                    L.control.layers(basemapM1, overlayMapsM1).addTo(map3);	
     
 		             
                  
