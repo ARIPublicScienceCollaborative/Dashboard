@@ -35,6 +35,7 @@
             <script src = "StateOnOutlets_2019"></script>
             <script src = "schools"></script>
             <script src = "IowaCitySAI"></script>
+            <script src = "CedarRapidsSAI"></script>
 
              <!--Boot Strap-->
              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -350,19 +351,75 @@
                             } 
                             );
 
-                    function getColorc1(d) {
-                            return d > 19.738366  ? '#FFFF0080' :
-                                d > 13.75994  ? '#32CD3280' :
-                                d > 9.988469   ? '#00808080' :
-                                d > 7.384746   ? '#00008B80' :
+
+                function getColorC1(d) {
+                            return d > 19.738367 ? '#FFFF0080' :
+                                d > 13.759995 ? '#32CD3280' :
+                                d > 9.98847 ? '#00808080' :
+                                d > 7.384747  ? '#00008B80' :
                                 d > 0   ? '#3F00FF80' :
                                             '#white';
                                             }
 
+                        
+                        function getColorC2(d) {
+                            return d > 91.24837 ? '#FFFF0080' :
+                                d > 47.922602 ? '#32CD3280' :
+                                d > 36.87287 ? '#00808080' :
+                                d > 21.84181   ? '#00008B80' :
+                                d > 0   ? '#3F00FF80' :
+                                            '#white';
+                                            }
+                       
+                         function getColorC3(d) {
+                            return d > 38.414316 ? '#FFFF0080' :
+                                d > 21.5726 ? '#32CD3280' :
+                                d > 13.521256 ? '#00808080' :
+                                d > 10.241322   ? '#00008B80' :
+                                d > 0   ? '#3F00FF80' :
+                                            '#white';
+                                            }
+                        
+                        function getColorC4(d) {
+                            return d > 23.11834 ? '#FFFF0080' :
+                                d > 13.277113 ? '#32CD3280' :
+                                d > 10.000068? '#00808080' :
+                                d > 6.999349  ? '#00008B80' :
+                                d > 0   ? '#3F00FF80' :
+                                            '#white';
+                                            }
+                        
+                        function getColorC5(d) {
+                            return d > 14.4705459 ? '#FFFF0080' :
+                                d > 10.778406 ? '#32CD3280' :
+                                d > 8.008124 ? '#00808080' :
+                                d > 5.762312  ? '#00008B80' :
+                                d > 0   ? '#3F00FF80' :
+                                            '#white';
+                                            }
+                       
+                         function getColorC6(d) {
+                            return d > 15.694647 ? '#FFFF0080' :
+                                d > 10.52095 ? '#32CD3280' :
+                                d > 7.690547 ? '#00808080' :
+                                d > 5.635748  ? '#00008B80' :
+                                d > 0   ? '#3F00FF80' :
+                                            '#white';
+                                            }
+                        
 
-                    function stylec1(feature) {
+                        function getColorC7(d) {
+                            return d > 14.583169 ? '#FFFF0080' :
+                                d > 10.485102 ? '#32CD3280' :
+                                d > 7.614719 ? '#00808080' :
+                                d > 5.668966  ? '#00008B80' :
+                                d > 0   ? '#3F00FF80' :
+                                            '#white';
+                                            }
+                        
+                       function styleC1(feature) {
                             return {
-                                fillColor: getColorc1((feature.properties.SAIoutlet_miles)),
+                                fillColor: getColorC1((feature.properties.SAIoutlet_miles)),
                                 weight: 2,
                                 opacity: 1,
                                 color: 'black',
@@ -371,11 +428,91 @@
                         }
 
 
-                    var CSAI = L.geoJson(ced, {style: stylec1});
+                        function styleC2(feature) {
+                            return {
+                                fillColor: getColorC2((feature.properties.SAIfamily_miles)),
+                                weight: 2,
+                                opacity: 1,
+                                color: 'black',
+                                fillOpacity: 0.7
+                            };
+                        }
 
-                var basemapC1 = {
-                    "Alcohol Outlet Density by Census Block in 2019": CSAI
-                };
+                        function styleC3(feature) {
+                            return {
+                                fillColor: getColorC3((feature.properties.SAIviolent_miles)),
+                                weight: 2,
+                                opacity: 1,
+                                color: 'black',
+                                fillOpacity: 0.7
+                            };
+                        }
+                        function styleC4(feature) {
+                            return {
+                                fillColor: getColorC4((feature.properties.SAIalc1_miles)),
+                                weight: 2,
+                                opacity: 1,
+                                color: 'black',
+                                fillOpacity: 0.7
+                            };
+                        }
+
+                        function styleC5(feature) {
+                            return {
+                                fillColor: getColorC5((feature.properties.SAInarralc1_miles)),
+                                weight: 2,
+                                opacity: 1,
+                                color: 'black',
+                                fillOpacity: 0.7
+                            };
+                        }
+                       
+                        function styleC6(feature) {
+                            return {
+                                fillColor: getColorC6((feature.properties.SAIOnoutlet_miles)),
+                                weight: 2,
+                                opacity: 1,
+                                color: 'black',
+                                fillOpacity: 0.7
+                            };
+                        }
+
+                        function styleC7(feature) {
+                            return {
+                                fillColor: getColorC7((feature.properties.SAIOffoutlet_miles)),
+                                weight: 2,
+                                opacity: 1,
+                                color: 'black',
+                                fillOpacity: 0.7
+                            };
+                        }
+
+                        var CSAI = L.geoJson(Cdata, {style: styleC1});
+                        var CSAI_family = L.geoJson(Cdata, {style: styleC2});
+                        var CSAI_violent= L.geoJson(Cdata, {style: styleC3});
+                        var CSAI_alc= L.geoJson(Cdata, {style: styleC4});
+                        var CSAI_narralc= L.geoJson(Cdata, {style: styleC5});
+                        var CSAI_On= L.geoJson(Cdata, {style: styleC6});
+                        var CSAI_Off= L.geoJson(Cdata, {style: styleC7});
+
+                        var basemapC1 = {
+                        "Family Calls for Service": CSAI_family,
+                        "Violent Crime Calls for Service": CSAI_violent,
+                        "Alcohol Calls for Service": CSAI_alc,
+                        "Narrowed Alcohol Calls for Service": CSAI_narralc,
+                        "Alcohol Outlet Density by Census Block": CSAI,
+                        "On Premise Alcohol Outlet Density by Census Block": CSAI_On,
+                        "Off Premise Alcohol Outlet Density by Census Block": CSAI_Off
+                           };  
+
+
+
+
+
+
+
+
+
 
                     var overlayMapsC1 = {
                         "On Premise Outlets": on,
@@ -590,16 +727,10 @@
                         "Violent Crime Calls for Service": ISAI_violent,
                         "Alcohol Calls for Service": ISAI_alc,
                         "Narrowed Alcohol Calls for Service": ISAI_narralc,
-                        "Alcohol Outlet Density by Census Block in 2019": ISAI,
-                        "On Premise Alcohol Outlet Density by Census Block in 2019 ": ISAI_On,
-                        "Off Premise Alcohol Outlet Density by Census Block in 2019": ISAI_Off
+                        "Alcohol Outlet Density by Census Block": ISAI,
+                        "On Premise Alcohol Outlet Density by Census Block": ISAI_On,
+                        "Off Premise Alcohol Outlet Density by Census Block": ISAI_Off
                            };  
-
-
-
-
-
-
 
 
                 var overlayMapsI1 = {
@@ -610,10 +741,10 @@
                         "Open Street Map" : osmI1
                         };				
 
-                    L.control.layers(basemapI1, overlayMapsI1, { collapsed: false }).addTo(map2);	
+                    L.control.layers(basemapI1, overlayMapsI1).addTo(map2);	
 
                 //Marshalltown Maps
-                var map3 = L.map('map3').setView([42.0495, -92.9080], 12);
+                var map3 = L.map('map3').setView([42.035, -92.9080], 13);
                             L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
                             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
                             maxZoom: 18,
@@ -828,16 +959,9 @@
                         "Violent Crime Calls for Service": MSAI_violent,
                         "Alcohol Calls for Service": MSAI_alc,
                         "Narrowed Alcohol Calls for Service": MSAI_narralc,
-                        "Alcohol Outlet Density by Census Block in 2019": MSAI,
-                        "On Premise Alcohol Outlet Density by Census Block in 2019 ": MSAI_On,
-                        "Off Premise Alcohol Outlet Density by Census Block in 2019": MSAI_Off,
-                        "Family Calls for Service": MSAI_family,
-                        "Violent Crime Calls for Service": MSAI_violent,
-                        "Alcohol Calls for Service": MSAI_alc,
-                        "Narrowed Alcohol Calls for Service": MSAI_narralc,
-                        "Alcohol Outlet Density by Census Block in 2019": MSAI,
-                        "On Premise Alcohol Outlet Density by Census Block in 2019 ": MSAI_On,
-                        "Off Premise Alcohol Outlet Density by Census Block in 2019": MSAI_Off,
+                        "Alcohol Outlet Density by Census Block": MSAI,
+                        "On Premise Alcohol Outlet Density by Census Block": MSAI_On,
+                        "Off Premise Alcohol Outlet Density by Census Block": MSAI_Off
                            };  
 
                 var overlayMapsM1 = {
@@ -1044,9 +1168,9 @@
                         "Violent Crime Calls for Service": BSAI_violent,
                         "Alcohol Calls for Service": BSAI_alc,
                         "Narrowed Alcohol Calls for Service": BSAI_narralc,
-                        "Alcohol Outlet Density by Census Block in 2019": BSAI,
-                        "On Premise Alcohol Outlet Density by Census Block in 2019 ": BSAI_On,
-                        "Off Premise Alcohol Outlet Density by Census Block in 2019": BSAI_Off
+                        "Alcohol Outlet Density by Census Block": BSAI,
+                        "On Premise Alcohol Outlet Density by Census Block": BSAI_On,
+                        "Off Premise Alcohol Outlet Density by Census Block": BSAI_Off
                            };  
 
 
