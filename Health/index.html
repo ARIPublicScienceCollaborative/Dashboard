@@ -36,6 +36,7 @@
             <script src = "AlcRelatedCrashes"></script>
             <script src= "StateOffOutlets_2019"></script>
             <script src = "StateOnOutlets_2019"></script>
+            <script src = "schools"></script>
 
              <!--Boot Strap-->
              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -523,9 +524,10 @@
                             }
                         }).addTo(map1);
 
-                    var privateschools = L.geoJSON(privateschools,  { 
+
+                    var schools = L.geoJSON(schools,  { 
                             filter: function(feature, layer) {
-                                return feature.type == "Feature";
+                                return feature.properties.feature_cl == "School";
                             },
                             pointToLayer: function(feature, coordinates) {
                             return L.marker(coordinates, {
@@ -539,32 +541,7 @@
                         },
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
-                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.SchoolName +
-                            "<br> <b>Starting Grade: </b>" + feature.properties.GradeStart +  
-                            "<br><b>Ending Grade: </b>" + feature.properties.GradeEnd )
-                            },
-                            } 
-                            );
-                    
-                    var publicschools = L.geoJSON(publicschools,  { 
-                            filter: function(feature, layer) {
-                                return feature.type == "Feature";
-                            },
-                            pointToLayer: function(feature, coordinates) {
-                            return L.marker(coordinates, {
-		                        icon: L.AwesomeMarkers.icon({
-			                    icon: 'flag', 
-			                    prefix: 'fa', 
-			                    markerColor: 'blue',
-			                    iconColor: 'yellow'
-		                        })
-                            });
-                        },
-                            onEachFeature: function (feature, layer) {
-                            popupOptions = {maxWidth: 200}; 
-                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.SchoolName +
-                            "<br> <b>Starting Grade: </b>" + feature.properties.GradeStart +  
-                            "<br><b>Ending Grade: </b>" + feature.properties.GradeEnd )
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.feature_na)
                             },
                             } 
                             );
@@ -630,8 +607,7 @@
                         "2010 Outlets": ten,
                         "2009 Outlets": nine,
                         "2008 Outlets": eight,
-                        "Private Schools": privateschools, 
-                        "Public Schools": publicschools, 
+                        "Schools": schools, 
                         "Alchol Related Crashes": crashes,
                         "Alcohol Outlet Density by Census Block in 2019": CSAI
                         };			
@@ -981,8 +957,7 @@
                         "2010 Outlets": ten,
                         "2009 Outlets": nine,
                         "2008 Outlets": eight,
-                        "Private Schools": privateschools, 
-                        "Public Schools": publicschools, 
+                        "Schools": schools, 
                         "Alchol Related Crashes": crashes,
                         "Alcohol Outlet Density by Census Block in 2019": ISAI
                         };			
@@ -1187,8 +1162,7 @@
 
                 var overlayMapsM1 = {
                         "2019 Outlets": all,
-                        "Private Schools": privateschools, 
-                        "Public Schools": publicschools, 
+                        "Schools": schools, 
                         "Alchol Related Crashes": crashes,
                         "Open Street Map" : osmm1
                         };			
@@ -1532,8 +1506,7 @@
                         "2010 Outlets": ten,
                         "2009 Outlets": nine,
                         "2008 Outlets": eight,
-                        "Private Schools": privateschools, 
-                        "Public Schools": publicschools, 
+                        "Schools": schools,  
                         "Alchol Related Crashes": crashes,
                         "Alcohol Outlet Density by Census Block in 2019": BSAI
                         };			
