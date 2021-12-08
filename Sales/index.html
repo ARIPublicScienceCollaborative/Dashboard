@@ -61,8 +61,8 @@
                     width: 25%;
                     } 
 
-                    #map1container {border: 1px solid#0a0a0a; position:absolute; background-color:#ecf7fc; color:black; text-align:left; margin-right: 0px; margin-left:5px; width:600px; height:700px;padding 0; }
-                    #map1 {border: 1px solid#0a0a0a; position: relative; width:1000px; height:700px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
+                    #map1container {border: 1px solid#0a0a0a; position:absolute; background-color:#ecf7fc; color:black; text-align:left; margin-right: 0px; margin-left:5px; width:600px; height:800px;padding 0; }
+                    #map1 {border: 1px solid#0a0a0a; position: relative; width:1250px; height:800px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
 
                      /* The navigation bar */
                      .navbar {
@@ -121,7 +121,7 @@
         <script>   
                   
                     //Sales Data Maps
-                var map1 = L.map('map1').setView([42.1, -93.5], 7);
+                var map1 = L.map('map1').setView([42.1, -93.5], 8);
                         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
                         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
                         maxZoom: 18,
@@ -132,14 +132,14 @@
                 var osm1 = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
                         attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
                         maxZoom: 18
-                        });
+                        }).addTo(map1);
 
 
                   var circle1 = {
-                        radius: 2,
+                        radius: 10,
                         fillColor: "#00008B80",
                         color: "#000",
-                        weight: 1,
+                        weight: 5,
                         opacity: 1,
                         fillOpacity: 0.8
                         };
@@ -160,7 +160,7 @@
                             "<br><b>Liters Sold: </b>" + feature.properties.sale_liters.toFixed(1) )
                             }, style: function(feature) {
                             return {
-                            radius: (feature.properties.sale_gallons/10000)*4,
+                            radius: (feature.properties.sale_gallons/10000)*6,
                             };
                             } 
                             }).addTo(map1);
@@ -182,7 +182,7 @@
                             },
                            style: function(feature) {
                             return {
-                            radius: feature.properties.sale_gallons/10000,
+                            radius: (feature.properties.sale_gallons/10000)*6,
                             };
                             } 
                             });
@@ -204,7 +204,7 @@
                             },
                            style: function(feature) {
                             return {
-                            radius: feature.properties.sale_gallons/10000,
+                            radius: (feature.properties.sale_gallons/10000)*6,
                             };
                             } 
                             });
@@ -226,7 +226,7 @@
                             },
                            style: function(feature) {
                             return {
-                            radius: feature.properties.sale_gallons/10000,
+                            radius: (feature.properties.sale_gallons/10000)*6,
                             };
                             } 
                             });
@@ -249,7 +249,7 @@
                             },
                            style: function(feature) {
                             return {
-                            radius: feature.properties.sale_gallons/10000,
+                            radius: (feature.properties.sale_gallons/10000)*6,
                             };
                             } 
                             });
@@ -271,7 +271,7 @@
                             },
                            style: function(feature) {
                             return {
-                            radius: feature.properties.sale_gallons/10000,
+                            radius: (feature.properties.sale_gallons/10000)*6,
                             };
                             } 
                             });
@@ -293,7 +293,7 @@
                             },
                            style: function(feature) {
                             return {
-                            radius: feature.properties.sale_gallons/10000,
+                            radius: (feature.properties.sale_gallons/10000)*6,
                             };
                             } 
                             });
@@ -315,7 +315,7 @@
                             },
                            style: function(feature) {
                             return {
-                            radius: feature.properties.sale_gallons/10000,
+                            radius: (feature.properties.sale_gallons/10000)*6,
                             };
                             } 
                             });
@@ -337,7 +337,7 @@
                             },
                            style: function(feature) {
                             return {
-                            radius: feature.properties.sale_gallons/10000,
+                            radius: (feature.properties.sale_gallons/10000)*6,
                             };
                             } 
                             });
@@ -359,7 +359,7 @@
                             },
                            style: function(feature) {
                             return {
-                            radius: feature.properties.sale_gallons/10000,
+                            radius: (feature.properties.sale_gallons/10000)*6,
                             };
                             } 
                             });
@@ -381,11 +381,15 @@
                             },
                            style: function(feature) {
                             return {
-                            radius: feature.properties.sale_gallons/10000,
+                            radius: (feature.properties.sale_gallons/10000)*6,
                             };
                             } 
                             });
                 
+                var basemaps1 = {
+                        "Open Street Map": osm1
+                };
+
                   var overlayMaps1 = {
                         "2020 Gallons Sold": twenty,
                         "2019 Gallons Sold": nineteen,
@@ -397,11 +401,10 @@
                         "2013 Gallons Sold": thirteen,
                         "2012 Gallons Sold": twelve,
                         "2011 Gallons Sold": eleven,
-                        "2010 Gallons Sold": ten,
-                        "Open Street Map": osm1,
+                        "2010 Gallons Sold": ten
                         };			
 
-                    L.control.layers(overlayMaps1).addTo(map1);	
+                    L.control.layers(basemaps1, overlayMaps1).addTo(map1);	
 	             
                    
 		             
