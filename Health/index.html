@@ -941,7 +941,7 @@
                         var ISAI = L.geoJson(icchlor, {style: styleI1});
 
                 var basemapI1 = {
-                    "Open Street Map" : osmI1,
+                    "Alcohol Outlets" : osmI1,
                 };
 
                 var overlayMapsI1 = {
@@ -957,12 +957,21 @@
                         "2010 Outlets": ten,
                         "2009 Outlets": nine,
                         "2008 Outlets": eight,
-                        "Schools": schools, 
-                        "Alchol Related Crashes": crashes,
                         "Alcohol Outlet Density by Census Block in 2019": ISAI
                         };			
 
-                    L.control.layers(basemapI1, overlayMapsI1).addTo(map2);	
+                var basemapI12 = {
+                    "Community Items" : osmI1,
+                };
+
+                var overlayMapsI12 = {
+                        "Schools": schools, 
+                        "Alchol Related Crashes": crashes
+                        };			
+
+
+                    L.control.layers(basemapI1, overlayMapsI1, { collapsed: false }).addTo(map2);	
+                    L.control.layers(basemapI12, overlayMapsI12, { position: 'topleft', collapsed: false }).addTo(map2);	
 
                 //Marshalltown Maps
                 var map3 = L.map('map3').setView([42.0495, -92.9080], 12);
