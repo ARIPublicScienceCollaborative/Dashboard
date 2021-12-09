@@ -226,8 +226,8 @@
                          
                     //Cedar Rapids Maps, Marker Information, Layers, & Layer Control
                     var map1 = L.map('map1').setView([41.97, -91.6656], 11.5);
-                        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                    L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
                         maxZoom: 18,
                         id: 'mapbox/streets-v11',
                         accessToken: 'pk.eyJ1Ijoia3ZhbnNlbG91cyIsImEiOiJjazZsbHE2NGwwZDdtM2tvNmRjc2N0NHo5In0.h_W_-4R3haPMK-IDBTcL-w' 
@@ -251,11 +251,6 @@
                         fillOpacity: 0.8
                         };    
                 
-                var osmc1 = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-                        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
-                        maxZoom: 18
-                        }).addTo(map1);
-
 
                         function highlightFeature(e) {
                          var layer = e.target;
@@ -603,8 +598,7 @@
                         "On Premise Outlets": on,
                         "Off Premise Outlets": off,
                         "Schools": schools, 
-                        "Alchol Related Crashes": crashes,
-                        "Open Street Map" : osmc1
+                        "Alchol Related Crashes": crashes
                         };			
 
                     L.control.layers(basemapC1, overlayMapsC1).addTo(map1);	
@@ -612,7 +606,7 @@
                     var legend1 = L.control({position: 'bottomleft'}); 
                         legend1.onAdd = function (map1) {
                             var div = L.DomUtil.create('div', 'info legend');
-                            grades = ["On Premise", "Off Premise", "School", "Crash"],
+                            grades = [" On Premise", " Off Premise", " School", " Crash"],
                             labels = ["onMarker.png", "offMarker.png", "schoolMarker.png", "crashMarker.png"];
                             for (var i = 0; i < grades.length; i++) {
                               div.innerHTML +=
@@ -641,18 +635,13 @@
 
                 //Iowa city Maps
                 var map2 = L.map('map2').setView([41.6611, -91.5302], 12);
-                        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                        L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
                         maxZoom: 18,
                         id: 'mapbox/streets-v11',
                         accessToken: 'pk.eyJ1Ijoia3ZhbnNlbG91cyIsImEiOiJjazZsbHE2NGwwZDdtM2tvNmRjc2N0NHo5In0.h_W_-4R3haPMK-IDBTcL-w' 
                         }).addTo(map2);      
-                
-                var osmI1 = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-                        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
-                        maxZoom: 18
-                        }).addTo(map2);     
-                
+
                 function resetHighlightIO(e) {
                                 ISAI.resetStyle(e.target);
                                 }
@@ -937,8 +926,7 @@
                         "On Premise Outlets": on,
                         "Off Premise Outlets": off,
                         "Schools": schools, 
-                        "Alchol Related Crashes": crashes,
-                        "Open Street Map" : osmI1
+                        "Alchol Related Crashes": crashes
                         };				
 
                     L.control.layers(basemapI1, overlayMapsI1).addTo(map2);	
@@ -946,7 +934,7 @@
                     var legend1 = L.control({position: 'bottomleft'}); 
                         legend1.onAdd = function (map1) {
                             var div = L.DomUtil.create('div', 'info legend');
-                            grades = ["On Premise", "Off Premise", "School", "Crash"],
+                            grades = [" On Premise", " Off Premise", " School", " Crash"],
                             labels = ["onMarker.png", "offMarker.png", "schoolMarker.png", "crashMarker.png"];
                             for (var i = 0; i < grades.length; i++) {
                               div.innerHTML +=
@@ -973,18 +961,13 @@
 
                 //Marshalltown Maps
                 var map3 = L.map('map3').setView([42.035, -92.9080], 13);
-                            L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-                            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                            L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                            attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
                             maxZoom: 18,
                             id: 'mapbox/streets-v11',
                             accessToken: 'pk.eyJ1Ijoia3ZhbnNlbG91cyIsImEiOiJjazZsbHE2NGwwZDdtM2tvNmRjc2N0NHo5In0.h_W_-4R3haPMK-IDBTcL-w' 
                             }).addTo(map3);     
-                
-                var osmm1 = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-                        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
-                        maxZoom: 18
-                        }).addTo(map3);
-            
+
                 function resetHighlightMO(e) {
                                 MSAI.resetStyle(e.target);
                                 }
@@ -1293,8 +1276,7 @@
                         "On Premise Outlets": on,
                         "Off Premise Outlets": off,
                         "Schools": schools, 
-                        "Alchol Related Crashes": crashes,
-                        "Open Street Map" : osmm1
+                        "Alchol Related Crashes": crashes
                         };			
 
                     L.control.layers(basemapM1, overlayMapsM1).addTo(map3);	
@@ -1302,7 +1284,7 @@
                     var legend1 = L.control({position: 'bottomleft'}); 
                         legend1.onAdd = function (map1) {
                             var div = L.DomUtil.create('div', 'info legend');
-                            grades = ["On Premise", "Off Premise", "School", "Crash"],
+                            grades = [" On Premise", " Off Premise", " School", " Crash"],
                             labels = ["onMarker.png", "offMarker.png", "schoolMarker.png", "crashMarker.png"];
                             for (var i = 0; i < grades.length; i++) {
                               div.innerHTML +=
@@ -1329,19 +1311,12 @@
                  
                  //Burlington Maps
                  var map4 = L.map('map4').setView([40.8077, -91.1129], 13);
-                        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                        L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
                         maxZoom: 18,
                         id: 'mapbox/streets-v11',
                         accessToken: 'pk.eyJ1Ijoia3ZhbnNlbG91cyIsImEiOiJjazZsbHE2NGwwZDdtM2tvNmRjc2N0NHo5In0.h_W_-4R3haPMK-IDBTcL-w' 
                         }).addTo(map4);      
-                
-                var osmb1 = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-                        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
-                        maxZoom: 18
-                        }).addTo(map4);
-
-
 
                 function resetHighlightBO(e) {
                                 BSAI.resetStyle(e.target);
@@ -1365,7 +1340,6 @@
                                 BSAI_Off.resetStyle(e.target);
                                 }                           
                                               
-
                         function onEachFeatureBO(feature, layer) {
                                 layer.on({
                                     mouseover: highlightFeature,
@@ -1435,7 +1409,6 @@
                                     layer.bindPopup("<b>SAI Off-Premise Alcohol Outlets: </b>" + feature.properties.SAIOffoutlet_miles.toFixed(2) );
                                     }
                                     }
-
 
                 var on= L.geoJSON(onoutlets, { 
                             filter: function(feature, layer) {
@@ -1628,8 +1601,7 @@
                         "On Premise Outlets": on,
                         "Off Premise Outlets": off,
                         "Schools": schools,  
-                        "Alchol Related Crashes": crashes,
-                        "Open Street Map": osmb1
+                        "Alchol Related Crashes": crashes
                         };			
 
                     L.control.layers(basemapB1, overlayMapsB1).addTo(map4);	
@@ -1637,7 +1609,7 @@
                     var legend1 = L.control({position: 'bottomleft'}); 
                         legend1.onAdd = function (map1) {
                             var div = L.DomUtil.create('div', 'info legend');
-                            grades = ["On Premise", "Off Premise", "School", "Crash"],
+                            grades = [" On Premise", " Off Premise", " School", " Crash"],
                             labels = ["onMarker.png", "offMarker.png", "schoolMarker.png", "crashMarker.png"];
                             for (var i = 0; i < grades.length; i++) {
                               div.innerHTML +=

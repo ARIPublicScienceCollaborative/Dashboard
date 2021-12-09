@@ -154,8 +154,8 @@
                   
                 //Violations Data Map 
                 var map1 = L.map('map1').setView([42.1, -93.5], 8);
-                        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                        L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
                         maxZoom: 18,
                         id: 'mapbox/streets-v11',
                         accessToken: 'pk.eyJ1Ijoia3ZhbnNlbG91cyIsImEiOiJjazZsbHE2NGwwZDdtM2tvNmRjc2N0NHo5In0.h_W_-4R3haPMK-IDBTcL-w' 
@@ -422,8 +422,8 @@
                     var legend1 = L.control({position: 'bottomleft'}); 
                         legend1.onAdd = function (map1) {
                             var div = L.DomUtil.create('div', 'info legend');
-                            grades = ["Violations", "Violations Involving Minors"],
-                            labels = ["violationMarker.png", "minorMarker.png"];
+                            grades = [" Violations Involving Minors", " All Other Violations"],
+                            labels = ["minorMarker.png", "violationMarker.png",];
                             for (var i = 0; i < grades.length; i++) {
                               div.innerHTML +=
                               (" <img src="+ labels[i] +" height='20' width='20'>") + grades[i] +'<br>';
