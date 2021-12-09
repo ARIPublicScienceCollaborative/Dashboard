@@ -251,34 +251,117 @@
                         fillOpacity: 0.8
                         };    
                 
-//                var ambMarker = L.AwesomeMarkers.icon({
-//               icon: 'ambulance',
-//                prefix: 'fa',
-//                markerColor: 'blue'
-//                });
-//                
-//                var appleMarker = L.AwesomeMarkers.icon({
-//                icon: 'apple',
-//                prefix: 'fa',
-//                color: 'black'
-//                });
-
-//                var onMarker = L.AwesomeMarkers.icon({
-//                icon: 'beer',
-//                prefix: 'fa',
-//                markerColor: 'blue'
-//                });
-
-//                var offMarker = L.AwesomeMarkers.icon({
-//                icon: 'shopping-cart',
-//                prefix: 'fa',
-//                markerColor: 'blue'
-//                });
-
                 var osmc1 = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
                         attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
                         maxZoom: 18
                         }).addTo(map1);
+
+
+                        function highlightFeature(e) {
+                         var layer = e.target;
+                            layer.setStyle({
+                            weight: 5,
+                            color: '#666',
+                            dashArray: '',
+                            fillOpacity: 0.7
+                        });
+                        if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                            layer.bringToFront();
+                        }
+                    }
+
+                function resetHighlightCO(e) {
+                                CSAI.resetStyle(e.target);
+                                }
+                function resetHighlightCF(e) {
+                                CSAI_family.resetStyle(e.target);
+                                }
+                function resetHighlightCV(e) {
+                                CSAI_violent.resetStyle(e.target);
+                                }   
+                function resetHighlightCA(e) {
+                                CSAI_alc.resetStyle(e.target);
+                                }                              
+                function resetHighlightCNA(e) {
+                                CSAI_narralc.resetStyle(e.target);
+                                }                              
+                function resetHighlightCOn(e) {
+                                CSAI_On.resetStyle(e.target);
+                                }        
+                function resetHighlightCOff(e) {
+                                CSAI_Off.resetStyle(e.target);
+                                }                           
+                                            
+                        function onEachFeatureCO(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightCO
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI Outlets: </b>" + feature.properties.SAIoutlet_miles.toFixed(2) );
+                                    }
+                                    }
+                        
+                        function onEachFeatureCF(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightCF
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI Family Calls for Service: </b>" + feature.properties.SAIfamily_miles.toFixed(2) );
+                                    }
+                                    }
+                        
+                        function onEachFeatureCV(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightCV
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI Violent Crime Calls for Service: </b>" + feature.properties.SAIviolent_miles.toFixed(2) );
+                                    }
+                                    }
+
+                        function onEachFeatureCA(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightCA
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI Alcohol Crime Calls for Service: </b>" + feature.properties.SAIalc1_miles.toFixed(2) );
+                                    }
+                                    }
+
+                        function onEachFeatureCNA(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightCNA
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI Narrowed Alcohol Crime Calls for Service: </b>" + feature.properties.SAInarralc1_miles.toFixed(2) );
+                                    }
+                                    }
+
+                        function onEachFeatureCOn(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightCOn
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI On-Premise Alcohol Outlets: </b>" + feature.properties.SAIOnoutlet_miles.toFixed(2) );
+                                    }
+                                    }
+
+                        function onEachFeatureCOff(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightCOff
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI Off-Premise Alcohol Outlets: </b>" + feature.properties.SAIOffoutlet_miles.toFixed(2) );
+                                    }
+                                    }
+
                 
                 var on= L.geoJSON(onoutlets, { 
                             filter: function(feature, layer) {
@@ -495,14 +578,14 @@
                             };
                         }
 
-                        var CSAI = L.geoJson(Cdata, {style: styleC1});
-                        var CSAI_family = L.geoJson(Cdata, {style: styleC2});
-                        var CSAI_violent= L.geoJson(Cdata, {style: styleC3});
-                        var CSAI_alc= L.geoJson(Cdata, {style: styleC4});
-                        var CSAI_narralc= L.geoJson(Cdata, {style: styleC5});
-                        var CSAI_On= L.geoJson(Cdata, {style: styleC6});
-                        var CSAI_Off= L.geoJson(Cdata, {style: styleC7});
-                        var deselect = L.geoJson(Idata, {style: styleC1});
+                        var CSAI = L.geoJson(Cdata, {style: styleC1, onEachFeature: onEachFeatureCO});
+                        var CSAI_family = L.geoJson(Cdata, {style: styleC2, onEachFeature: onEachFeatureCF});
+                        var CSAI_violent= L.geoJson(Cdata, {style: styleC3, onEachFeature: onEachFeatureCV});
+                        var CSAI_alc= L.geoJson(Cdata, {style: styleC4, onEachFeature: onEachFeatureCA});
+                        var CSAI_narralc= L.geoJson(Cdata, {style: styleC5, onEachFeature: onEachFeatureCNA});
+                        var CSAI_On= L.geoJson(Cdata, {style: styleC6, onEachFeature: onEachFeatureCOn});
+                        var CSAI_Off= L.geoJson(Cdata, {style: styleC7, onEachFeature: onEachFeatureCOff});
+                        var deselect = L.geoJson(Cdata, {style: styleC1, onEachFeature: onEachFeatureCO});
 
                         var basemapC1 = {
                         "Family Calls for Service": CSAI_family,
@@ -569,17 +652,100 @@
                         attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
                         maxZoom: 18
                         }).addTo(map2);     
+                
+                function resetHighlightIO(e) {
+                                ISAI.resetStyle(e.target);
+                                }
+                function resetHighlightIF(e) {
+                                ISAI_family.resetStyle(e.target);
+                                }
+                function resetHighlightIV(e) {
+                                ISAI_violent.resetStyle(e.target);
+                                }   
+                function resetHighlightIA(e) {
+                                ISAI_alc.resetStyle(e.target);
+                                }                              
+                function resetHighlightINA(e) {
+                                ISAI_narralc.resetStyle(e.target);
+                                }                              
+                function resetHighlightIOn(e) {
+                                ISAI_On.resetStyle(e.target);
+                                }        
+                function resetHighlightIOff(e) {
+                                ISAI_Off.resetStyle(e.target);
+                                }                           
+                                            
+                        function onEachFeatureIO(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightIO
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI Outlets: </b>" + feature.properties.SAIoutlet_miles_12 );
+                                    }
+                                    }
+                        
+                        function onEachFeatureIF(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightIF
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI Family Calls for Service: </b>" + feature.properties.SAIfamily_miles_12 );
+                                    }
+                                    }
+                        
+                        function onEachFeatureIV(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightIV
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI Violent Crime Calls for Service: </b>" + feature.properties.SAIviolent_miles_12  );
+                                    }
+                                    }
+
+                        function onEachFeatureIA(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightIA
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI Alcohol Crime Calls for Service: </b>" + feature.properties.SAIalc1_miles_12 );
+                                    }
+                                    }
+
+                        function onEachFeatureINA(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightINA
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI Narrowed Alcohol Crime Calls for Service: </b>" + feature.properties.SAInarralc1_miles_12 );
+                                    }
+                                    }
+
+                        function onEachFeatureIOn(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightIOn
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI On-Premise Alcohol Outlets: </b>" + feature.properties.SAIOnoutlet_miles_12 );
+                                    }
+                                    }
+
+                        function onEachFeatureIOff(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightIOff
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI Off-Premise Alcohol Outlets: </b>" + feature.properties.SAIOffoutlet_miles_12 );
+                                    }
+                                    }
 
                 
-                        function styleoutlet(feature) {
-                            return {
-                                fillColor: 'pink' ((feature.properties.OnpremisePSC)),
-                                weight: 2,
-                                opacity: 1,
-                                color: 'black',
-                                fillOpacity: 0.7
-                            };
-                        }
 
                 var on= L.geoJSON(onoutlets, { 
                             filter: function(feature, layer) {
@@ -746,14 +912,14 @@
                             };
                         }
 
-                        var ISAI = L.geoJson(Idata, {style: styleI1});
-                        var ISAI_family = L.geoJson(Idata, {style: styleI2});
-                        var ISAI_violent= L.geoJson(Idata, {style: styleI3});
-                        var ISAI_alc= L.geoJson(Idata, {style: styleI4});
-                        var ISAI_narralc= L.geoJson(Idata, {style: styleI5});
-                        var ISAI_On= L.geoJson(Idata, {style: styleI6});
-                        var ISAI_Off= L.geoJson(Idata, {style: styleI7});
-                        var deselect = L.geoJson(Cdata, {style: styleC1});
+                        var ISAI = L.geoJson(Idata, {style: styleI1, onEachFeature: onEachFeatureIO});
+                        var ISAI_family = L.geoJson(Idata, {style: styleI2, onEachFeature: onEachFeatureIF});
+                        var ISAI_violent= L.geoJson(Idata, {style: styleI3, onEachFeature: onEachFeatureIV});
+                        var ISAI_alc= L.geoJson(Idata, {style: styleI4, onEachFeature: onEachFeatureIA});
+                        var ISAI_narralc= L.geoJson(Idata, {style: styleI5, onEachFeature: onEachFeatureINA});
+                        var ISAI_On= L.geoJson(Idata, {style: styleI6, onEachFeature: onEachFeatureIOn});
+                        var ISAI_Off= L.geoJson(Idata, {style: styleI7, onEachFeature: onEachFeatureIOff});
+                        var deselect = L.geoJson(Cdata, {style: styleC1, onEachFeature: onEachFeatureIO});
 
                         var basemapI1 = {
                         "Family Calls for Service": ISAI_family,
@@ -819,6 +985,102 @@
                         maxZoom: 18
                         }).addTo(map3);
             
+                function resetHighlightMO(e) {
+                                MSAI.resetStyle(e.target);
+                                }
+                function resetHighlightMF(e) {
+                                MSAI_family.resetStyle(e.target);
+                                }
+                function resetHighlightMV(e) {
+                                MSAI_violent.resetStyle(e.target);
+                                }   
+                function resetHighlightMA(e) {
+                                MSAI_alc.resetStyle(e.target);
+                                }                              
+                function resetHighlightMNA(e) {
+                                MSAI_narralc.resetStyle(e.target);
+                                }                              
+                function resetHighlightMOn(e) {
+                                MSAI_On.resetStyle(e.target);
+                                }        
+                function resetHighlightMOff(e) {
+                                MSAI_Off.resetStyle(e.target);
+                                }                           
+                                            
+                        function onEachFeatureMO(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightMO
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI Outlets: </b>" + feature.properties.SAIoutlet_miles.toFixed(2) );
+                                    }
+                                    }
+                        
+                        function onEachFeatureMF(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightMF
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI Family Calls for Service: </b>" + feature.properties.SAIfamily_miles.toFixed(2) );
+                                    }
+                                    }
+                        
+                        function onEachFeatureMV(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightMV
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI Violent Crime Calls for Service: </b>" + feature.properties.SAIviolent_miles.toFixed(2) );
+                                    }
+                                    }
+
+                        function onEachFeatureMA(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightMA
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI Alcohol Crime Calls for Service: </b>" + feature.properties.SAIalc1_miles.toFixed(2) );
+                                    }
+                                    }
+
+                        function onEachFeatureMNA(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightMNA
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI Narrowed Alcohol Crime Calls for Service: </b>" + feature.properties.SAInarralc1_miles.toFixed(2) );
+                                    }
+                                    }
+
+                        function onEachFeatureMOn(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightMOn
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI On-Premise Alcohol Outlets: </b>" + feature.properties.SAIOnoutlet_miles.toFixed(2) );
+                                    }
+                                    }
+
+                        function onEachFeatureMOff(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightMOff
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI Off-Premise Alcohol Outlets: </b>" + feature.properties.SAIOffoutlet_miles.toFixed(2) );
+                                    }
+                                    }
+
+
+
+
+
 
                         var on= L.geoJSON(onoutlets, { 
                             filter: function(feature, layer) {
@@ -1008,13 +1270,13 @@
                             };
                         }
 
-                        var MSAI = L.geoJson(Mdata, {style: stylem1});
-                        var MSAI_family = L.geoJson(Mdata, {style: stylem2});
-                        var MSAI_violent= L.geoJson(Mdata, {style: stylem3});
-                        var MSAI_alc= L.geoJson(Mdata, {style: stylem4});
-                        var MSAI_narralc= L.geoJson(Mdata, {style: stylem5});
-                        var MSAI_On= L.geoJson(Mdata, {style: stylem6});
-                        var MSAI_Off= L.geoJson(Mdata, {style: stylem7});
+                        var MSAI = L.geoJson(Mdata, {style: stylem1, onEachFeature: onEachFeatureMO});
+                        var MSAI_family = L.geoJson(Mdata, {style: stylem2, onEachFeature: onEachFeatureMF});
+                        var MSAI_violent= L.geoJson(Mdata, {style: stylem3, onEachFeature: onEachFeatureMV});
+                        var MSAI_alc= L.geoJson(Mdata, {style: stylem4, onEachFeature: onEachFeatureMA});
+                        var MSAI_narralc= L.geoJson(Mdata, {style: stylem5, onEachFeature: onEachFeatureMNA});
+                        var MSAI_On= L.geoJson(Mdata, {style: stylem6, onEachFeature: onEachFeatureMOn});
+                        var MSAI_Off= L.geoJson(Mdata, {style: stylem7, onEachFeature: onEachFeatureMOff});
 
                         var basemapM1 = {
                         "Family Calls for Service": MSAI_family,
@@ -1078,6 +1340,102 @@
                         attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
                         maxZoom: 18
                         }).addTo(map4);
+
+
+
+                function resetHighlightBO(e) {
+                                BSAI.resetStyle(e.target);
+                                }
+                function resetHighlightBF(e) {
+                                BSAI_family.resetStyle(e.target);
+                                }
+                function resetHighlightBV(e) {
+                                BSAI_violent.resetStyle(e.target);
+                                }   
+                function resetHighlightBA(e) {
+                                BSAI_alc.resetStyle(e.target);
+                                }                              
+                function resetHighlightBNA(e) {
+                                BSAI_narralc.resetStyle(e.target);
+                                }                              
+                function resetHighlightBOn(e) {
+                                BSAI_On.resetStyle(e.target);
+                                }        
+                function resetHighlightBOff(e) {
+                                BSAI_Off.resetStyle(e.target);
+                                }                           
+                                              
+
+                        function onEachFeatureBO(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightBO
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI Outlets: </b>" + feature.properties.SAIoutlet_miles.toFixed(2) );
+                                    }
+                                    }
+                        
+                        function onEachFeatureBF(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightBF
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI Family Calls for Service: </b>" + feature.properties.SAIfamily_miles.toFixed(2) );
+                                    }
+                                    }
+                        
+                        function onEachFeatureBV(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightBV
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI Violent Crime Calls for Service: </b>" + feature.properties.SAIviolent_miles.toFixed(2) );
+                                    }
+                                    }
+
+                        function onEachFeatureBA(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightBA
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI Alcohol Crime Calls for Service: </b>" + feature.properties.SAIalc1_miles.toFixed(2) );
+                                    }
+                                    }
+
+                        function onEachFeatureBNA(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightBNA
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI Narrowed Alcohol Crime Calls for Service: </b>" + feature.properties.SAInarralc1_miles.toFixed(2) );
+                                    }
+                                    }
+
+                        function onEachFeatureBOn(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightBOn
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI On-Premise Alcohol Outlets: </b>" + feature.properties.SAIOnoutlet_miles.toFixed(2) );
+                                    }
+                                    }
+
+                        function onEachFeatureBOff(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightBOff
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>SAI Off-Premise Alcohol Outlets: </b>" + feature.properties.SAIOffoutlet_miles.toFixed(2) );
+                                    }
+                                    }
+
 
                 var on= L.geoJSON(onoutlets, { 
                             filter: function(feature, layer) {
@@ -1244,13 +1602,14 @@
                             };
                         }
 
-                        var BSAI = L.geoJson(Bdata, {style: styleb1});
-                        var BSAI_family = L.geoJson(Bdata, {style: styleb2});
-                        var BSAI_violent= L.geoJson(Bdata, {style: styleb3});
-                        var BSAI_alc= L.geoJson(Bdata, {style: styleb4});
-                        var BSAI_narralc= L.geoJson(Bdata, {style: styleb5});
-                        var BSAI_On= L.geoJson(Bdata, {style: styleb6});
-                        var BSAI_Off= L.geoJson(Bdata, {style: styleb7});
+                        var BSAI = L.geoJson(Bdata, {style: styleb1, onEachFeature: onEachFeatureBO});
+                        var BSAI_family = L.geoJson(Bdata, {style: styleb2, onEachFeature: onEachFeatureBF});
+                        var BSAI_violent= L.geoJson(Bdata, {style: styleb3, onEachFeature: onEachFeatureBV});
+                        var BSAI_alc= L.geoJson(Bdata, {style: styleb4, onEachFeature: onEachFeatureBA});
+                        var BSAI_narralc= L.geoJson(Bdata, {style: styleb5, onEachFeature: onEachFeatureBNA});
+                        var BSAI_On= L.geoJson(Bdata, {style: styleb6, onEachFeature: onEachFeatureBOn});
+                        var BSAI_Off= L.geoJson(Bdata, {style: styleb7, onEachFeature: onEachFeatureBOff});
+
 
                         var basemapB1 = {
                         "Family Calls for Service": BSAI_family,
