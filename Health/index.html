@@ -53,15 +53,16 @@
             <!--External JS for Markers-->	
             <!--<script src="https://code.jquery.com/jquery-3.1.0.js"></script>-->
             <!--<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>-->
-            <script src="https://profseeger.github.io/LVM-Code/classes/Leaflet.awesome-markers/leaflet.awesome-markers.js"></script>
+            <!--<script src="https://profseeger.github.io/LVM-Code/classes/Leaflet.awesome-markers/leaflet.awesome-markers.js"></script>-->
 
             <!--AwesomeMarker-->
-            <link href=“http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css” rel=“stylesheet”> 
-            <link rel=“stylesheet” href=“https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css”> 
-          <link rel=“stylesheet” href=“ARIWebMapping/Home/Health/PlugIn/PlugIn/awesomemarkers/dist/leaflet.awesome-markers.css” /> 
+           <!-- <link href=“http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css” rel=“stylesheet”> -->
+          <!--  <link rel=“stylesheet” href=“https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css”> -->
+         <!--  <link rel=“stylesheet” href=“ARIWebMapping/Home/Health/PlugIn/PlugIn/awesomemarkers/dist/leaflet.awesome-markers.css” /> -->
        <!--     <script src= "PlugIn/PlugIn/awesomemarkers/dist/leaflet.awesome-markers.js"></script> -->
         
-     
+
+        <script src = "Leaflet.SvgShapeMarkers-gh-pages/dist/leaflet-svg-shape-markers.min.js"></script>
             <!--Boot Strap-->
               <link rel=“stylesheet” href=“https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css”> 
               <link rel=“stylesheet” href=“https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css”> 
@@ -157,7 +158,19 @@
                         color: #777;
                         }
                         
-                
+                    .legend .circle {
+                        border-radius: 50%;
+                        width: 10px;
+                        height: 10px;
+                        margin-top: 8px;
+                        }
+
+                    .legend .triangle {
+                        border-radius: 50%;
+                        width: 10px;
+                        height: 10px;
+                        margin-top: 8px;
+                        }
                 </style>
         
         </head>
@@ -179,7 +192,6 @@
             <h4><b>Background:</b> Alcohol Outlet Density </h4>
             <h4><b>Map:</b> The map to the right displays.   </h4>
             <h4><b>Interactivity:</b> Click on.  </h4>     
-            <br><img src = "DensityLegend3.png" height=75% width=100% class="right" >     
             </div>
             
         <div id='map1' class="center">
@@ -188,8 +200,7 @@
             <h2>Iowa City Outlets </h2>   
             <h4><b>Background:</b> Alcohol Outlet Density</h4>  
             <h4><b>Map:</b> The map to the right displays.  </h4>
-            <h4><b>Interactivity:</b> Click on.</h4>         
-            <br><img src = "DensityLegend3.png" height=75% width=100% class="right" >     
+            <h4><b>Interactivity:</b> Click on.</h4>           
             </div>
         <div id='map2' class="center">
         </div>
@@ -199,7 +210,6 @@
             <h4><b>Background:</b> Alcohol Outlet Density</p>  
             <h4><b>Map:</b> The map to the right displays.  </h4>
             <h4><b>Interactivity:</b> Click on.</h4>           
-            <br><img src = "DensityLegend3.png" height=75% width=100% class="right" >   
             </div>
         <div id='map3' class="center"></div>
     
@@ -208,8 +218,7 @@
         <h2>Burlington Outlets </h2>   
         <h4><b>Background:</b> Alcohol Outlet Density</h4>  
         <h4><b>Map:</b> The map to the right displays.  </h4>
-        <h4><b>Interactivity:</b> Click on.</h4>   
-        <br><img src = "DensityLegend3.png" height=75% width=100% class="right" >           
+        <h4><b>Interactivity:</b> Click on.</h4>            
         </div>
         <div id='map4' class="center"></div>
 
@@ -225,7 +234,7 @@
                         }).addTo(map1);      
                     
                     var circle1 = {
-                        radius: 3,
+                        radius: 5,
                         fillColor: "grey",
                         color: "red",
                         weight: 1,
@@ -234,58 +243,39 @@
                         };   
 
                     var circle2 = {
-                        radius: 2,
+                        radius: 5,
                         fillColor: "grey",
                         color: "blue",
                         weight: 1,
                         opacity: 1,
                         fillOpacity: 0.8
-                        };   
-                    
-                    
-                    var circle3 = {
-                        radius: 2,
-                        fillColor: "grey",
-                        color: "yellow",
-                        weight: 10,
-                        opacity: 1,
-                        fillOpacity: 0.8
-                        };   
-
-                    var circle4 = {
-                        radius: 2,
-                        fillColor: "grey",
-                        color: "black",
-                        weight: 10,
-                        opacity: 1,
-                        fillOpacity: 0.8
-                        };   
+                        };    
                 
-                var ambMarker = L.AwesomeMarkers.icon({
-                icon: 'ambulance',
-                prefix: 'fa',
-                markerColor: 'blue'
-                });
-                
-                var appleMarker = L.AwesomeMarkers.icon({
-                icon: 'apple',
-                prefix: 'fa',
-                color: 'black'
-                });
+//                var ambMarker = L.AwesomeMarkers.icon({
+//               icon: 'ambulance',
+//                prefix: 'fa',
+//                markerColor: 'blue'
+//                });
+//                
+//                var appleMarker = L.AwesomeMarkers.icon({
+//                icon: 'apple',
+//                prefix: 'fa',
+//                color: 'black'
+//                });
 
-                var onMarker = L.AwesomeMarkers.icon({
-                icon: 'beer',
-                prefix: 'fa',
-                markerColor: 'blue'
-                });
+//                var onMarker = L.AwesomeMarkers.icon({
+//                icon: 'beer',
+//                prefix: 'fa',
+//                markerColor: 'blue'
+//                });
 
-                var offMarker = L.AwesomeMarkers.icon({
-                icon: 'shopping-cart',
-                prefix: 'fa',
-                markerColor: 'blue'
-                });
+//                var offMarker = L.AwesomeMarkers.icon({
+//                icon: 'shopping-cart',
+//                prefix: 'fa',
+//                markerColor: 'blue'
+//                });
 
-                    var osmc1 = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                var osmc1 = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
                         attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
                         maxZoom: 18
                         }).addTo(map1);
@@ -323,13 +313,18 @@
                         }).addTo(map1);
             
 
-                    var schools = L.geoJSON(schools,  { 
+                var schools = L.geoJSON(schools,  { 
                             filter: function(feature, layer) {
                                 return feature.type == "Feature";
                             },
                             pointToLayer: function(feature, coordinates) {
-                            return L.circleMarker(coordinates, circle3)
-                        },
+                             return   L.shapeMarker(coordinates, {
+                            color: "purple",
+                            fillColor: "grey",        
+                            shape: "square",
+	                    	radius: 5
+	                        });
+                            },
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.feature_na)
@@ -337,20 +332,33 @@
                             } 
                             );
 
-                    var crashes = L.geoJSON(crashes,  { 
+                var crashes = L.geoJSON(crashes,  { 
                             filter: function(feature, layer) {
                                 return feature.type == "Feature";
                             },
                             pointToLayer: function(feature, coordinates) {
-                            return L.circleMarker(coordinates, circle4)
-                        },
+                            return L.shapeMarker(coordinates, {
+                            color: "black",
+                            fillColor: "grey",        
+                            shape: "triangle",
+	                    	radius: 5
+	                        });
+                            },
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<br><b> Severity: </b>" + feature.properties.CSEVERITY )
                             },
                             } 
                             );
-
+                
+                function getColorOn(d) {
+                            return  d = 'On Premise' ? 'red':
+                                            '#white';
+                                            }
+                function getColorOff(d) {
+                            return  d = 'Off Premise' ? 'blue' :
+                                            '#white';
+                                            }
 
                 function getColorC1(d) {
                             return d > 19.738367 ? '#FFFF0080' :
@@ -362,7 +370,7 @@
                                             }
 
                         
-                        function getColorC2(d) {
+                function getColorC2(d) {
                             return d > 91.24837 ? '#FFFF0080' :
                                 d > 47.922602 ? '#32CD3280' :
                                 d > 36.87287 ? '#00808080' :
@@ -371,7 +379,7 @@
                                             '#white';
                                             }
                        
-                         function getColorC3(d) {
+                function getColorC3(d) {
                             return d > 38.414316 ? '#FFFF0080' :
                                 d > 21.5726 ? '#32CD3280' :
                                 d > 13.521256 ? '#00808080' :
@@ -380,7 +388,7 @@
                                             '#white';
                                             }
                         
-                        function getColorC4(d) {
+                function getColorC4(d) {
                             return d > 23.11834 ? '#FFFF0080' :
                                 d > 13.277113 ? '#32CD3280' :
                                 d > 10.000068? '#00808080' :
@@ -389,7 +397,7 @@
                                             '#white';
                                             }
                         
-                        function getColorC5(d) {
+                function getColorC5(d) {
                             return d > 14.4705459 ? '#FFFF0080' :
                                 d > 10.778406 ? '#32CD3280' :
                                 d > 8.008124 ? '#00808080' :
@@ -398,7 +406,7 @@
                                             '#white';
                                             }
                        
-                         function getColorC6(d) {
+                function getColorC6(d) {
                             return d > 15.694647 ? '#FFFF0080' :
                                 d > 10.52095 ? '#32CD3280' :
                                 d > 7.690547 ? '#00808080' :
@@ -408,7 +416,7 @@
                                             }
                         
 
-                        function getColorC7(d) {
+                function getColorC7(d) {
                             return d > 14.583169 ? '#FFFF0080' :
                                 d > 10.485102 ? '#32CD3280' :
                                 d > 7.614719 ? '#00808080' :
@@ -417,7 +425,7 @@
                                             '#white';
                                             }
                         
-                       function styleC1(feature) {
+                function styleC1(feature) {
                             return {
                                 fillColor: getColorC1((feature.properties.SAIoutlet_miles)),
                                 weight: 2,
@@ -428,7 +436,7 @@
                         }
 
 
-                        function styleC2(feature) {
+                function styleC2(feature) {
                             return {
                                 fillColor: getColorC2((feature.properties.SAIfamily_miles)),
                                 weight: 2,
@@ -438,7 +446,7 @@
                             };
                         }
 
-                        function styleC3(feature) {
+                function styleC3(feature) {
                             return {
                                 fillColor: getColorC3((feature.properties.SAIviolent_miles)),
                                 weight: 2,
@@ -447,7 +455,7 @@
                                 fillOpacity: 0.7
                             };
                         }
-                        function styleC4(feature) {
+                function styleC4(feature) {
                             return {
                                 fillColor: getColorC4((feature.properties.SAIalc1_miles)),
                                 weight: 2,
@@ -457,7 +465,7 @@
                             };
                         }
 
-                        function styleC5(feature) {
+                function styleC5(feature) {
                             return {
                                 fillColor: getColorC5((feature.properties.SAInarralc1_miles)),
                                 weight: 2,
@@ -467,7 +475,7 @@
                             };
                         }
                        
-                        function styleC6(feature) {
+                function styleC6(feature) {
                             return {
                                 fillColor: getColorC6((feature.properties.SAIOnoutlet_miles)),
                                 weight: 2,
@@ -477,7 +485,7 @@
                             };
                         }
 
-                        function styleC7(feature) {
+                function styleC7(feature) {
                             return {
                                 fillColor: getColorC7((feature.properties.SAIOffoutlet_miles)),
                                 weight: 2,
@@ -494,6 +502,7 @@
                         var CSAI_narralc= L.geoJson(Cdata, {style: styleC5});
                         var CSAI_On= L.geoJson(Cdata, {style: styleC6});
                         var CSAI_Off= L.geoJson(Cdata, {style: styleC7});
+                        var deselect = L.geoJson(Idata, {style: styleC1});
 
                         var basemapC1 = {
                         "Family Calls for Service": CSAI_family,
@@ -502,16 +511,9 @@
                         "Narrowed Alcohol Calls for Service": CSAI_narralc,
                         "Alcohol Outlet Density by Census Block": CSAI,
                         "On Premise Alcohol Outlet Density by Census Block": CSAI_On,
-                        "Off Premise Alcohol Outlet Density by Census Block": CSAI_Off
+                        "Off Premise Alcohol Outlet Density by Census Block": CSAI_Off,
+                        "Deselect Census Block Data": deselect
                            };  
-
-
-
-
-
-
-
-
 
 
                     var overlayMapsC1 = {
@@ -523,6 +525,36 @@
                         };			
 
                     L.control.layers(basemapC1, overlayMapsC1).addTo(map1);	
+
+                    var legend1 = L.control({position: 'bottomleft'}); 
+                        legend1.onAdd = function (map1) {
+                            var div = L.DomUtil.create('div', 'info legend');
+                            grades = ["On Premise", "Off Premise", "School", "Crash"],
+                            labels = ["onMarker.png", "offMarker.png", "schoolMarker.png", "crashMarker.png"];
+                            for (var i = 0; i < grades.length; i++) {
+                              div.innerHTML +=
+                              (" <img src="+ labels[i] +" height='20' width='20'>") + grades[i] +'<br>';
+                                }
+
+                         return div;
+                        } ;
+                        legend1.addTo(map1)
+
+                    var legend2 = L.control({position: 'bottomright'}); 
+                        legend2.onAdd = function (map1) {
+                            var div = L.DomUtil.create('div', 'info legend');
+                            grades = [""],
+                            labels = ["DensityMarker.png"];
+                            for (var i = 0; i < grades.length; i++) {
+                              div.innerHTML +=
+                              (" <img src="+ labels[i] +" height='300' width='175'>") + grades[i] +'<br>';
+                                }
+
+                         return div;
+                        } ;
+                        legend2.addTo(map1)
+                                                    
+
 
                 //Iowa city Maps
                 var map2 = L.map('map2').setView([41.6611, -91.5302], 12);
@@ -721,6 +753,7 @@
                         var ISAI_narralc= L.geoJson(Idata, {style: styleI5});
                         var ISAI_On= L.geoJson(Idata, {style: styleI6});
                         var ISAI_Off= L.geoJson(Idata, {style: styleI7});
+                        var deselect = L.geoJson(Cdata, {style: styleC1});
 
                         var basemapI1 = {
                         "Family Calls for Service": ISAI_family,
@@ -729,7 +762,8 @@
                         "Narrowed Alcohol Calls for Service": ISAI_narralc,
                         "Alcohol Outlet Density by Census Block": ISAI,
                         "On Premise Alcohol Outlet Density by Census Block": ISAI_On,
-                        "Off Premise Alcohol Outlet Density by Census Block": ISAI_Off
+                        "Off Premise Alcohol Outlet Density by Census Block": ISAI_Off,
+                        "Deselect Census Block Data": deselect
                            };  
 
 
@@ -742,6 +776,34 @@
                         };				
 
                     L.control.layers(basemapI1, overlayMapsI1).addTo(map2);	
+
+                    var legend1 = L.control({position: 'bottomleft'}); 
+                        legend1.onAdd = function (map1) {
+                            var div = L.DomUtil.create('div', 'info legend');
+                            grades = ["On Premise", "Off Premise", "School", "Crash"],
+                            labels = ["onMarker.png", "offMarker.png", "schoolMarker.png", "crashMarker.png"];
+                            for (var i = 0; i < grades.length; i++) {
+                              div.innerHTML +=
+                              (" <img src="+ labels[i] +" height='20' width='20'>") + grades[i] +'<br>';
+                                }
+
+                         return div;
+                        } ;
+                        legend1.addTo(map2)
+
+                    var legend2 = L.control({position: 'bottomright'}); 
+                        legend2.onAdd = function (map1) {
+                            var div = L.DomUtil.create('div', 'info legend');
+                            grades = [""],
+                            labels = ["DensityMarker.png"];
+                            for (var i = 0; i < grades.length; i++) {
+                              div.innerHTML +=
+                              (" <img src="+ labels[i] +" height='300' width='175'>") + grades[i] +'<br>';
+                                }
+
+                         return div;
+                        } ;
+                        legend2.addTo(map2)
 
                 //Marshalltown Maps
                 var map3 = L.map('map3').setView([42.035, -92.9080], 13);
@@ -961,7 +1023,8 @@
                         "Narrowed Alcohol Calls for Service": MSAI_narralc,
                         "Alcohol Outlet Density by Census Block": MSAI,
                         "On Premise Alcohol Outlet Density by Census Block": MSAI_On,
-                        "Off Premise Alcohol Outlet Density by Census Block": MSAI_Off
+                        "Off Premise Alcohol Outlet Density by Census Block": MSAI_Off,
+                        "Deselect Census Block Data": deselect
                            };  
 
                 var overlayMapsM1 = {
@@ -974,7 +1037,33 @@
 
                     L.control.layers(basemapM1, overlayMapsM1).addTo(map3);	
     
-		             
+                    var legend1 = L.control({position: 'bottomleft'}); 
+                        legend1.onAdd = function (map1) {
+                            var div = L.DomUtil.create('div', 'info legend');
+                            grades = ["On Premise", "Off Premise", "School", "Crash"],
+                            labels = ["onMarker.png", "offMarker.png", "schoolMarker.png", "crashMarker.png"];
+                            for (var i = 0; i < grades.length; i++) {
+                              div.innerHTML +=
+                              (" <img src="+ labels[i] +" height='20' width='20'>") + grades[i] +'<br>';
+                                }
+
+                         return div;
+                        } ;
+                        legend1.addTo(map3)
+
+                    var legend2 = L.control({position: 'bottomright'}); 
+                        legend2.onAdd = function (map1) {
+                            var div = L.DomUtil.create('div', 'info legend');
+                            grades = [""],
+                            labels = ["DensityMarker.png"];
+                            for (var i = 0; i < grades.length; i++) {
+                              div.innerHTML +=
+                              (" <img src="+ labels[i] +" height='300' width='175'>") + grades[i] +'<br>';
+                                }
+
+                         return div;
+                        } ;
+                        legend2.addTo(map3)   
                  
                  //Burlington Maps
                  var map4 = L.map('map4').setView([40.8077, -91.1129], 13);
@@ -1170,7 +1259,8 @@
                         "Narrowed Alcohol Calls for Service": BSAI_narralc,
                         "Alcohol Outlet Density by Census Block": BSAI,
                         "On Premise Alcohol Outlet Density by Census Block": BSAI_On,
-                        "Off Premise Alcohol Outlet Density by Census Block": BSAI_Off
+                        "Off Premise Alcohol Outlet Density by Census Block": BSAI_Off,
+                        "Deselect Census Block Data": deselect
                            };  
 
 
@@ -1184,6 +1274,34 @@
                         };			
 
                     L.control.layers(basemapB1, overlayMapsB1).addTo(map4);	
+
+                    var legend1 = L.control({position: 'bottomleft'}); 
+                        legend1.onAdd = function (map1) {
+                            var div = L.DomUtil.create('div', 'info legend');
+                            grades = ["On Premise", "Off Premise", "School", "Crash"],
+                            labels = ["onMarker.png", "offMarker.png", "schoolMarker.png", "crashMarker.png"];
+                            for (var i = 0; i < grades.length; i++) {
+                              div.innerHTML +=
+                              (" <img src="+ labels[i] +" height='20' width='20'>") + grades[i] +'<br>';
+                                }
+
+                         return div;
+                        } ;
+                        legend1.addTo(map4)
+
+                    var legend2 = L.control({position: 'bottomright'}); 
+                        legend2.onAdd = function (map1) {
+                            var div = L.DomUtil.create('div', 'info legend');
+                            grades = [""],
+                            labels = ["DensityMarker.png"];
+                            for (var i = 0; i < grades.length; i++) {
+                              div.innerHTML +=
+                              (" <img src="+ labels[i] +" height='300' width='175'>") + grades[i] +'<br>';
+                                }
+
+                         return div;
+                        } ;
+                        legend2.addTo(map4)
     
 		             
             </script>
