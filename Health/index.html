@@ -577,6 +577,17 @@
                             };
                         }
 
+                        function styleOn(feature) {
+                            return {
+                                fillColor: 'grey',
+                                weight: 2,
+                                opacity: 1,
+                                color: 'red',
+                                fillOpacity: 0.1
+                            };
+                        }
+
+
                         var CSAI = L.geoJson(Cdata, {style: styleC1, onEachFeature: onEachFeatureCO}).bringToBack().addTo(map1);
                         var CSAI_family = L.geoJson(Cdata, {style: styleC2, onEachFeature: onEachFeatureCF}).bringToBack();
                         var CSAI_violent= L.geoJson(Cdata, {style: styleC3, onEachFeature: onEachFeatureCV}).bringToBack();
@@ -585,7 +596,7 @@
                         var CSAI_On= L.geoJson(Cdata, {style: styleC6, onEachFeature: onEachFeatureCOn}).bringToBack();
                         var CSAI_Off= L.geoJson(Cdata, {style: styleC7, onEachFeature: onEachFeatureCOff}).bringToBack();
                         var deselect = L.geoJson(Mdata, {style: styleC1, onEachFeature: onEachFeatureCO}).bringToBack();
-                        var ConClusters =  L.geoJson(onoutletcluster)
+                        var ConClusters =  L.geoJson(onoutletcluster, {style: styleOn});
                         var CoffClusters =  L.geoJson(offoutletcluster)
 
                         var basemapC1 = {
@@ -910,6 +921,8 @@
                             };
                         }
 
+
+
                         var ISAI = L.geoJson(Idata, {style: styleI1, onEachFeature: onEachFeatureIO}).addTo(map2);
                         var ISAI_family = L.geoJson(Idata, {style: styleI2, onEachFeature: onEachFeatureIF});
                         var ISAI_violent= L.geoJson(Idata, {style: styleI3, onEachFeature: onEachFeatureIV});
@@ -918,7 +931,7 @@
                         var ISAI_On= L.geoJson(Idata, {style: styleI6, onEachFeature: onEachFeatureIOn});
                         var ISAI_Off= L.geoJson(Idata, {style: styleI7, onEachFeature: onEachFeatureIOff});
                         var deselect = L.geoJson(Cdata, {style: styleC1, onEachFeature: onEachFeatureIO});
-                        var IonClusters =  L.geoJson(onoutletcluster)
+                        var IonClusters =  L.geoJson(onoutletcluster, {style: styleOn})
                         var IoffClusters =  L.geoJson(offoutletcluster)
 
                         var basemapI1 = {
@@ -1247,7 +1260,7 @@
                         var MSAI_narralc= L.geoJson(Mdata, {style: stylem5, onEachFeature: onEachFeatureMNA});
                         var MSAI_On= L.geoJson(Mdata, {style: stylem6, onEachFeature: onEachFeatureMOn});
                         var MSAI_Off= L.geoJson(Mdata, {style: stylem7, onEachFeature: onEachFeatureMOff});
-                        var MOnClusters =  L.geoJson(onoutletcluster)
+                        var MOnClusters =  L.geoJson(onoutletcluster, {style: styleOn});
                         var MOffClusters =  L.geoJson(offoutletcluster)
 
                         var basemapM1 = {
@@ -1573,7 +1586,7 @@
                         var BSAI_narralc= L.geoJson(Bdata, {style: styleb5, onEachFeature: onEachFeatureBNA});
                         var BSAI_On= L.geoJson(Bdata, {style: styleb6, onEachFeature: onEachFeatureBOn});
                         var BSAI_Off= L.geoJson(Bdata, {style: styleb7, onEachFeature: onEachFeatureBOff});
-                        var BOnClusters =  L.geoJson(onoutletcluster)
+                        var BOnClusters =  L.geoJson(onoutletcluster, {style: styleOn});
                         var BOffClusters =  L.geoJson(offoutletcluster)
 
 
