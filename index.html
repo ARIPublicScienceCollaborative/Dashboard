@@ -40,6 +40,8 @@
             <script src="StateOutletsTotal.geojson"></script>
             <script src= "StateOffOutlets_2019"></script>
             <script src = "StateOnOutlets_2019"></script>
+            <script src = "OnOutletCluster"></script>
+            <script src = "OffOutletCluster"></script>
 
      
                 <style>
@@ -222,15 +224,20 @@
                              )},
                         }).addTo(map1);
 
+
+                var onclusterlayer = L.geoJson(onoutletcluster)
+                var offclusterlayer = L.geoJson(offoutletcluster)
                 var basemap1 = {
                         "Open Street Map": osm1
                            };  
-
+                    
 
 
                 var overlayMaps1 = {
                         "On Premise Outlets": on,
-                        "Off Premise Outlets": off
+                        "Off Premise Outlets": off,
+                        "On Premise Clusters": onclusterlayer,
+                        "Off Premise Clusters": offclusterlayer
                         };			
 
                     L.control.layers(basemap1, overlayMaps1).addTo(map1);	

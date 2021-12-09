@@ -36,6 +36,8 @@
             <script src = "schools"></script>
             <script src = "IowaCitySAI"></script>
             <script src = "CedarRapidsSAI"></script>
+            <script src = "OnOutletCluster"></script>
+            <script src = "OffOutletCluster"></script>
 
 
              <!--Boot Strap-->
@@ -93,14 +95,14 @@
                     width: 25%;
                     } 
                    
-                    #map1container {border: 1px solid#0a0a0a;  position:absolute; background-color:#ecf7fc; color:black; text-align:left; margin-right: 0px; margin-left:5px; width:600px; height:700px;padding 0; }
-                    #map1 {border: 1px solid#0a0a0a;  position: relative; width:1000px; height:700px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
-                    #map2container {border: 1px solid#0a0a0a; position:absolute; background-color:#fdfdfd; color:black; text-align:left; margin-right: 0px; margin-left:5px; width:600px; height:700px;padding 0; }
-                    #map2 {border: 1px solid#0a0a0a; position: relative; width:1000px; height:700px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;} 
-                    #map3container {border: 1px solid#0a0a0a; position:absolute; background-color:#ecf7fc; color:black; text-align:left; margin-right: 0px; margin-left:5px; width:600px; height:700px;padding 0; }
-                    #map3 {border: 1px solid#0a0a0a; position: relative; width:1000px; height:700px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
-                    #map4container {border: 1px solid#0a0a0a; position:absolute; background-color:#fdfdfd; color:black; text-align:left; margin-right: 0px; margin-left:5px; width:600px; height:700px;padding 0; }
-                    #map4 {border: 1px solid#0a0a0a; position: relative; width:1000px; height:700px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}         
+                    #map1container {border: 1px solid#0a0a0a;  position:absolute; background-color:#ecf7fc; color:black; text-align:left; margin-right: 0px; margin-left:5px; width:600px; height:790px;padding 0; }
+                    #map1 {border: 1px solid#0a0a0a;  position: relative; width:1000px; height:790px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
+                    #map2container {border: 1px solid#0a0a0a; position:absolute; background-color:#fdfdfd; color:black; text-align:left; margin-right: 0px; margin-left:5px; width:600px; height:790px;padding 0; }
+                    #map2 {border: 1px solid#0a0a0a; position: relative; width:1000px; height:790px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;} 
+                    #map3container {border: 1px solid#0a0a0a; position:absolute; background-color:#ecf7fc; color:black; text-align:left; margin-right: 0px; margin-left:5px; width:600px; height:790px;padding 0; }
+                    #map3 {border: 1px solid#0a0a0a; position: relative; width:1000px; height:790px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
+                    #map4container {border: 1px solid#0a0a0a; position:absolute; background-color:#fdfdfd; color:black; text-align:left; margin-right: 0px; margin-left:5px; width:600px; height:790px;padding 0; }
+                    #map4 {border: 1px solid#0a0a0a; position: relative; width:1000px; height:790px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}         
 
 
                     /* The navigation bar */
@@ -226,7 +228,7 @@
             <script>   
                          
                     //Cedar Rapids Maps, Marker Information, Layers, & Layer Control
-                    var map1 = L.map('map1').setView([41.97, -91.6656], 11.5);
+                    var map1 = L.map('map1').setView([41.96, -91.6656], 11.5);
                     L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
                         attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
                         maxZoom: 18,
@@ -359,7 +361,7 @@
                                     }
 
                 
-                var on= L.geoJSON(onoutlets, { 
+              var on= L.geoJSON(onoutlets, { 
                             filter: function(feature, layer) {
                                 return feature.type == "Feature";
                             },
@@ -373,7 +375,7 @@
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
                             "<br><b>Number Of Licenses: </b>" + feature.properties.numlics 
                              )},
-                        }).addTo(map1);
+                        }).setZIndex(1);
                     
                 var off= L.geoJSON(offoutlets, { 
                             filter: function(feature, layer) {
@@ -389,7 +391,8 @@
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
                             "<br><b>Number Of Licenses: </b>" + feature.properties.numlics 
                              )},
-                        }).addTo(map1);
+                        }).setZIndex(1);
+
             
 
                 var schools = L.geoJSON(schools,  { 
@@ -409,7 +412,7 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.feature_na)
                             },
                             } 
-                            );
+                            ).setZIndex(1);;
 
                 var crashes = L.geoJSON(crashes,  { 
                             filter: function(feature, layer) {
@@ -428,7 +431,7 @@
                             layer.bindPopup("<br><b> Severity: </b>" + feature.properties.CSEVERITY )
                             },
                             } 
-                            );
+                            ).setZIndex(1);;
                 
                 function getColorOn(d) {
                             return  d = 'On Premise' ? 'red':
@@ -574,14 +577,16 @@
                             };
                         }
 
-                        var CSAI = L.geoJson(Cdata, {style: styleC1, onEachFeature: onEachFeatureCO});
-                        var CSAI_family = L.geoJson(Cdata, {style: styleC2, onEachFeature: onEachFeatureCF});
-                        var CSAI_violent= L.geoJson(Cdata, {style: styleC3, onEachFeature: onEachFeatureCV});
-                        var CSAI_alc= L.geoJson(Cdata, {style: styleC4, onEachFeature: onEachFeatureCA});
-                        var CSAI_narralc= L.geoJson(Cdata, {style: styleC5, onEachFeature: onEachFeatureCNA});
-                        var CSAI_On= L.geoJson(Cdata, {style: styleC6, onEachFeature: onEachFeatureCOn});
-                        var CSAI_Off= L.geoJson(Cdata, {style: styleC7, onEachFeature: onEachFeatureCOff});
-                        var deselect = L.geoJson(Cdata, {style: styleC1, onEachFeature: onEachFeatureCO});
+                        var CSAI = L.geoJson(Cdata, {style: styleC1, onEachFeature: onEachFeatureCO}).bringToBack().addTo(map1);
+                        var CSAI_family = L.geoJson(Cdata, {style: styleC2, onEachFeature: onEachFeatureCF}).bringToBack();
+                        var CSAI_violent= L.geoJson(Cdata, {style: styleC3, onEachFeature: onEachFeatureCV}).bringToBack();
+                        var CSAI_alc= L.geoJson(Cdata, {style: styleC4, onEachFeature: onEachFeatureCA}).bringToBack();
+                        var CSAI_narralc= L.geoJson(Cdata, {style: styleC5, onEachFeature: onEachFeatureCNA}).bringToBack();
+                        var CSAI_On= L.geoJson(Cdata, {style: styleC6, onEachFeature: onEachFeatureCOn}).bringToBack();
+                        var CSAI_Off= L.geoJson(Cdata, {style: styleC7, onEachFeature: onEachFeatureCOff}).bringToBack();
+                        var deselect = L.geoJson(Cdata, {style: styleC1, onEachFeature: onEachFeatureCO}).bringToBack();
+                        var ConClusters =  L.geoJson(onoutletcluster)
+                        var CoffClusters =  L.geoJson(offoutletcluster)
 
                         var basemapC1 = {
                         "Family Calls for Service": CSAI_family,
@@ -598,6 +603,8 @@
                     var overlayMapsC1 = {
                         "On Premise Outlets": on,
                         "Off Premise Outlets": off,
+                        "On Premise Clusters": ConClusters,
+                        "Off Premise Clusters": CoffClusters,
                         "Schools": schools, 
                         "Alchol Related Crashes": crashes
                         };			
@@ -625,7 +632,7 @@
                             labels = ["DensityMarker.png"];
                             for (var i = 0; i < grades.length; i++) {
                               div.innerHTML +=
-                              (" <img src="+ labels[i] +" height='300' width='175'>") + grades[i] +'<br>';
+                              (" <img src="+ labels[i] +" height='140' width='95'>") + grades[i] +'<br>';
                                 }
 
                          return div;
@@ -635,7 +642,7 @@
 
 
                 //Iowa city Maps
-                var map2 = L.map('map2').setView([41.6611, -91.5302], 12);
+                var map2 = L.map('map2').setView([41.653, -91.5302], 13);
                         L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
                         attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
                         maxZoom: 18,
@@ -737,7 +744,7 @@
 
                 
 
-                var on= L.geoJSON(onoutlets, { 
+               var on= L.geoJSON(onoutlets, { 
                             filter: function(feature, layer) {
                                 return feature.type == "Feature";
                             },
@@ -751,7 +758,7 @@
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
                             "<br><b>Number Of Licenses: </b>" + feature.properties.numlics 
                              )},
-                        }).addTo(map2);
+                        }).setZIndex(1);
                     
                 var off= L.geoJSON(offoutlets, { 
                             filter: function(feature, layer) {
@@ -767,7 +774,8 @@
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
                             "<br><b>Number Of Licenses: </b>" + feature.properties.numlics 
                              )},
-                        }).addTo(map2);
+                        }).setZIndex(1);
+
                 
                         function getColorI1(d) {
                             return d > 17.351978 ? '#FFFF0080' :
@@ -902,7 +910,7 @@
                             };
                         }
 
-                        var ISAI = L.geoJson(Idata, {style: styleI1, onEachFeature: onEachFeatureIO});
+                        var ISAI = L.geoJson(Idata, {style: styleI1, onEachFeature: onEachFeatureIO}).addTo(map2);
                         var ISAI_family = L.geoJson(Idata, {style: styleI2, onEachFeature: onEachFeatureIF});
                         var ISAI_violent= L.geoJson(Idata, {style: styleI3, onEachFeature: onEachFeatureIV});
                         var ISAI_alc= L.geoJson(Idata, {style: styleI4, onEachFeature: onEachFeatureIA});
@@ -910,6 +918,8 @@
                         var ISAI_On= L.geoJson(Idata, {style: styleI6, onEachFeature: onEachFeatureIOn});
                         var ISAI_Off= L.geoJson(Idata, {style: styleI7, onEachFeature: onEachFeatureIOff});
                         var deselect = L.geoJson(Cdata, {style: styleC1, onEachFeature: onEachFeatureIO});
+                        var IonClusters =  L.geoJson(onoutletcluster)
+                        var IoffClusters =  L.geoJson(offoutletcluster)
 
                         var basemapI1 = {
                         "Family Calls for Service": ISAI_family,
@@ -926,6 +936,8 @@
                 var overlayMapsI1 = {
                         "On Premise Outlets": on,
                         "Off Premise Outlets": off,
+                        "On Premise Clusters": IonClusters, 
+                        "Off Premise Clusters": IoffClusters, 
                         "Schools": schools, 
                         "Alchol Related Crashes": crashes
                         };				
@@ -939,7 +951,7 @@
                             labels = ["onMarker.png", "offMarker.png", "schoolMarker.png", "crashMarker.png"];
                             for (var i = 0; i < grades.length; i++) {
                               div.innerHTML +=
-                              (" <img src="+ labels[i] +" height='20' width='20'>") + grades[i] +'<br>';
+                              (" <img src="+ labels[i] + " height='20' width='20'>") + grades[i] +'<br>';
                                 }
 
                          return div;
@@ -953,7 +965,7 @@
                             labels = ["DensityMarker.png"];
                             for (var i = 0; i < grades.length; i++) {
                               div.innerHTML +=
-                              (" <img src="+ labels[i] +" height='300' width='175'>") + grades[i] +'<br>';
+                              (" <img src="+ labels[i] +" height='140' width='95'>") + grades[i] +'<br>';
                                 }
 
                          return div;
@@ -1062,11 +1074,7 @@
                                     }
 
 
-
-
-
-
-                        var on= L.geoJSON(onoutlets, { 
+                var on= L.geoJSON(onoutlets, { 
                             filter: function(feature, layer) {
                                 return feature.type == "Feature";
                             },
@@ -1080,7 +1088,7 @@
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
                             "<br><b>Number Of Licenses: </b>" + feature.properties.numlics 
                              )},
-                        }).addTo(map3);
+                        }).setZIndex(1);
                     
                 var off= L.geoJSON(offoutlets, { 
                             filter: function(feature, layer) {
@@ -1096,31 +1104,9 @@
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
                             "<br><b>Number Of Licenses: </b>" + feature.properties.numlics 
                              )},
-                        }).addTo(map3);
+                        }).setZIndex(1);
+
                                 
-         //     var all= L.geoJSON(outlets, { 
-          //                  filter: function(feature, layer) {
-           //                     return feature.properties.sixmosactiveyear == "2019";
-            //                },
-             //               pointToLayer: function(feature, coordinates) {
-              //              return L.circleMarker(coordinates,circle1);
-               //             },
-                //            onEachFeature: function (feature, layer) {
-                 //           popupOptions = {maxWidth: 200}; 
-                  //          layer.bindPopup("<br><b> Name: </b>" + feature.properties.doing_business_as +
-                   //         "<br> <b>Address: </b>" + feature.properties.address +  
-                    //        "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
-                     //       "<br><b>Number Of Licenses: </b>" + feature.properties.numlics  
-                      //      )}, style: function(feature) {
-                       //       switch (feature.properties.onpremisePSC) {
-                        //         case 1: return {icon: onMarker};
-                         //   }
-                       //     switch (feature.properties.offpremisePSC) {
-                        //         case 1: return {icon: offMarker};
-                         //   }
-                          //  }
-                       // }).addTo(map3);
-                
 
                         function getColorm1(d) {
                             return d > 18.748103 ? '#FFFF0080' :
@@ -1254,13 +1240,15 @@
                             };
                         }
 
-                        var MSAI = L.geoJson(Mdata, {style: stylem1, onEachFeature: onEachFeatureMO});
+                        var MSAI = L.geoJson(Mdata, {style: stylem1, onEachFeature: onEachFeatureMO}).addTo(map3);
                         var MSAI_family = L.geoJson(Mdata, {style: stylem2, onEachFeature: onEachFeatureMF});
                         var MSAI_violent= L.geoJson(Mdata, {style: stylem3, onEachFeature: onEachFeatureMV});
                         var MSAI_alc= L.geoJson(Mdata, {style: stylem4, onEachFeature: onEachFeatureMA});
                         var MSAI_narralc= L.geoJson(Mdata, {style: stylem5, onEachFeature: onEachFeatureMNA});
                         var MSAI_On= L.geoJson(Mdata, {style: stylem6, onEachFeature: onEachFeatureMOn});
                         var MSAI_Off= L.geoJson(Mdata, {style: stylem7, onEachFeature: onEachFeatureMOff});
+                        var MOnClusters =  L.geoJson(onoutletcluster)
+                        var MOffClusters =  L.geoJson(offoutletcluster)
 
                         var basemapM1 = {
                         "Family Calls for Service": MSAI_family,
@@ -1276,6 +1264,8 @@
                 var overlayMapsM1 = {
                         "On Premise Outlets": on,
                         "Off Premise Outlets": off,
+                        "On Premise Clusters": MOnClusters,
+                        "Off Premise Clusters": MOffClusters,
                         "Schools": schools, 
                         "Alchol Related Crashes": crashes
                         };			
@@ -1303,7 +1293,7 @@
                             labels = ["DensityMarker.png"];
                             for (var i = 0; i < grades.length; i++) {
                               div.innerHTML +=
-                              (" <img src="+ labels[i] +" height='300' width='175'>") + grades[i] +'<br>';
+                              (" <img src="+ labels[i] +" height='140' width='95'>") + grades[i] +'<br>';
                                 }
 
                          return div;
@@ -1425,7 +1415,7 @@
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
                             "<br><b>Number Of Licenses: </b>" + feature.properties.numlics 
                              )},
-                        }).addTo(map4);
+                        }).setZIndex(1);
                     
                 var off= L.geoJSON(offoutlets, { 
                             filter: function(feature, layer) {
@@ -1441,7 +1431,7 @@
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
                             "<br><b>Number Of Licenses: </b>" + feature.properties.numlics 
                              )},
-                        }).addTo(map4);
+                        }).setZIndex(1);
 
                         function getColorb1(d) {
                             return d > 21.311043  ? '#FFFF0080' :
@@ -1576,13 +1566,15 @@
                             };
                         }
 
-                        var BSAI = L.geoJson(Bdata, {style: styleb1, onEachFeature: onEachFeatureBO});
+                        var BSAI = L.geoJson(Bdata, {style: styleb1, onEachFeature: onEachFeatureBO}).addTo(map4);
                         var BSAI_family = L.geoJson(Bdata, {style: styleb2, onEachFeature: onEachFeatureBF});
                         var BSAI_violent= L.geoJson(Bdata, {style: styleb3, onEachFeature: onEachFeatureBV});
                         var BSAI_alc= L.geoJson(Bdata, {style: styleb4, onEachFeature: onEachFeatureBA});
                         var BSAI_narralc= L.geoJson(Bdata, {style: styleb5, onEachFeature: onEachFeatureBNA});
                         var BSAI_On= L.geoJson(Bdata, {style: styleb6, onEachFeature: onEachFeatureBOn});
                         var BSAI_Off= L.geoJson(Bdata, {style: styleb7, onEachFeature: onEachFeatureBOff});
+                        var BOnClusters =  L.geoJson(onoutletcluster)
+                        var BOffClusters =  L.geoJson(offoutletcluster)
 
 
                         var basemapB1 = {
@@ -1601,6 +1593,8 @@
                 var overlayMapsB1 = {
                         "On Premise Outlets": on,
                         "Off Premise Outlets": off,
+                        "On Premise Clusters": BOnClusters,
+                        "Off Premise Clusters": BOffClusters,
                         "Schools": schools,  
                         "Alchol Related Crashes": crashes
                         };			
@@ -1628,7 +1622,7 @@
                             labels = ["DensityMarker.png"];
                             for (var i = 0; i < grades.length; i++) {
                               div.innerHTML +=
-                              (" <img src="+ labels[i] +" height='300' width='175'>") + grades[i] +'<br>';
+                              (" <img src="+ labels[i] +" height='140' width='95'>") + grades[i] +'<br>';
                                 }
 
                          return div;
