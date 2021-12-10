@@ -447,67 +447,67 @@
                 
 
                 function getColorC1(d) {
-                            return d > 19.738367 ? '#c6771880' :
-                                d > 13.759995 ? '#f2952680' :
-                                d > 9.98847 ? '#fbb66480' :
-                                d > 7.384747  ? '#fdcc9280' :
-                                d > 0   ? '#fed9ad80' :
+                            return d > 19.738367 ? '#c67718' :
+                                d > 13.759995 ? '#f29526' :
+                                d > 9.98847 ? '#fbb664' :
+                                d > 7.384747  ? '#fdcc92' :
+                                d > 0   ? '#fed9ad' :
                                             '#white';
                                             }
 
                         
                 function getColorC2(d) {
-                            return d > 91.24837 ? '#c6771880' :
-                                d > 47.922602 ? '#f2952680' :
-                                d > 36.87287 ? '#fbb66480' :
-                                d > 21.84181   ? '#fdcc9280' :
-                                d > 0   ? '#fed9ad80' :
+                            return d > 91.24837 ? '#c67718' :
+                                d > 47.922602 ? '#f29526' :
+                                d > 36.87287 ? '#fbb664' :
+                                d > 21.84181   ? '#fdcc92' :
+                                d > 0   ? '#fed9ad' :
                                             '#white';
                                             }
                        
                 function getColorC3(d) {
-                            return d > 38.414316 ? '#c6771880' :
-                                d > 21.5726 ? '#f2952680' :
-                                d > 13.521256 ? '#fbb66480' :
-                                d > 10.241322   ? '#fdcc9280' :
-                                d > 0   ? '#fed9ad80' :
+                            return d > 38.414316 ? '#c67718' :
+                                d > 21.5726 ? '#f29526' :
+                                d > 13.521256 ? '#fbb664' :
+                                d > 10.241322   ? '#fdcc92' :
+                                d > 0   ? '#fed9ad' :
                                             '#white';
                                             }
                         
                 function getColorC4(d) {
-                            return d > 23.11834 ? '#c6771880' :
-                                d > 13.277113 ? '#f2952680' :
-                                d > 10.000068? '#fbb66480' :
-                                d > 6.999349  ? '#fdcc9280' :
-                                d > 0   ? '#fed9ad80' :
+                            return d > 23.11834 ? '#c67718' :
+                                d > 13.277113 ? '#f29526' :
+                                d > 10.000068? '#fbb664' :
+                                d > 6.999349  ? '#fdcc92' :
+                                d > 0   ? '#fed9ad' :
                                             '#white';
                                             }
                         
                 function getColorC5(d) {
-                            return d > 14.4705459 ? '#c6771880' :
-                                d > 10.778406 ? '#f2952680' :
-                                d > 8.008124 ? '#fbb66480' :
-                                d > 5.762312  ? '#fdcc9280' :
-                                d > 0   ? '#fed9ad80' :
+                            return d > 14.4705459 ? '#c67718' :
+                                d > 10.778406 ? '#f29526' :
+                                d > 8.008124 ? '#fbb664' :
+                                d > 5.762312  ? '#fdcc92' :
+                                d > 0   ? '#fed9ad' :
                                             '#white';
                                             }
                        
                 function getColorC6(d) {
-                            return d > 15.694647 ? '#c6771880' :
-                                d > 10.52095 ? '#f2952680' :
-                                d > 7.690547 ? '#fbb66480' :
-                                d > 5.635748  ? '#fdcc9280' :
-                                d > 0   ? '#fed9ad80' :
+                            return d > 15.694647 ? '#c67718' :
+                                d > 10.52095 ? '#f29526' :
+                                d > 7.690547 ? '#fbb664' :
+                                d > 5.635748  ? '#fdcc92' :
+                                d > 0   ? '#fed9ad' :
                                             '#white';
                                             }
                         
 
                 function getColorC7(d) {
-                            return d > 14.583169 ? '#c6771880' :
-                                d > 10.485102 ? '#f2952680' :
-                                d > 7.614719 ? '#fbb66480' :
-                                d > 5.668966  ? '#fdcc9280' :
-                                d > 0   ? '#fed9ad80' :
+                            return d > 14.583169 ? '#c67718' :
+                                d > 10.485102 ? '#f29526' :
+                                d > 7.614719 ? '#fbb664' :
+                                d > 5.668966  ? '#fdcc92' :
+                                d > 0   ? '#fed9ad' :
                                             '#white';
                                             }
                         
@@ -965,24 +965,23 @@ var legend1 = L.control({position: 'bottomleft'});
                         var IoffClusters =  L.geoJson(offoutletcluster)
 
                         var basemapI1 = {
+                        "Neighborhood Density, On & Off Premise": ISAI,
+                        "Neighborhood Density, On Premise": ISAI_On,
+                        "Neighborhood Density, Off Premise": ISAI_Off,    
                         "Family Calls for Service": ISAI_family,
                         "Violent Crime Calls for Service": ISAI_violent,
                         "Alcohol Calls for Service": ISAI_alc,
                         "Narrowed Alcohol Calls for Service": ISAI_narralc,
-                        "Alcohol Outlet Density by Census Block": ISAI,
-                        "On Premise Alcohol Outlet Density by Census Block": ISAI_On,
-                        "Off Premise Alcohol Outlet Density by Census Block": ISAI_Off,
                         "Deselect Census Block Data": deselect
                            };  
 
-
                 var overlayMapsI1 = {
-                        "On Premise Outlets": on,
-                        "Off Premise Outlets": off,
-                        "On Premise Clusters": IonClusters, 
-                        "Off Premise Clusters": IoffClusters, 
-                        "Schools": schools, 
-                        "Alchol Related Crashes": crashes
+                    "Alcohol Outlets, On Premise": on,
+                        "Alcohol Outlets, Off Premise": off,
+                        "Alcohol Outlet Clusters, On Premise": IonClusters,
+                        "Alcohol Outlet Clusters, Off Premise": IoffClusters,
+                        "K-12 Schools, Pubic & Private": schools, 
+                        "Alchol-Related Automobile Crashes": crashes
                         };				
 
                     L.control.layers(basemapI1, overlayMapsI1).addTo(map2);	
@@ -1292,27 +1291,30 @@ var legend1 = L.control({position: 'bottomleft'});
                         var MSAI_On= L.geoJson(Mdata, {style: stylem6, onEachFeature: onEachFeatureMOn});
                         var MSAI_Off= L.geoJson(Mdata, {style: stylem7, onEachFeature: onEachFeatureMOff});
                         var MOnClusters =  L.geoJson(onoutletcluster, {style: styleOn});
-                        var MOffClusters =  L.geoJson(offoutletcluster)
+                        var MOffClusters =  L.geoJson(offoutletcluster, {style: styleOff});
 
                         var basemapM1 = {
+                         "Neighborhood Density, On & Off Premise": MSAI,
+                        "Neighborhood Density, On Premise": MSAI_On,
+                        "Neighborhood Density, Off Premise": MSAI_Off,    
                         "Family Calls for Service": MSAI_family,
                         "Violent Crime Calls for Service": MSAI_violent,
-                        "Alcohol Calls for Service": MSAI_alc,
                         "Narrowed Alcohol Calls for Service": MSAI_narralc,
-                        "Alcohol Outlet Density by Census Block": MSAI,
-                        "On Premise Alcohol Outlet Density by Census Block": MSAI_On,
-                        "Off Premise Alcohol Outlet Density by Census Block": MSAI_Off,
                         "Deselect Census Block Data": deselect
                            };  
+                          
 
                 var overlayMapsM1 = {
-                        "On Premise Outlets": on,
-                        "Off Premise Outlets": off,
-                        "On Premise Clusters": MOnClusters,
-                        "Off Premise Clusters": MOffClusters,
-                        "Schools": schools, 
-                        "Alchol Related Crashes": crashes
+                        "Alcohol Outlets, On Premise": on,
+                        "Alcohol Outlets, Off Premise": off,
+                        "Alcohol Outlet Clusters, On Premise": MOnClusters,
+                        "Alcohol Outlet Clusters, Off Premise": MOffClusters,
+                        "K-12 Schools, Pubic & Private": schools, 
+                        "Alchol-Related Automobile Crashes": crashes
                         };			
+
+
+
 
                     L.control.layers(basemapM1, overlayMapsM1).addTo(map3);	
     
@@ -1618,30 +1620,32 @@ var legend1 = L.control({position: 'bottomleft'});
                         var BSAI_On= L.geoJson(Bdata, {style: styleb6, onEachFeature: onEachFeatureBOn});
                         var BSAI_Off= L.geoJson(Bdata, {style: styleb7, onEachFeature: onEachFeatureBOff});
                         var BOnClusters =  L.geoJson(onoutletcluster, {style: styleOn});
-                        var BOffClusters =  L.geoJson(offoutletcluster)
+                        var BOffClusters =  L.geoJson(offoutletcluster, {style: styleOff});
 
 
                         var basemapB1 = {
+                            "Neighborhood Density, On & Off Premise": BSAI,
+                        "Neighborhood Density, On Premise": BSAI_On,
+                        "Neighborhood Density, Off Premise": BSAI_Off,    
                         "Family Calls for Service": BSAI_family,
                         "Violent Crime Calls for Service": BSAI_violent,
                         "Alcohol Calls for Service": BSAI_alc,
                         "Narrowed Alcohol Calls for Service": BSAI_narralc,
-                        "Alcohol Outlet Density by Census Block": BSAI,
-                        "On Premise Alcohol Outlet Density by Census Block": BSAI_On,
-                        "Off Premise Alcohol Outlet Density by Census Block": BSAI_Off,
                         "Deselect Census Block Data": deselect
                            };  
 
 
 
                 var overlayMapsB1 = {
-                        "On Premise Outlets": on,
-                        "Off Premise Outlets": off,
-                        "On Premise Clusters": BOnClusters,
-                        "Off Premise Clusters": BOffClusters,
-                        "Schools": schools,  
-                        "Alchol Related Crashes": crashes
+                         "Alcohol Outlets, On Premise": on,
+                        "Alcohol Outlets, Off Premise": off,
+                        "Alcohol Outlet Clusters, On Premise": BOnClusters,
+                        "Alcohol Outlet Clusters, Off Premise": BOffClusters,
+                        "K-12 Schools, Pubic & Private": schools, 
+                        "Alchol-Related Automobile Crashes": crashes
                         };			
+
+
 
                     L.control.layers(basemapB1, overlayMapsB1).addTo(map4);	
 
