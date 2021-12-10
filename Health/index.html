@@ -240,18 +240,18 @@
                     
                     var circle1 = {
                         radius: 5,
-                        fillColor: "grey",
-                        color: "darkgreen",
-                        weight: 1,
+                        fillColor: "darkgreen",
+                        color: "black",
+                        weight: .5,
                         opacity: 1,
                         fillOpacity: 0.8
                         };   
 
                     var circle2 = {
                         radius: 5,
-                        fillColor: "grey",
-                        color: "darkblue",
-                        weight: 1,
+                        fillColor: "darkblue",
+                        color: "grey",
+                        weight: .5,
                         opacity: 1,
                         fillOpacity: 0.8
                         };    
@@ -385,7 +385,7 @@
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
                             "<br><b>Number Of Licenses: </b>" + feature.properties.numlics 
                              )},
-                        }).setZIndex(1);
+                        }).bringToFront(100);
                     
                 var off= L.geoJSON(offoutlets, { 
                             filter: function(feature, layer) {
@@ -401,7 +401,7 @@
                             "<br><b>Year: </b>" + feature.properties.sixmosactiveyear +
                             "<br><b>Number Of Licenses: </b>" + feature.properties.numlics 
                              )},
-                        }).setZIndex(1);
+                        }).bringToFront(100);
 
             
 
@@ -412,10 +412,11 @@
                             pointToLayer: function(feature, coordinates) {
                              return   L.shapeMarker(coordinates, {
                             color: "black",
-                            fillColor: "grey",        
+                            fillColor: "purple",        
                             shape: "triangle",
                             radius: 5,
-                            weight: 1
+                            weight: .5,
+                            fillOpacity: 0.8
 	                        });
                             },
                             onEachFeature: function (feature, layer) {
@@ -423,7 +424,7 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.feature_na)
                             },
                             } 
-                            ).setZIndex(1);
+                            ).bringToFront(100);
 
                 var crashes = L.geoJSON(crashes,  { 
                             filter: function(feature, layer) {
@@ -431,8 +432,7 @@
                             },
                             pointToLayer: function(feature, coordinates) {
                             return L.shapeMarker(coordinates, {
-                            color: "purple",
-                            fillColor: "grey",        
+                            color: "darkred",      
                             shape: "x",
 	                    	radius: 10,
                             weight: 2
@@ -443,73 +443,63 @@
                             layer.bindPopup("<br><b> Severity: </b>" + feature.properties.CSEVERITY )
                             },
                             } 
-                            ).setZIndex(1);
+                            ).bringToFront(100);
                 
 
                 function getColorC1(d) {
-                            return d > 19.738367 ? '#c67718' :
-                                d > 13.759995 ? '#f29526' :
-                                d > 9.98847 ? '#fbb664' :
-                                d > 7.384747  ? '#fdcc92' :
-                                d > 0   ? '#fed9ad' :
+                            return   d > 16.077736? '#c67718' :
+                                d > 9.313716   ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
 
                         
                 function getColorC2(d) {
-                            return d > 91.24837 ? '#c67718' :
-                                d > 47.922602 ? '#f29526' :
-                                d > 36.87287 ? '#fbb664' :
-                                d > 21.84181   ? '#fdcc92' :
-                                d > 0   ? '#fed9ad' :
+                            return  d > 54.233366 ? '#c67718' :
+                                d > 33.255352   ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
+
                        
                 function getColorC3(d) {
-                            return d > 38.414316 ? '#c67718' :
-                                d > 21.5726 ? '#f29526' :
-                                d > 13.521256 ? '#fbb664' :
-                                d > 10.241322   ? '#fdcc92' :
-                                d > 0   ? '#fed9ad' :
+                            return  d > 24.517983 ? '#c67718' :
+                                d > 11.9551   ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
+
                         
                 function getColorC4(d) {
-                            return d > 23.11834 ? '#c67718' :
-                                d > 13.277113 ? '#f29526' :
-                                d > 10.000068? '#fbb664' :
-                                d > 6.999349  ? '#fdcc92' :
-                                d > 0   ? '#fed9ad' :
+                            return  d > 15.673219 ? '#c67718' :
+                                d > 9.075954   ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
+
                         
                 function getColorC5(d) {
-                            return d > 14.4705459 ? '#c67718' :
-                                d > 10.778406 ? '#f29526' :
-                                d > 8.008124 ? '#fbb664' :
-                                d > 5.762312  ? '#fdcc92' :
-                                d > 0   ? '#fed9ad' :
+                            return  d > 12.095957 ? '#c67718' :
+                                d > 7.046176   ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
-                       
+
                 function getColorC6(d) {
-                            return d > 15.694647 ? '#c67718' :
-                                d > 10.52095 ? '#f29526' :
-                                d > 7.690547 ? '#fbb664' :
-                                d > 5.635748  ? '#fdcc92' :
-                                d > 0   ? '#fed9ad' :
+                            return  d > 11.455359 ? '#c67718' :
+                                d > 6.968766   ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
                         
 
                 function getColorC7(d) {
-                            return d > 14.583169 ? '#c67718' :
-                                d > 10.485102 ? '#f29526' :
-                                d > 7.614719 ? '#fbb664' :
-                                d > 5.668966  ? '#fdcc92' :
-                                d > 0   ? '#fed9ad' :
+                            return  d > 11.668378 ? '#c67718' :
+                                d > 7.248416  ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
+
                         
                 function styleC1(feature) {
                             return {
@@ -602,14 +592,14 @@
                         }
 
 
-                        var CSAI = L.geoJson(Cdata, {style: styleC1, onEachFeature: onEachFeatureCO}).bringToBack().addTo(map1);
-                        var CSAI_family = L.geoJson(Cdata, {style: styleC2, onEachFeature: onEachFeatureCF}).bringToBack();
-                        var CSAI_violent= L.geoJson(Cdata, {style: styleC3, onEachFeature: onEachFeatureCV}).bringToBack();
-                        var CSAI_alc= L.geoJson(Cdata, {style: styleC4, onEachFeature: onEachFeatureCA}).bringToBack();
-                        var CSAI_narralc= L.geoJson(Cdata, {style: styleC5, onEachFeature: onEachFeatureCNA}).bringToBack();
-                        var CSAI_On= L.geoJson(Cdata, {style: styleC6, onEachFeature: onEachFeatureCOn}).bringToBack();
-                        var CSAI_Off= L.geoJson(Cdata, {style: styleC7, onEachFeature: onEachFeatureCOff}).bringToBack();
-                        var deselect = L.geoJson(Mdata, {style: styleC1, onEachFeature: onEachFeatureCO}).bringToBack();
+                        var CSAI = L.geoJson(Cdata, {style: styleC1, onEachFeature: onEachFeatureCO}).bringToBack(0).addTo(map1);
+                        var CSAI_family = L.geoJson(Cdata, {style: styleC2, onEachFeature: onEachFeatureCF}).bringToBack(0);
+                        var CSAI_violent= L.geoJson(Cdata, {style: styleC3, onEachFeature: onEachFeatureCV}).bringToBack(0);
+                        var CSAI_alc= L.geoJson(Cdata, {style: styleC4, onEachFeature: onEachFeatureCA}).bringToBack(0);
+                        var CSAI_narralc= L.geoJson(Cdata, {style: styleC5, onEachFeature: onEachFeatureCNA}).bringToBack(0);
+                        var CSAI_On= L.geoJson(Cdata, {style: styleC6, onEachFeature: onEachFeatureCOn}).bringToBack(0);
+                        var CSAI_Off= L.geoJson(Cdata, {style: styleC7, onEachFeature: onEachFeatureCOff}).bringToBack(0);
+                        var deselect = L.geoJson(Mdata, {style: styleC1, onEachFeature: onEachFeatureCO}).bringToBack(0);
                         var ConClusters =  L.geoJson(onoutletcluster, {style: styleOn});
                         var CoffClusters =  L.geoJson(offoutletcluster, {style: styleOff})
 
@@ -658,7 +648,7 @@ var legend1 = L.control({position: 'bottomleft'});
                             labels = ["pointLegend.png"];
                             for (var i = 0; i < grades.length; i++) {
                               div.innerHTML +=
-                              (" <img src="+ labels[i] +" height='140' width='150'>") + grades[i] +'<br>';
+                              (" <img src="+ labels[i] +" height='120' width='110'>") + grades[i] +'<br>';
                                 }
 
                          return div;
