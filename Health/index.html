@@ -241,7 +241,7 @@
                     var circle1 = {
                         radius: 5,
                         fillColor: "grey",
-                        color: "red",
+                        color: "darkgreen",
                         weight: 1,
                         opacity: 1,
                         fillOpacity: 0.8
@@ -250,7 +250,7 @@
                     var circle2 = {
                         radius: 5,
                         fillColor: "grey",
-                        color: "blue",
+                        color: "darkblue",
                         weight: 1,
                         opacity: 1,
                         fillOpacity: 0.8
@@ -411,10 +411,11 @@
                             },
                             pointToLayer: function(feature, coordinates) {
                              return   L.shapeMarker(coordinates, {
-                            color: "purple",
+                            color: "black",
                             fillColor: "grey",        
-                            shape: "square",
-	                    	radius: 5
+                            shape: "triangle",
+                            radius: 5,
+                            weight: 1
 	                        });
                             },
                             onEachFeature: function (feature, layer) {
@@ -430,10 +431,11 @@
                             },
                             pointToLayer: function(feature, coordinates) {
                             return L.shapeMarker(coordinates, {
-                            color: "black",
+                            color: "purple",
                             fillColor: "grey",        
-                            shape: "triangle",
-	                    	radius: 5
+                            shape: "x",
+	                    	radius: 10,
+                            weight: 2
 	                        });
                             },
                             onEachFeature: function (feature, layer) {
@@ -443,77 +445,69 @@
                             } 
                             ).setZIndex(1);
                 
-                function getColorOn(d) {
-                            return  d = 'On Premise' ? 'red':
-                                            '#white';
-                                            }
-                function getColorOff(d) {
-                            return  d = 'Off Premise' ? 'blue' :
-                                            '#white';
-                                            }
 
                 function getColorC1(d) {
-                            return d > 19.738367 ? '#FFFF0080' :
-                                d > 13.759995 ? '#32CD3280' :
-                                d > 9.98847 ? '#00808080' :
-                                d > 7.384747  ? '#00008B80' :
-                                d > 0   ? '#3F00FF80' :
+                            return d > 19.738367 ? '#c6771880' :
+                                d > 13.759995 ? '#f2952680' :
+                                d > 9.98847 ? '#fbb66480' :
+                                d > 7.384747  ? '#fdcc9280' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
 
                         
                 function getColorC2(d) {
-                            return d > 91.24837 ? '#FFFF0080' :
-                                d > 47.922602 ? '#32CD3280' :
-                                d > 36.87287 ? '#00808080' :
-                                d > 21.84181   ? '#00008B80' :
-                                d > 0   ? '#3F00FF80' :
+                            return d > 91.24837 ? '#c6771880' :
+                                d > 47.922602 ? '#f2952680' :
+                                d > 36.87287 ? '#fbb66480' :
+                                d > 21.84181   ? '#fdcc9280' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
                        
                 function getColorC3(d) {
-                            return d > 38.414316 ? '#FFFF0080' :
-                                d > 21.5726 ? '#32CD3280' :
-                                d > 13.521256 ? '#00808080' :
-                                d > 10.241322   ? '#00008B80' :
-                                d > 0   ? '#3F00FF80' :
+                            return d > 38.414316 ? '#c6771880' :
+                                d > 21.5726 ? '#f2952680' :
+                                d > 13.521256 ? '#fbb66480' :
+                                d > 10.241322   ? '#fdcc9280' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
                         
                 function getColorC4(d) {
-                            return d > 23.11834 ? '#FFFF0080' :
-                                d > 13.277113 ? '#32CD3280' :
-                                d > 10.000068? '#00808080' :
-                                d > 6.999349  ? '#00008B80' :
-                                d > 0   ? '#3F00FF80' :
+                            return d > 23.11834 ? '#c6771880' :
+                                d > 13.277113 ? '#f2952680' :
+                                d > 10.000068? '#fbb66480' :
+                                d > 6.999349  ? '#fdcc9280' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
                         
                 function getColorC5(d) {
-                            return d > 14.4705459 ? '#FFFF0080' :
-                                d > 10.778406 ? '#32CD3280' :
-                                d > 8.008124 ? '#00808080' :
-                                d > 5.762312  ? '#00008B80' :
-                                d > 0   ? '#3F00FF80' :
+                            return d > 14.4705459 ? '#c6771880' :
+                                d > 10.778406 ? '#f2952680' :
+                                d > 8.008124 ? '#fbb66480' :
+                                d > 5.762312  ? '#fdcc9280' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
                        
                 function getColorC6(d) {
-                            return d > 15.694647 ? '#FFFF0080' :
-                                d > 10.52095 ? '#32CD3280' :
-                                d > 7.690547 ? '#00808080' :
-                                d > 5.635748  ? '#00008B80' :
-                                d > 0   ? '#3F00FF80' :
+                            return d > 15.694647 ? '#c6771880' :
+                                d > 10.52095 ? '#f2952680' :
+                                d > 7.690547 ? '#fbb66480' :
+                                d > 5.635748  ? '#fdcc9280' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
                         
 
                 function getColorC7(d) {
-                            return d > 14.583169 ? '#FFFF0080' :
-                                d > 10.485102 ? '#32CD3280' :
-                                d > 7.614719 ? '#00808080' :
-                                d > 5.668966  ? '#00008B80' :
-                                d > 0   ? '#3F00FF80' :
+                            return d > 14.583169 ? '#c6771880' :
+                                d > 10.485102 ? '#f2952680' :
+                                d > 7.614719 ? '#fbb66480' :
+                                d > 5.668966  ? '#fdcc9280' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
                         
@@ -592,7 +586,17 @@
                                 fillColor: 'grey',
                                 weight: 2,
                                 opacity: 1,
-                                color: 'red',
+                                color: 'darkgreen',
+                                fillOpacity: 0.1
+                            };
+                        }
+
+                        function styleOff(feature) {
+                            return {
+                                fillColor: 'grey',
+                                weight: 2,
+                                opacity: 1,
+                                color: 'darkblue',
                                 fillOpacity: 0.1
                             };
                         }
@@ -607,53 +611,69 @@
                         var CSAI_Off= L.geoJson(Cdata, {style: styleC7, onEachFeature: onEachFeatureCOff}).bringToBack();
                         var deselect = L.geoJson(Mdata, {style: styleC1, onEachFeature: onEachFeatureCO}).bringToBack();
                         var ConClusters =  L.geoJson(onoutletcluster, {style: styleOn});
-                        var CoffClusters =  L.geoJson(offoutletcluster)
+                        var CoffClusters =  L.geoJson(offoutletcluster, {style: styleOff})
 
                         var basemapC1 = {
+                        "Neighborhood Density, On & Off Premise": CSAI,
+                        "Neighborhood Density, On Premise": CSAI_On,
+                        "Neighborhood Density, Off Premise": CSAI_Off,    
                         "Family Calls for Service": CSAI_family,
                         "Violent Crime Calls for Service": CSAI_violent,
                         "Alcohol Calls for Service": CSAI_alc,
                         "Narrowed Alcohol Calls for Service": CSAI_narralc,
-                        "Alcohol Outlet Density by Census Block": CSAI,
-                        "On Premise Alcohol Outlet Density by Census Block": CSAI_On,
-                        "Off Premise Alcohol Outlet Density by Census Block": CSAI_Off,
                         "Deselect Census Block Data": deselect
                            };  
 
 
                     var overlayMapsC1 = {
-                        "On Premise Outlets": on,
-                        "Off Premise Outlets": off,
-                        "On Premise Clusters": ConClusters,
-                        "Off Premise Clusters": CoffClusters,
-                        "Schools": schools, 
-                        "Alchol Related Crashes": crashes
+                        "Alcohol Outlets, On Premise": on,
+                        "Alcohol Outlets, Off Premise": off,
+                        "Alcohol Outlet Clusters, On Premise": ConClusters,
+                        "Alcohol Outlet Clusters, Off Premise": CoffClusters,
+                        "K-12 Schools, Pubic & Private": schools, 
+                        "Alchol-Related Automobile Crashes": crashes
                         };			
 
                     L.control.layers(basemapC1, overlayMapsC1).addTo(map1);	
 
-                    var legend1 = L.control({position: 'bottomleft'}); 
+//                    var legend1 = L.control({position: 'bottomleft'}); 
+//                        legend1.onAdd = function (map1) {
+//                            var div = L.DomUtil.create('div', 'info legend');
+//                            grades = [" On Premise", " Off Premise", " School", " Crash"],
+//                            labels = ["circleMarker(circle1)", "offMarker.png", "schoolMarker.png", "crashMarker.png"];
+//                        for (var i = 0; i < grades.length; i++) {
+//                               div.innerHTML +=
+//                              (" <img src="+ labels[i] +" height='20' width='20'>") + grades[i] +'<br>';
+//                                }
+// 
+//                        return div;
+//                         } ;
+//                         legend1.addTo(map1)
+
+
+var legend1 = L.control({position: 'bottomleft'}); 
                         legend1.onAdd = function (map1) {
                             var div = L.DomUtil.create('div', 'info legend');
-                            grades = [" On Premise", " Off Premise", " School", " Crash"],
-                            labels = ["onMarker.png", "offMarker.png", "schoolMarker.png", "crashMarker.png"];
+                            grades = [""],
+                            labels = ["pointLegend.png"];
                             for (var i = 0; i < grades.length; i++) {
                               div.innerHTML +=
-                              (" <img src="+ labels[i] +" height='20' width='20'>") + grades[i] +'<br>';
+                              (" <img src="+ labels[i] +" height='140' width='150'>") + grades[i] +'<br>';
                                 }
 
                          return div;
                         } ;
                         legend1.addTo(map1)
+                                            
 
                     var legend2 = L.control({position: 'bottomright'}); 
                         legend2.onAdd = function (map1) {
                             var div = L.DomUtil.create('div', 'info legend');
                             grades = [""],
-                            labels = ["DensityMarker.png"];
+                            labels = ["DensityLegend.png"];
                             for (var i = 0; i < grades.length; i++) {
                               div.innerHTML +=
-                              (" <img src="+ labels[i] +" height='140' width='95'>") + grades[i] +'<br>';
+                              (" <img src="+ labels[i] +" height=150 width=120>") + grades[i] +'<br>';
                                 }
 
                          return div;
