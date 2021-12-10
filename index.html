@@ -25,7 +25,7 @@
             <div class="navbar">
                 <a href="https://kvanselous.github.io/ARIDashboard/">Home</a>
                 <a href="https://kvanselous.github.io/ARIDashboard/Sales/">Sales</a>
-                <a href="https://publicsciencecollaborative.shinyapps.io/abd_tobacco/">Tobacco</a>
+                <a href="https://kvanselous.github.io/ARIDashboard/Tobacco/">Tobacco</a>
                 <a href="https://kvanselous.github.io/ARIDashboard/Violations/">Violations</a>
                 <a href="https://kvanselous.github.io/ARIDashboard/Health/">Health & Safety</a>
                 <a href="https://kvanselous.github.io/ARIDashboard/Deliverables/">Deliverale List</a>
@@ -225,8 +225,6 @@
                         }).addTo(map1);
 
 
-                var onclusterlayer = L.geoJson(onoutletcluster)
-                var offclusterlayer = L.geoJson(offoutletcluster)
                 var basemap1 = {
                         "Open Street Map": osm1
                            };  
@@ -235,10 +233,8 @@
 
                 var overlayMaps1 = {
                         "On Premise Outlets": on,
-                        "Off Premise Outlets": off,
-                        "On Premise Clusters": onclusterlayer,
-                        "Off Premise Clusters": offclusterlayer
-                        };			
+                        "Off Premise Outlets": off
+                    }; 
 
                     L.control.layers(basemap1, overlayMaps1).addTo(map1);	
 
