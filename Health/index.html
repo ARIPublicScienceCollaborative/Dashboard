@@ -25,8 +25,6 @@
             <script src="https://code.jquery.com/jquery-3.1.0.js"></script>  
             
             <!--KVS geoJSON-->    
-            <script src="BurlingtonCountCapitaDistanceSAI.geojson"></script>
-            <script src="CedarRapidsCountCapitaDistanceSAI.geojson"></script>
             <script src="StateOutlets.geojson"></script>
             <script src="BurlingtonSAI"></script>
             <script src ="MarshalltownSAI"></script>
@@ -221,7 +219,8 @@
         <h2>Burlington Outlets </h2>   
         <h4><b>Background:</b> Alcohol Outlet Density</h4>  
         <h4><b>Map:</b> The map to the right displays.  </h4>
-        <h4><b>Interactivity:</b> Click on.</h4>            
+        <h4><b>Interactivity:</b> Click on.</h4> 
+        <img src=BurlingtonSummary.png>           
         </div>
         <div id='map4' class="center"></div>
 
@@ -697,7 +696,7 @@
                                     mouseout: resetHighlightIO
                                 });
                                 if (feature.properties) {
-                                    layer.bindPopup("<b>SAI Outlets: </b>" + feature.properties.SAIoutlet_miles_12 );
+                                    layer.bindPopup("<b>SAI Outlets: </b>" + feature.properties.SAIoutlet_miles.toFixed(2) );
                                     }
                                     }
                         
@@ -707,7 +706,7 @@
                                     mouseout: resetHighlightIF
                                 });
                                 if (feature.properties) {
-                                    layer.bindPopup("<b>SAI Family Calls for Service: </b>" + feature.properties.SAIfamily_miles_12 );
+                                    layer.bindPopup("<b>SAI Family Calls for Service: </b>" + feature.properties.SAIfamily_miles.toFixed(2) );
                                     }
                                     }
                         
@@ -717,7 +716,7 @@
                                     mouseout: resetHighlightIV
                                 });
                                 if (feature.properties) {
-                                    layer.bindPopup("<b>SAI Violent Crime Calls for Service: </b>" + feature.properties.SAIviolent_miles_12  );
+                                    layer.bindPopup("<b>SAI Violent Crime Calls for Service: </b>" + feature.properties.SAIviolent_miles.toFixed(2) );
                                     }
                                     }
 
@@ -727,7 +726,7 @@
                                     mouseout: resetHighlightIA
                                 });
                                 if (feature.properties) {
-                                    layer.bindPopup("<b>SAI Alcohol Crime Calls for Service: </b>" + feature.properties.SAIalc1_miles_12 );
+                                    layer.bindPopup("<b>SAI Alcohol Crime Calls for Service: </b>" + feature.properties.SAIalc1_miles.toFixed(2) );
                                     }
                                     }
 
@@ -737,7 +736,7 @@
                                     mouseout: resetHighlightINA
                                 });
                                 if (feature.properties) {
-                                    layer.bindPopup("<b>SAI Narrowed Alcohol Crime Calls for Service: </b>" + feature.properties.SAInarralc1_miles_12 );
+                                    layer.bindPopup("<b>SAI Narrowed Alcohol Crime Calls for Service: </b>" + feature.properties.SAInarralc1_miles.toFixed(2) );
                                     }
                                     }
 
@@ -747,7 +746,7 @@
                                     mouseout: resetHighlightIOn
                                 });
                                 if (feature.properties) {
-                                    layer.bindPopup("<b>SAI On-Premise Alcohol Outlets: </b>" + feature.properties.SAIOnoutlet_miles_12 );
+                                    layer.bindPopup("<b>SAI On-Premise Alcohol Outlets: </b>" + feature.properties.SAIOnoutlet_miles.toFixed(2) );
                                     }
                                     }
 
@@ -757,7 +756,7 @@
                                     mouseout: resetHighlightIOff
                                 });
                                 if (feature.properties) {
-                                    layer.bindPopup("<b>SAI Off-Premise Alcohol Outlets: </b>" + feature.properties.SAIOffoutlet_miles_12 );
+                                    layer.bindPopup("<b>SAI Off-Premise Alcohol Outlets: </b>" + feature.properties.SAIOffoutlet_miles.toFixed(2) );
                                     }
                                     }
 
@@ -862,7 +861,7 @@
                         
                         function styleI1(feature) {
                             return {
-                                fillColor: getColorI1((feature.properties.SAIoutlet_miles_12)),
+                                fillColor: getColorI1((feature.properties.SAIoutlet_miles)),
                                 weight: 2,
                                 opacity: 1,
                                 color: 'black',
@@ -872,7 +871,7 @@
 
                         function styleI2(feature) {
                             return {
-                                fillColor: getColorI2((feature.properties.SAIfamily_miles_12)),
+                                fillColor: getColorI2((feature.properties.SAIfamily_miles)),
                                 weight: 2,
                                 opacity: 1,
                                 color: 'black',
@@ -882,7 +881,7 @@
 
                         function styleI3(feature) {
                             return {
-                                fillColor: getColorI3((feature.properties.SAIviolent_miles_12)),
+                                fillColor: getColorI3((feature.properties.SAIviolent_miles)),
                                 weight: 2,
                                 opacity: 1,
                                 color: 'black',
@@ -891,7 +890,7 @@
                         }
                         function styleI4(feature) {
                             return {
-                                fillColor: getColorI4((feature.properties.SAIalc1_miles_12)),
+                                fillColor: getColorI4((feature.properties.SAIalc1_miles)),
                                 weight: 2,
                                 opacity: 1,
                                 color: 'black',
@@ -901,7 +900,7 @@
 
                         function styleI5(feature) {
                             return {
-                                fillColor: getColorI5((feature.properties.SAInarralc1_miles_12)),
+                                fillColor: getColorI5((feature.properties.SAInarralc1_miles)),
                                 weight: 2,
                                 opacity: 1,
                                 color: 'black',
@@ -911,7 +910,7 @@
                        
                         function styleI6(feature) {
                             return {
-                                fillColor: getColorI6((feature.properties.SAIOnoutlet_miles_12)),
+                                fillColor: getColorI6((feature.properties.SAIOnoutlet_miles)),
                                 weight: 2,
                                 opacity: 1,
                                 color: 'black',
@@ -921,7 +920,7 @@
 
                         function styleI7(feature) {
                             return {
-                                fillColor: getColorI7((feature.properties.SAIOffoutlet_miles_12)),
+                                fillColor: getColorI7((feature.properties.SAIOffoutlet_miles)),
                                 weight: 2,
                                 opacity: 1,
                                 color: 'black',
