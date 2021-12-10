@@ -573,21 +573,22 @@
 
                         function styleOn(feature) {
                             return {
-                                fillColor: 'grey',
-                                weight: 2,
+                                fillColor: 'darkgreen',
+                                weight: 3,
                                 opacity: 1,
+                                radius: 10, 
                                 color: 'darkgreen',
-                                fillOpacity: 0.1
+                                fillOpacity: 0.2
                             };
                         }
 
                         function styleOff(feature) {
                             return {
-                                fillColor: 'grey',
-                                weight: 2,
+                                fillColor: 'darkblue',
+                                weight: 3,
                                 opacity: 1,
                                 color: 'darkblue',
-                                fillOpacity: 0.1
+                                fillOpacity: 0.2
                             };
                         }
 
@@ -648,7 +649,7 @@ var legend1 = L.control({position: 'bottomleft'});
                             labels = ["pointLegend.png"];
                             for (var i = 0; i < grades.length; i++) {
                               div.innerHTML +=
-                              (" <img src="+ labels[i] +" height='120' width='110'>") + grades[i] +'<br>';
+                              (" <img src="+ labels[i] +" height='120' width='140'>") + grades[i] +'<br>';
                                 }
 
                          return div;
