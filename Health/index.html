@@ -810,66 +810,57 @@ var legend1 = L.control({position: 'bottomleft'});
 
                 
                         function getColorI1(d) {
-                            return d > 17.351978 ? '#bf5b1d90' :
-                                d > 10.687996 ? '#e4804390' :
-                                d > 8.498744 ? '#d6cdcd90' :
-                                d > 7.168205  ? '#84a7c490' :
-                                d > 0   ? '#547a9990' :
+                            return  d > 10.818359 ? '#c67718' :
+                                d > 8.117004  ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
-
+                        
                         
                         function getColorI2(d) {
-                            return d > 63.849306 ? '#bf5b1d90' :
-                                d > 36.28569 ? '#e4804390' :
-                                d > 22.5643 ? '#d6cdcd90' :
-                                d > 16.926735   ? '#84a7c490' :
-                                d > 0   ? '#547a9990' :
+                            return  d > 47.062782 ? '#c67718' :
+                                d > 21.856973   ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
+                        
                        
                          function getColorI3(d) {
-                            return d > 32.043519 ? '#bf5b1d90' :
-                                d > 15.275715 ? '#e4804390' :
-                                d > 13.154854 ? '#d6cdcd90' :
-                                d > 7.708744   ? '#84a7c490' :
-                                d > 0   ? '#547a9990' :
+                            return  d > 17.47147 ? '#c67718' :
+                                d > 11.108533   ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
+                        
                         
                         function getColorI4(d) {
-                            return d > 36.045128 ? '#bf5b1d90' :
-                                d > 20.188977 ? '#e4804390' :
-                                d > 13.600697 ? '#d6cdcd90' :
-                                d > 8.775603  ? '#84a7c490' :
-                                d > 0   ? '#547a9990' :
+                            return  d > 21.468809 ? '#c67718' :
+                                d > 12.954804   ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
                         
+                        
                         function getColorI5(d) {
-                            return d > 36.045128 ? '#bf5b1d90' :
-                                d > 18.977646 ? '#e4804390' :
-                                d > 12.954804 ? '#d6cdcd90' :
-                                d > 8.641238   ? '#84a7c490' :
-                                d > 0   ? '#547a9990' :
+                            return  d > 21.024899 ? '#c67718' :
+                                d > 12.55983  ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
+                        
                        
                          function getColorI6(d) {
-                            return d > 15.438912 ? '#bf5b1d90' :
-                                d > 8.448983 ? '#bf5b1d90' :
-                                d > 7.500324 ? '#d6cdcd90' :
-                                d > 5.593908   ? '#84a7c490' :
-                                d > 0   ? '#547a9990' :
+                            return  d > 10.43857 ? '#c67718' :
+                                d > 6.97192   ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
+                        
 
                         function getColorI7(d) {
-                            return d > 13.106865 ? '#bf5b1d90' :
-                                d > 8.187953 ? '#e4804390' :
-                                d > 7.199369 ? '#d6cdcd90' :
-                                d > 5.611992   ? '#84a7c490' :
-                                d > 0   ? '#547a9990' :
+                            return  d > 8.558648 ? '#c67718' :
+                                d > 7.012553   ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
                         
@@ -984,22 +975,21 @@ var legend1 = L.control({position: 'bottomleft'});
                             labels = ["pointLegend.png"];
                             for (var i = 0; i < grades.length; i++) {
                               div.innerHTML +=
-                              (" <img src="+ labels[i] +" height='140' width='150'>") + grades[i] +'<br>';
+                              (" <img src="+ labels[i] +" height='120' width='140'>") + grades[i] +'<br>';
                                 }
 
                          return div;
                         } ;
                         legend1.addTo(map2)
-                                            
 
                     var legend2 = L.control({position: 'bottomright'}); 
                         legend2.onAdd = function (map1) {
                             var div = L.DomUtil.create('div', 'info legend');
                             grades = [""],
-                            labels = ["DensityLegend2.png"];
+                            labels = ["DensityLegend.png"];
                             for (var i = 0; i < grades.length; i++) {
                               div.innerHTML +=
-                              (" <img src="+ labels[i] +" height='140' width='95'>") + grades[i] +'<br>';
+                              (" <img src="+ labels[i] +" height=150 width=120>") + grades[i] +'<br>';
                                 }
 
                          return div;
@@ -1143,67 +1133,60 @@ var legend1 = L.control({position: 'bottomleft'});
                                 
 
                         function getColorm1(d) {
-                            return d > 18.748103 ? '#FFFF0080' :
-                                d > 14.884174 ? '#32CD3280' :
-                                d > 11.323752  ? '#008080' :
-                                d > 7.133859   ? '#00008B80' :
-                                d > 0   ? '#3F00FF80' :
+                            return  d > 15.056157 ? '#c67718' :
+                                d > 9.340565   ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
+                        
                         
                         function getColorm2(d) {
-                            return d > 131.430312 ? '#FFFF0080' :
-                                d > 68.919122 ? '#32CD3280' :
-                                d > 35.15401 ? '#00808080' :
-                                d > 12.566793   ? '#00008B80' :
-                                d > 0   ? '#3F00FF80' :
+                            return  d > 70.338594 ? '#c67718' :
+                                d > 28.471514   ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
+                        
                        
                          function getColorm3(d) {
-                            return d > 87.49023 ? '#FFFF0080' :
-                                d > 49.48195 ? '#32CD3280' :
-                                d > 28.34843 ? '#00808080' :
-                                d > 12.406792   ? '#00008B80' :
-                                d > 0   ? '#3F00FF80' :
+                            return  d > 57.488513 ? '#c67718' :
+                                d > 20.215948  ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
+                        
                         
                         function getColorm4(d) {
-                            return d > 42.952513 ? '#FFFF0080' :
-                                d > 29.78173 ? '#32CD3280' :
-                                d > 17.067713 ? '#00808080' :
-                                d > 9.205279   ? '#00008B80' :
-                                d > 0   ? '#3F00FF80' :
+                            return  d > 30.389875 ? '#c67718' :
+                                d > 15.68   ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
                         
+                        
                         function getColorm5(d) {
-                            return d > 42.952513 ? '#FFFF0080' :
-                                d > 29.78173 ? '#32CD3280' :
-                                d > 17.067713 ? '#00808080' :
-                                d > 9.205279   ? '#00008B80' :
-                                d > 0   ? '#3F00FF80' :
+                            return  d > 30.389875 ? '#c67718' :
+                                d > 15.68   ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
+                        
                        
                          function getColorm6(d) {
-                            return d > 14.822238 ? '#FFFF0080' :
-                                d > 11.768905 ? '#32CD3280' :
-                                d > 10.103444 ? '#00808080' :
-                                d > 6.377327   ? '#00008B80' :
-                                d > 0   ? '#3F00FF80' :
+                            return  d > 12.41227 ? '#c67718' :
+                                d > 8.577117   ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
+                        
 
                         function getColorm7(d) {
-                            return d > 13.689378 ? '#FFFF0080' :
-                                d > 10.551444 ? '#32CD3280' :
-                                d > 8.476797 ? '#00808080' :
-                                d > 6.196528   ? '#00008B80' :
-                                d > 0   ? '#3F00FF80' :
+                            return  d > 12.124179 ? '#c67718' :
+                                d > 7.963968  ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
+                        
 
                         function stylem1(feature) {
                             return {
@@ -1312,11 +1295,11 @@ var legend1 = L.control({position: 'bottomleft'});
                     var legend1 = L.control({position: 'bottomleft'}); 
                         legend1.onAdd = function (map1) {
                             var div = L.DomUtil.create('div', 'info legend');
-                            grades = [" On Premise", " Off Premise", " School", " Crash"],
-                            labels = ["onMarker.png", "offMarker.png", "schoolMarker.png", "crashMarker.png"];
+                            grades = [""],
+                            labels = ["pointLegend.png"];
                             for (var i = 0; i < grades.length; i++) {
                               div.innerHTML +=
-                              (" <img src="+ labels[i] +" height='20' width='20'>") + grades[i] +'<br>';
+                              (" <img src="+ labels[i] +" height='120' width='140'>") + grades[i] +'<br>';
                                 }
 
                          return div;
@@ -1327,15 +1310,15 @@ var legend1 = L.control({position: 'bottomleft'});
                         legend2.onAdd = function (map1) {
                             var div = L.DomUtil.create('div', 'info legend');
                             grades = [""],
-                            labels = ["DensityMarker.png"];
+                            labels = ["DensityLegend.png"];
                             for (var i = 0; i < grades.length; i++) {
                               div.innerHTML +=
-                              (" <img src="+ labels[i] +" height='140' width='95'>") + grades[i] +'<br>';
+                              (" <img src="+ labels[i] +" height=150 width=120>") + grades[i] +'<br>';
                                 }
 
                          return div;
                         } ;
-                        legend2.addTo(map3)   
+                        legend2.addTo(map3) 
                  
                  //Burlington Maps
                  var map4 = L.map('map4').setView([40.8077, -91.1129], 13);
@@ -1471,68 +1454,59 @@ var legend1 = L.control({position: 'bottomleft'});
                         }).setZIndex(1);
 
                         function getColorb1(d) {
-                            return d > 21.311043  ? '#FFFF0080' :
-                                d > 17.145912 ? '#32CD3280' :
-                                d > 11.940675  ? '#00808080' :
-                                d > 9.771186   ? '#00008B80' :
-                                d > 0   ? '#3F00FF80' :
+                            return  d > 18.655517 ? '#c67718' :
+                                d > 11.181537   ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
-                                    }
-
+                                            }
+                        
                         
                         function getColorb2(d) {
-                            return d > 127.541512 ? '#FFFF0080' :
-                                d > 83.830082 ? '#32CD3280' :
-                                d > 44.055208 ? '#00808080' :
-                                d > 24.764626   ? '#00008B80' :
-                                d > 0   ? '#3F00FF80' :
+                            return  d > 93.572398  ? '#c67718' :
+                                d > 41.012965  ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
+                        
                        
                          function getColorb3(d) {
-                            return d > 61.028 ? '#FFFF0080' :
-                                d > 38.790514 ? '#32CD3280' :
-                                d > 22.370265 ? '#00808080' :
-                                d > 13.877582   ? '#00008B80' :
-                                d > 0   ? '#3F00FF80' :
+                            return  d > 42.339382 ? '#c67718' :
+                                d > 15.42154   ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
+                        
                         
                         function getColorb4(d) {
-                            return d > 26.0964 ? '#FFFF0080' :
-                                d > 21.806145 ? '#32CD3280' :
-                                d > 17.699075 ? '#00808080' :
-                                d > 12.314822  ? '#00008B80' :
-                                d > 0   ? '#3F00FF80' :
+                            return  d > 21.988759 ? '#c67718' :
+                                d > 15.697262  ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
                         
+                        
                         function getColorb5(d) {
-                            return d > 23.822664 ? '#FFFF0080' :
-                                d > 19.034324 ? '#32CD3280' :
-                                d > 15.421309 ? '#00808080' :
-                                d > 9.961678   ? '#00008B80' :
-                                d > 0   ? '#3F00FF80' :
+                            return  d > 21.806145 ? '#c67718' :
+                                d > 14.388295  ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
-                       
+                        
                          function getColorb6(d) {
-                            return d > 13.978833 ? '#FFFF0080' :
-                                d > 12.908325 ? '#32CD3280' :
-                                d > 10.505069 ? '#00808080' :
-                                d > 7.58905   ? '#00008B80' :
-                                d > 0   ? '#3F00FF80' :
+                            return  d > 13.31623 ? '#c67718' :
+                                d > 8.846507   ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
+                        
 
                         function getColorb7(d) {
-                            return d > 16.713328 ? '#FFFF0080' :
-                                d > 11.244689 ? '#32CD3280' :
-                                d > 8.216485 ? '#00808080' :
-                                d > 5.693093   ? '#00008B80' :
-                                d > 0   ? '#3F00FF80' :
+                            return  d > 11.594403 ? '#c67718' :
+                                d > 7.737363  ? '#fbb664' :
+                                d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
+                        
 
                         function styleb1(feature) {
                             return {
@@ -1640,28 +1614,28 @@ var legend1 = L.control({position: 'bottomleft'});
 
                     L.control.layers(basemapB1, overlayMapsB1).addTo(map4);	
 
-                    var legend1 = L.control({position: 'bottomleft'}); 
-                        legend1.onAdd = function (map1) {
+                    var legend4 = L.control({position: 'bottomleft'}); 
+                        legend4.onAdd = function (map1) {
                             var div = L.DomUtil.create('div', 'info legend');
-                            grades = [" On Premise", " Off Premise", " School", " Crash"],
-                            labels = ["onMarker.png", "offMarker.png", "schoolMarker.png", "crashMarker.png"];
+                            grades = [""],
+                            labels = ["pointLegend.png"];
                             for (var i = 0; i < grades.length; i++) {
                               div.innerHTML +=
-                              (" <img src="+ labels[i] +" height='20' width='20'>") + grades[i] +'<br>';
+                              (" <img src="+ labels[i] +" height='120' width='140'>") + grades[i] +'<br>';
                                 }
 
                          return div;
                         } ;
-                        legend1.addTo(map4)
+                        legend4.addTo(map4)
 
                     var legend2 = L.control({position: 'bottomright'}); 
                         legend2.onAdd = function (map1) {
                             var div = L.DomUtil.create('div', 'info legend');
                             grades = [""],
-                            labels = ["DensityMarker.png"];
+                            labels = ["DensityLegend.png"];
                             for (var i = 0; i < grades.length; i++) {
                               div.innerHTML +=
-                              (" <img src="+ labels[i] +" height='140' width='95'>") + grades[i] +'<br>';
+                              (" <img src="+ labels[i] +" height=150 width=120>") + grades[i] +'<br>';
                                 }
 
                          return div;
