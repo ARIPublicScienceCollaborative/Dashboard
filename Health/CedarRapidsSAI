@@ -145,9 +145,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 1,
-        "Join_Count" : 1,
-        "TARGET_FID" : 1,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130017002",
         "SAIoutlet_miles" : 9.0769574642181396,
         "SAIOnoutlet_miles" : 6.0293006300926208,
         "SAIOffoutlet_miles" : 9.0769574642181396,
@@ -156,7 +154,15 @@ var Cdata = {
         "SAIalc1_miles" : 11.41906774044037,
         "SAInarralc1_miles" : 10.778672456741329,
         "Shape_Length" : 0.030836540409467379,
-        "Shape_Area" : 3.9102719200300428e-05
+        "Shape_Area" : 3.9102719200300428e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 0,
+        "family_count" : 38,
+        "violent_count" : 1,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : null
       }
     },
     {
@@ -571,9 +577,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 2,
-        "Join_Count" : 1,
-        "TARGET_FID" : 2,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130002033",
         "SAIoutlet_miles" : 9.2991092205047607,
         "SAIOnoutlet_miles" : 6.5062631368637076,
         "SAIOffoutlet_miles" : 7.6093295216560364,
@@ -582,7 +586,15 @@ var Cdata = {
         "SAIalc1_miles" : 10.00006723403931,
         "SAInarralc1_miles" : 7.3886037468910217,
         "Shape_Length" : 0.054049720162410921,
-        "Shape_Area" : 5.6227297837591703e-05
+        "Shape_Area" : 5.6227297837591703e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 0,
+        "family_count" : 9,
+        "violent_count" : 0,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : null
       }
     },
     {
@@ -1009,9 +1021,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 3,
-        "Join_Count" : 1,
-        "TARGET_FID" : 3,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130002072",
         "SAIoutlet_miles" : 9.9247071743011475,
         "SAIOnoutlet_miles" : 8.571723461151123,
         "SAIOffoutlet_miles" : 7.3176989555358887,
@@ -1020,7 +1030,15 @@ var Cdata = {
         "SAIalc1_miles" : 10.014603972434999,
         "SAInarralc1_miles" : 8.229778528213501,
         "Shape_Length" : 0.092421021166496808,
-        "Shape_Area" : 0.0002767569439437429
+        "Shape_Area" : 0.0002767569439437429,
+        "Onoutlet_count" : 3,
+        "Offoutlet_count" : 2,
+        "outlet_count" : 5,
+        "family_count" : 84,
+        "violent_count" : 21,
+        "alc1_count" : 9,
+        "narralc1_count" : 4,
+        "crash_count" : null
       }
     },
     {
@@ -1449,9 +1467,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 4,
-        "Join_Count" : 1,
-        "TARGET_FID" : 4,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130002073",
         "SAIoutlet_miles" : 16.959040522575378,
         "SAIOnoutlet_miles" : 16.862528324127201,
         "SAIOffoutlet_miles" : 6.8647043108940116,
@@ -1460,7 +1476,15 @@ var Cdata = {
         "SAIalc1_miles" : 11.741174101829531,
         "SAInarralc1_miles" : 11.233456015586849,
         "Shape_Length" : 0.1115880174359308,
-        "Shape_Area" : 0.00030763124266297836
+        "Shape_Area" : 0.00030763124266297836,
+        "Onoutlet_count" : 10,
+        "Offoutlet_count" : 4,
+        "outlet_count" : 14,
+        "family_count" : 132,
+        "violent_count" : 16,
+        "alc1_count" : 11,
+        "narralc1_count" : 7,
+        "crash_count" : 3
       }
     },
     {
@@ -1687,9 +1711,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 5,
-        "Join_Count" : 1,
-        "TARGET_FID" : 5,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130011022",
         "SAIoutlet_miles" : 4.3711282014846802,
         "SAIOnoutlet_miles" : 4.0503924489021301,
         "SAIOffoutlet_miles" : 4.1582277417182922,
@@ -1698,7 +1720,15 @@ var Cdata = {
         "SAIalc1_miles" : 4.3959736227989197,
         "SAInarralc1_miles" : 4.2191388010978699,
         "Shape_Length" : 0.050514272730596721,
-        "Shape_Area" : 0.00014046013584980593
+        "Shape_Area" : 0.00014046013584980593,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 0,
+        "family_count" : 61,
+        "violent_count" : 4,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : 2
       }
     },
     {
@@ -1997,9 +2027,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 6,
-        "Join_Count" : 1,
-        "TARGET_FID" : 6,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130011013",
         "SAIoutlet_miles" : 7.0530360341072083,
         "SAIOnoutlet_miles" : 5.6357466578483582,
         "SAIOffoutlet_miles" : 6.8301684260368347,
@@ -2008,7 +2036,15 @@ var Cdata = {
         "SAIalc1_miles" : 7.2538741827011108,
         "SAInarralc1_miles" : 7.046174943447113,
         "Shape_Length" : 0.05177258217937248,
-        "Shape_Area" : 0.00011410343870636329
+        "Shape_Area" : 0.00011410343870636329,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 0,
+        "family_count" : 48,
+        "violent_count" : 4,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : null
       }
     },
     {
@@ -2423,9 +2459,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 7,
-        "Join_Count" : 1,
-        "TARGET_FID" : 7,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130009021",
         "SAIoutlet_miles" : 4.7414346933364868,
         "SAIOnoutlet_miles" : 4.68210169672966,
         "SAIOffoutlet_miles" : 3.472384005784988,
@@ -2434,7 +2468,15 @@ var Cdata = {
         "SAIalc1_miles" : 4.1600868701934806,
         "SAInarralc1_miles" : 3.50445356965065,
         "Shape_Length" : 0.084385646175009987,
-        "Shape_Area" : 0.00034337581961464502
+        "Shape_Area" : 0.00034337581961464502,
+        "Onoutlet_count" : 2,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 2,
+        "family_count" : 18,
+        "violent_count" : 0,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : 1
       }
     },
     {
@@ -2793,9 +2835,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 8,
-        "Join_Count" : 1,
-        "TARGET_FID" : 8,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130008002",
         "SAIoutlet_miles" : 54.828911781311042,
         "SAIOnoutlet_miles" : 33.907242298126221,
         "SAIOffoutlet_miles" : 33.720078229904168,
@@ -2804,7 +2844,15 @@ var Cdata = {
         "SAIalc1_miles" : 64.505958080291748,
         "SAInarralc1_miles" : 51.858382940292358,
         "Shape_Length" : 0.060930259731640665,
-        "Shape_Area" : 0.00011534520095517996
+        "Shape_Area" : 0.00011534520095517996,
+        "Onoutlet_count" : 8,
+        "Offoutlet_count" : 4,
+        "outlet_count" : 12,
+        "family_count" : 56,
+        "violent_count" : 16,
+        "alc1_count" : 21,
+        "narralc1_count" : 3,
+        "crash_count" : 1
       }
     },
     {
@@ -3199,9 +3247,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 9,
-        "Join_Count" : 1,
-        "TARGET_FID" : 9,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130009011",
         "SAIoutlet_miles" : 8.3184965848922729,
         "SAIOnoutlet_miles" : 7.0450260043144226,
         "SAIOffoutlet_miles" : 7.6691093444824219,
@@ -3210,7 +3256,15 @@ var Cdata = {
         "SAIalc1_miles" : 7.790844202041626,
         "SAInarralc1_miles" : 7.790844202041626,
         "Shape_Length" : 0.088964990606729216,
-        "Shape_Area" : 0.00017425995803679333
+        "Shape_Area" : 0.00017425995803679333,
+        "Onoutlet_count" : 8,
+        "Offoutlet_count" : 6,
+        "outlet_count" : 14,
+        "family_count" : 116,
+        "violent_count" : 11,
+        "alc1_count" : 13,
+        "narralc1_count" : 9,
+        "crash_count" : null
       }
     },
     {
@@ -3581,9 +3635,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 10,
-        "Join_Count" : 1,
-        "TARGET_FID" : 10,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130009012",
         "SAIoutlet_miles" : 6.1270610690116882,
         "SAIOnoutlet_miles" : 6.0392274856567383,
         "SAIOffoutlet_miles" : 4.104036271572113,
@@ -3592,7 +3644,15 @@ var Cdata = {
         "SAIalc1_miles" : 7.1628734469413757,
         "SAInarralc1_miles" : 4.2206524014472961,
         "Shape_Length" : 0.098328843768824753,
-        "Shape_Area" : 0.00020664763696982819
+        "Shape_Area" : 0.00020664763696982819,
+        "Onoutlet_count" : 1,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 1,
+        "family_count" : 25,
+        "violent_count" : 2,
+        "alc1_count" : 2,
+        "narralc1_count" : 0,
+        "crash_count" : null
       }
     },
     {
@@ -3803,9 +3863,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 11,
-        "Join_Count" : 1,
-        "TARGET_FID" : 11,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130009013",
         "SAIoutlet_miles" : 8.4159930944442749,
         "SAIOnoutlet_miles" : 7.1539962887763977,
         "SAIOffoutlet_miles" : 7.9519534707069397,
@@ -3814,7 +3872,15 @@ var Cdata = {
         "SAIalc1_miles" : 8.7133587598800659,
         "SAInarralc1_miles" : 8.0081231594085693,
         "Shape_Length" : 0.03632962477990688,
-        "Shape_Area" : 5.8465505873263143e-05
+        "Shape_Area" : 5.8465505873263143e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 0,
+        "family_count" : 70,
+        "violent_count" : 7,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : null
       }
     },
     {
@@ -4109,9 +4175,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 12,
-        "Join_Count" : 1,
-        "TARGET_FID" : 12,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130009014",
         "SAIoutlet_miles" : 6.6902271509170532,
         "SAIOnoutlet_miles" : 6.5069226026535034,
         "SAIOffoutlet_miles" : 5.6912627816200256,
@@ -4120,7 +4184,15 @@ var Cdata = {
         "SAIalc1_miles" : 9.6643135547637939,
         "SAInarralc1_miles" : 5.9515412449836731,
         "Shape_Length" : 0.050118993823907436,
-        "Shape_Area" : 9.5600046172577812e-05
+        "Shape_Area" : 9.5600046172577812e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 0,
+        "family_count" : 13,
+        "violent_count" : 0,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : 2
       }
     },
     {
@@ -4371,9 +4443,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 13,
-        "Join_Count" : 1,
-        "TARGET_FID" : 13,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130009022",
         "SAIoutlet_miles" : 7.729488730430603,
         "SAIOnoutlet_miles" : 6.5284024477004996,
         "SAIOffoutlet_miles" : 7.2484151721000671,
@@ -4382,7 +4452,15 @@ var Cdata = {
         "SAIalc1_miles" : 7.7526791095733643,
         "SAInarralc1_miles" : 6.3350328803062439,
         "Shape_Length" : 0.047644917337335391,
-        "Shape_Area" : 0.00014658534606945415
+        "Shape_Area" : 0.00014658534606945415,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 0,
+        "family_count" : 17,
+        "violent_count" : 0,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : null
       }
     },
     {
@@ -5179,9 +5257,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 14,
-        "Join_Count" : 1,
-        "TARGET_FID" : 14,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130010011",
         "SAIoutlet_miles" : 1.8090517669916151,
         "SAIOnoutlet_miles" : 1.7949988096952441,
         "SAIOffoutlet_miles" : 1.604608491063118,
@@ -5190,7 +5266,15 @@ var Cdata = {
         "SAIalc1_miles" : 1.793664336204529,
         "SAInarralc1_miles" : 1.792723700404167,
         "Shape_Length" : 0.24863882348713331,
-        "Shape_Area" : 0.00044665007566854894
+        "Shape_Area" : 0.00044665007566854894,
+        "Onoutlet_count" : 1,
+        "Offoutlet_count" : 1,
+        "outlet_count" : 2,
+        "family_count" : 77,
+        "violent_count" : 4,
+        "alc1_count" : 9,
+        "narralc1_count" : 1,
+        "crash_count" : 1
       }
     },
     {
@@ -5433,9 +5517,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 15,
-        "Join_Count" : 1,
-        "TARGET_FID" : 15,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130010022",
         "SAIoutlet_miles" : 8.8142035007476807,
         "SAIOnoutlet_miles" : 6.5617747902870178,
         "SAIOffoutlet_miles" : 7.614717960357666,
@@ -5444,7 +5526,15 @@ var Cdata = {
         "SAIalc1_miles" : 11.04766178131104,
         "SAInarralc1_miles" : 7.017118513584137,
         "Shape_Length" : 0.032949937076488113,
-        "Shape_Area" : 4.5361294017845818e-05
+        "Shape_Area" : 4.5361294017845818e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 0,
+        "family_count" : 20,
+        "violent_count" : 0,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : null
       }
     },
     {
@@ -5635,9 +5725,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 16,
-        "Join_Count" : 1,
-        "TARGET_FID" : 16,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130010023",
         "SAIoutlet_miles" : 8.5941495895385742,
         "SAIOnoutlet_miles" : 6.7265810072422028,
         "SAIOffoutlet_miles" : 6.7473230957984924,
@@ -5646,7 +5734,15 @@ var Cdata = {
         "SAIalc1_miles" : 7.9231381416320801,
         "SAInarralc1_miles" : 6.6084351539611816,
         "Shape_Length" : 0.038025600801438297,
-        "Shape_Area" : 5.8668447492009608e-05
+        "Shape_Area" : 5.8668447492009608e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 0,
+        "family_count" : 22,
+        "violent_count" : 2,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : null
       }
     },
     {
@@ -6137,9 +6233,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 17,
-        "Join_Count" : 1,
-        "TARGET_FID" : 17,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130015001",
         "SAIoutlet_miles" : 18.011455893516541,
         "SAIOnoutlet_miles" : 9.8037395477294922,
         "SAIOffoutlet_miles" : 16.127708315849301,
@@ -6148,7 +6242,15 @@ var Cdata = {
         "SAIalc1_miles" : 16.21903216838837,
         "SAInarralc1_miles" : 12.885955035686489,
         "Shape_Length" : 0.05866826585116762,
-        "Shape_Area" : 8.2539490490298961e-05
+        "Shape_Area" : 8.2539490490298961e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 2,
+        "outlet_count" : 2,
+        "family_count" : 82,
+        "violent_count" : 7,
+        "alc1_count" : 1,
+        "narralc1_count" : 1,
+        "crash_count" : 3
       }
     },
     {
@@ -6431,9 +6533,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 18,
-        "Join_Count" : 1,
-        "TARGET_FID" : 18,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130016001",
         "SAIoutlet_miles" : 5.3739017248153687,
         "SAIOnoutlet_miles" : 3.7635191380977631,
         "SAIOffoutlet_miles" : 5.1704229712486267,
@@ -6442,7 +6542,15 @@ var Cdata = {
         "SAIalc1_miles" : 5.2823492884635934,
         "SAInarralc1_miles" : 5.0782862305641174,
         "Shape_Length" : 0.052927250374945514,
-        "Shape_Area" : 0.00016654505073064203
+        "Shape_Area" : 0.00016654505073064203,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 0,
+        "family_count" : 14,
+        "violent_count" : 0,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : null
       }
     },
     {
@@ -6605,9 +6713,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 19,
-        "Join_Count" : 1,
-        "TARGET_FID" : 19,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130016003",
         "SAIoutlet_miles" : 13.380209445953369,
         "SAIOnoutlet_miles" : 5.9142083525657654,
         "SAIOffoutlet_miles" : 11.37053322792053,
@@ -6616,7 +6722,15 @@ var Cdata = {
         "SAIalc1_miles" : 17.418381929397579,
         "SAInarralc1_miles" : 14.506149768829349,
         "Shape_Length" : 0.037172421677063971,
-        "Shape_Area" : 6.2198409011716304e-05
+        "Shape_Area" : 6.2198409011716304e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 0,
+        "family_count" : 48,
+        "violent_count" : 3,
+        "alc1_count" : 2,
+        "narralc1_count" : 2,
+        "crash_count" : 1
       }
     },
     {
@@ -6973,9 +7087,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 20,
-        "Join_Count" : 1,
-        "TARGET_FID" : 20,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130016004",
         "SAIoutlet_miles" : 6.3521875143051147,
         "SAIOnoutlet_miles" : 3.8167039155960079,
         "SAIOffoutlet_miles" : 5.6689645349979401,
@@ -6984,7 +7096,15 @@ var Cdata = {
         "SAIalc1_miles" : 6.6593892574310303,
         "SAInarralc1_miles" : 6.0348462462425232,
         "Shape_Length" : 0.063354611533075103,
-        "Shape_Area" : 0.00011321807286315923
+        "Shape_Area" : 0.00011321807286315923,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 0,
+        "family_count" : 9,
+        "violent_count" : 1,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : null
       }
     },
     {
@@ -7243,9 +7363,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 21,
-        "Join_Count" : 1,
-        "TARGET_FID" : 21,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130010031",
         "SAIoutlet_miles" : 19.027033805847172,
         "SAIOnoutlet_miles" : 11.92964059114456,
         "SAIOffoutlet_miles" : 13.900991797447199,
@@ -7254,7 +7372,15 @@ var Cdata = {
         "SAIalc1_miles" : 36.972071170806878,
         "SAInarralc1_miles" : 8.6926818490028381,
         "Shape_Length" : 0.039846900491718393,
-        "Shape_Area" : 4.0689491720233693e-05
+        "Shape_Area" : 4.0689491720233693e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 0,
+        "family_count" : 24,
+        "violent_count" : 0,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : null
       }
     },
     {
@@ -7413,9 +7539,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 22,
-        "Join_Count" : 1,
-        "TARGET_FID" : 22,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130014002",
         "SAIoutlet_miles" : 19.055675268173221,
         "SAIOnoutlet_miles" : 11.48238122463226,
         "SAIOffoutlet_miles" : 18.320254564285278,
@@ -7424,7 +7548,15 @@ var Cdata = {
         "SAIalc1_miles" : 15.244725584983829,
         "SAInarralc1_miles" : 13.36827230453491,
         "Shape_Length" : 0.034665396417600497,
-        "Shape_Area" : 5.7126117705276673e-05
+        "Shape_Area" : 5.7126117705276673e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 1,
+        "outlet_count" : 1,
+        "family_count" : 40,
+        "violent_count" : 1,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : 1
       }
     },
     {
@@ -7723,9 +7855,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 23,
-        "Join_Count" : 1,
-        "TARGET_FID" : 23,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130014003",
         "SAIoutlet_miles" : 10.63336265087128,
         "SAIOnoutlet_miles" : 8.5309929251670837,
         "SAIOffoutlet_miles" : 9.6085131168365479,
@@ -7734,7 +7864,15 @@ var Cdata = {
         "SAIalc1_miles" : 9.5630793571472168,
         "SAInarralc1_miles" : 8.3138994574546814,
         "Shape_Length" : 0.046427887014725853,
-        "Shape_Area" : 7.9912511889397206e-05
+        "Shape_Area" : 7.9912511889397206e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 0,
+        "family_count" : 17,
+        "violent_count" : 2,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : null
       }
     },
     {
@@ -7957,9 +8095,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 24,
-        "Join_Count" : 1,
-        "TARGET_FID" : 24,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130017001",
         "SAIoutlet_miles" : 9.313715398311615,
         "SAIOnoutlet_miles" : 7.0238999724388123,
         "SAIOffoutlet_miles" : 8.4989524483680725,
@@ -7968,7 +8104,15 @@ var Cdata = {
         "SAIalc1_miles" : 9.9709490537643433,
         "SAInarralc1_miles" : 9.6343134045600891,
         "Shape_Length" : 0.044280983757190882,
-        "Shape_Area" : 9.3206441950157529e-05
+        "Shape_Area" : 9.3206441950157529e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 0,
+        "family_count" : 53,
+        "violent_count" : 3,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : 4
       }
     },
     {
@@ -8179,9 +8323,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 25,
-        "Join_Count" : 1,
-        "TARGET_FID" : 25,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130023003",
         "SAIoutlet_miles" : 11.893019914627081,
         "SAIOnoutlet_miles" : 9.7571996450424194,
         "SAIOffoutlet_miles" : 10.42710280418396,
@@ -8190,7 +8332,15 @@ var Cdata = {
         "SAIalc1_miles" : 11.80120587348938,
         "SAInarralc1_miles" : 11.596127510070801,
         "Shape_Length" : 0.049508870599022183,
-        "Shape_Area" : 8.0805023610062388e-05
+        "Shape_Area" : 8.0805023610062388e-05,
+        "Onoutlet_count" : 2,
+        "Offoutlet_count" : 2,
+        "outlet_count" : 4,
+        "family_count" : 31,
+        "violent_count" : 2,
+        "alc1_count" : 33,
+        "narralc1_count" : 2,
+        "crash_count" : 1
       }
     },
     {
@@ -8497,9 +8647,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 26,
-        "Join_Count" : 1,
-        "TARGET_FID" : 26,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130025002",
         "SAIoutlet_miles" : 43.268037080764771,
         "SAIOnoutlet_miles" : 29.802218914031979,
         "SAIOffoutlet_miles" : 22.5355024933815,
@@ -8508,7 +8656,15 @@ var Cdata = {
         "SAIalc1_miles" : 23.118330478668209,
         "SAInarralc1_miles" : 20.168564677238461,
         "Shape_Length" : 0.04424742763381178,
-        "Shape_Area" : 6.9995813037726563e-05
+        "Shape_Area" : 6.9995813037726563e-05,
+        "Onoutlet_count" : 2,
+        "Offoutlet_count" : 1,
+        "outlet_count" : 3,
+        "family_count" : 73,
+        "violent_count" : 7,
+        "alc1_count" : 1,
+        "narralc1_count" : 1,
+        "crash_count" : null
       }
     },
     {
@@ -9089,9 +9245,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 27,
-        "Join_Count" : 1,
-        "TARGET_FID" : 27,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130107002",
         "SAIoutlet_miles" : 7.3847459256649017,
         "SAIOnoutlet_miles" : 6.9687649011611938,
         "SAIOffoutlet_miles" : 1.9397967457771299,
@@ -9100,7 +9254,15 @@ var Cdata = {
         "SAIalc1_miles" : 2.3707337081432338,
         "SAInarralc1_miles" : 1.833468154072762,
         "Shape_Length" : 0.48349440308951325,
-        "Shape_Area" : 0.0024738716192974713
+        "Shape_Area" : 0.0024738716192974713,
+        "Onoutlet_count" : 3,
+        "Offoutlet_count" : 4,
+        "outlet_count" : 7,
+        "family_count" : 23,
+        "violent_count" : 8,
+        "alc1_count" : 21,
+        "narralc1_count" : 8,
+        "crash_count" : 2
       }
     },
     {
@@ -9331,9 +9493,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 28,
-        "Join_Count" : 1,
-        "TARGET_FID" : 28,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130002032",
         "SAIoutlet_miles" : 5.898475170135498,
         "SAIOnoutlet_miles" : 4.4535045623779297,
         "SAIOffoutlet_miles" : 4.5273637473583221,
@@ -9342,7 +9502,15 @@ var Cdata = {
         "SAIalc1_miles" : 6.0702241659164429,
         "SAInarralc1_miles" : 4.7201473414897919,
         "Shape_Length" : 0.043650987966057521,
-        "Shape_Area" : 0.00010601427640469536
+        "Shape_Area" : 0.00010601427640469536,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 0,
+        "family_count" : 15,
+        "violent_count" : 0,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : 1
       }
     },
     {
@@ -9569,9 +9737,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 29,
-        "Join_Count" : 1,
-        "TARGET_FID" : 29,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130012003",
         "SAIoutlet_miles" : 22.231623291969299,
         "SAIOnoutlet_miles" : 19.123368740081791,
         "SAIOffoutlet_miles" : 12.76197445392609,
@@ -9580,7 +9746,15 @@ var Cdata = {
         "SAIalc1_miles" : 39.010268688201897,
         "SAInarralc1_miles" : 10.264198422431949,
         "Shape_Length" : 0.038912092646832035,
-        "Shape_Area" : 6.7079883299369153e-05
+        "Shape_Area" : 6.7079883299369153e-05,
+        "Onoutlet_count" : 3,
+        "Offoutlet_count" : 2,
+        "outlet_count" : 5,
+        "family_count" : 42,
+        "violent_count" : 9,
+        "alc1_count" : 41,
+        "narralc1_count" : 1,
+        "crash_count" : null
       }
     },
     {
@@ -9743,9 +9917,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 30,
-        "Join_Count" : 1,
-        "TARGET_FID" : 30,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130023004",
         "SAIoutlet_miles" : 13.007262468338009,
         "SAIOnoutlet_miles" : 10.719471573829651,
         "SAIOffoutlet_miles" : 11.135578751564029,
@@ -9754,7 +9926,15 @@ var Cdata = {
         "SAIalc1_miles" : 12.81262314319611,
         "SAInarralc1_miles" : 12.45008027553558,
         "Shape_Length" : 0.040033060600924472,
-        "Shape_Area" : 6.6580603742078334e-05
+        "Shape_Area" : 6.6580603742078334e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 2,
+        "outlet_count" : 2,
+        "family_count" : 55,
+        "violent_count" : 2,
+        "alc1_count" : 4,
+        "narralc1_count" : 4,
+        "crash_count" : 1
       }
     },
     {
@@ -9949,9 +10129,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 31,
-        "Join_Count" : 1,
-        "TARGET_FID" : 31,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130027002",
         "SAIoutlet_miles" : 37.768577575683587,
         "SAIOnoutlet_miles" : 30.27107048034668,
         "SAIOffoutlet_miles" : 18.861181497573849,
@@ -9960,7 +10138,15 @@ var Cdata = {
         "SAIalc1_miles" : 49.71135401725769,
         "SAInarralc1_miles" : 25.4602210521698,
         "Shape_Length" : 0.046725832631514766,
-        "Shape_Area" : 0.00010738367800300237
+        "Shape_Area" : 0.00010738367800300237,
+        "Onoutlet_count" : 7,
+        "Offoutlet_count" : 2,
+        "outlet_count" : 9,
+        "family_count" : 79,
+        "violent_count" : 118,
+        "alc1_count" : 13,
+        "narralc1_count" : 4,
+        "crash_count" : 1
       }
     },
     {
@@ -10099,9 +10285,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 32,
-        "Join_Count" : 1,
-        "TARGET_FID" : 32,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130017006",
         "SAIoutlet_miles" : 15.3875892162323,
         "SAIOnoutlet_miles" : 8.3336200714111328,
         "SAIOffoutlet_miles" : 15.386391162872309,
@@ -10110,7 +10294,15 @@ var Cdata = {
         "SAIalc1_miles" : 35.09096097946167,
         "SAInarralc1_miles" : 35.09096097946167,
         "Shape_Length" : 0.030490552516792314,
-        "Shape_Area" : 3.9648276906148622e-05
+        "Shape_Area" : 3.9648276906148622e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 1,
+        "outlet_count" : 1,
+        "family_count" : 131,
+        "violent_count" : 19,
+        "alc1_count" : 3,
+        "narralc1_count" : 3,
+        "crash_count" : 1
       }
     },
     {
@@ -10323,9 +10515,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 33,
-        "Join_Count" : 1,
-        "TARGET_FID" : 33,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130007002",
         "SAIoutlet_miles" : 36.846640586853027,
         "SAIOnoutlet_miles" : 30.62468147277832,
         "SAIOffoutlet_miles" : 21.2847386598587,
@@ -10334,7 +10524,15 @@ var Cdata = {
         "SAIalc1_miles" : 36.854677200317383,
         "SAInarralc1_miles" : 25.470459580421451,
         "Shape_Length" : 0.044470374056712739,
-        "Shape_Area" : 8.1136904069651367e-05
+        "Shape_Area" : 8.1136904069651367e-05,
+        "Onoutlet_count" : 6,
+        "Offoutlet_count" : 1,
+        "outlet_count" : 7,
+        "family_count" : 31,
+        "violent_count" : 5,
+        "alc1_count" : 65,
+        "narralc1_count" : 2,
+        "crash_count" : 1
       }
     },
     {
@@ -10509,9 +10707,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 34,
-        "Join_Count" : 1,
-        "TARGET_FID" : 34,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130014001",
         "SAIoutlet_miles" : 19.303927302360531,
         "SAIOnoutlet_miles" : 15.69464600086212,
         "SAIOffoutlet_miles" : 14.747889041900629,
@@ -10520,7 +10716,15 @@ var Cdata = {
         "SAIalc1_miles" : 26.641947031021122,
         "SAInarralc1_miles" : 16.467161178588871,
         "Shape_Length" : 0.045871107608645018,
-        "Shape_Area" : 8.2859389734603247e-05
+        "Shape_Area" : 8.2859389734603247e-05,
+        "Onoutlet_count" : 3,
+        "Offoutlet_count" : 3,
+        "outlet_count" : 6,
+        "family_count" : 38,
+        "violent_count" : 9,
+        "alc1_count" : 20,
+        "narralc1_count" : 4,
+        "crash_count" : 1
       }
     },
     {
@@ -10807,9 +11011,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 35,
-        "Join_Count" : 1,
-        "TARGET_FID" : 35,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130010021",
         "SAIoutlet_miles" : 6.8632403016090393,
         "SAIOnoutlet_miles" : 5.6026906967163086,
         "SAIOffoutlet_miles" : 5.9539015293121338,
@@ -10818,7 +11020,15 @@ var Cdata = {
         "SAIalc1_miles" : 7.3021399974822998,
         "SAInarralc1_miles" : 5.7623106837272644,
         "Shape_Length" : 0.056261015845244441,
-        "Shape_Area" : 9.4735780955048168e-05
+        "Shape_Area" : 9.4735780955048168e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 0,
+        "family_count" : 20,
+        "violent_count" : 1,
+        "alc1_count" : 1,
+        "narralc1_count" : 1,
+        "crash_count" : null
       }
     },
     {
@@ -11145,9 +11355,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 36,
-        "Join_Count" : 1,
-        "TARGET_FID" : 36,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130022001",
         "SAIoutlet_miles" : 46.766122341156013,
         "SAIOnoutlet_miles" : 46.766122341156013,
         "SAIOffoutlet_miles" : 12.902636289596559,
@@ -11156,7 +11364,15 @@ var Cdata = {
         "SAIalc1_miles" : 91.422152519226074,
         "SAInarralc1_miles" : 13.674243211746219,
         "Shape_Length" : 0.050021377857781095,
-        "Shape_Area" : 0.00010406382917659597
+        "Shape_Area" : 0.00010406382917659597,
+        "Onoutlet_count" : 10,
+        "Offoutlet_count" : 1,
+        "outlet_count" : 11,
+        "family_count" : 225,
+        "violent_count" : 182,
+        "alc1_count" : 28,
+        "narralc1_count" : 1,
+        "crash_count" : 4
       }
     },
     {
@@ -11379,9 +11595,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 37,
-        "Join_Count" : 1,
-        "TARGET_FID" : 37,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130006001",
         "SAIoutlet_miles" : 7.9178682565689087,
         "SAIOnoutlet_miles" : 7.6907661557197571,
         "SAIOffoutlet_miles" : 5.3561022877693176,
@@ -11390,7 +11604,15 @@ var Cdata = {
         "SAIalc1_miles" : 6.3426896929740906,
         "SAInarralc1_miles" : 5.6970177888870239,
         "Shape_Length" : 0.055769759906836261,
-        "Shape_Area" : 8.9083176393559075e-05
+        "Shape_Area" : 8.9083176393559075e-05,
+        "Onoutlet_count" : 3,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 3,
+        "family_count" : 17,
+        "violent_count" : 2,
+        "alc1_count" : 3,
+        "narralc1_count" : 2,
+        "crash_count" : null
       }
     },
     {
@@ -11549,9 +11771,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 38,
-        "Join_Count" : 1,
-        "TARGET_FID" : 38,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130017004",
         "SAIoutlet_miles" : 9.9884685277938843,
         "SAIOnoutlet_miles" : 5.2183560132980347,
         "SAIOffoutlet_miles" : 9.9013286232948303,
@@ -11560,7 +11780,15 @@ var Cdata = {
         "SAIalc1_miles" : 11.88059031963348,
         "SAInarralc1_miles" : 11.345065116882321,
         "Shape_Length" : 0.037299326341012962,
-        "Shape_Area" : 7.0445346770914183e-05
+        "Shape_Area" : 7.0445346770914183e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 1,
+        "outlet_count" : 1,
+        "family_count" : 30,
+        "violent_count" : 1,
+        "alc1_count" : 2,
+        "narralc1_count" : 2,
+        "crash_count" : null
       }
     },
     {
@@ -11663,9 +11891,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 39,
-        "Join_Count" : 1,
-        "TARGET_FID" : 39,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130017005",
         "SAIoutlet_miles" : 11.66837656497955,
         "SAIOnoutlet_miles" : 7.1151060461997986,
         "SAIOffoutlet_miles" : 11.66837656497955,
@@ -11674,7 +11900,15 @@ var Cdata = {
         "SAIalc1_miles" : 21.457788825035099,
         "SAInarralc1_miles" : 16.571051716804501,
         "Shape_Length" : 0.026379942980248247,
-        "Shape_Area" : 2.5981412851768737e-05
+        "Shape_Area" : 2.5981412851768737e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 0,
+        "family_count" : 128,
+        "violent_count" : 12,
+        "alc1_count" : 1,
+        "narralc1_count" : 0,
+        "crash_count" : null
       }
     },
     {
@@ -11865,9 +12099,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 40,
-        "Join_Count" : 1,
-        "TARGET_FID" : 40,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130018001",
         "SAIoutlet_miles" : 11.92615008354187,
         "SAIOnoutlet_miles" : 9.0356048941612244,
         "SAIOffoutlet_miles" : 9.6597155332565308,
@@ -11876,7 +12108,15 @@ var Cdata = {
         "SAIalc1_miles" : 10.14810836315155,
         "SAInarralc1_miles" : 9.0302795171737671,
         "Shape_Length" : 0.031594129461326483,
-        "Shape_Area" : 5.0770609760477953e-05
+        "Shape_Area" : 5.0770609760477953e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 1,
+        "outlet_count" : 1,
+        "family_count" : 39,
+        "violent_count" : 4,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : null
       }
     },
     {
@@ -12107,9 +12347,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 41,
-        "Join_Count" : 1,
-        "TARGET_FID" : 41,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130018002",
         "SAIoutlet_miles" : 10.86637055873871,
         "SAIOnoutlet_miles" : 10.35843414068222,
         "SAIOffoutlet_miles" : 8.1918390393257141,
@@ -12118,7 +12356,15 @@ var Cdata = {
         "SAIalc1_miles" : 12.94604754447937,
         "SAInarralc1_miles" : 9.7437145113945007,
         "Shape_Length" : 0.046394155049877837,
-        "Shape_Area" : 5.9168522448803227e-05
+        "Shape_Area" : 5.9168522448803227e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 0,
+        "family_count" : 61,
+        "violent_count" : 5,
+        "alc1_count" : 1,
+        "narralc1_count" : 1,
+        "crash_count" : 1
       }
     },
     {
@@ -12233,9 +12479,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 42,
-        "Join_Count" : 1,
-        "TARGET_FID" : 42,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130018003",
         "SAIoutlet_miles" : 20.39554762840271,
         "SAIOnoutlet_miles" : 17.477762699127201,
         "SAIOffoutlet_miles" : 14.05075573921204,
@@ -12244,7 +12488,15 @@ var Cdata = {
         "SAIalc1_miles" : 22.889216423034672,
         "SAInarralc1_miles" : 12.436628818511959,
         "Shape_Length" : 0.028490866518175974,
-        "Shape_Area" : 3.6720964182216104e-05
+        "Shape_Area" : 3.6720964182216104e-05,
+        "Onoutlet_count" : 4,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 4,
+        "family_count" : 150,
+        "violent_count" : 12,
+        "alc1_count" : 10,
+        "narralc1_count" : 0,
+        "crash_count" : 2
       }
     },
     {
@@ -12535,9 +12787,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 43,
-        "Join_Count" : 1,
-        "TARGET_FID" : 43,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130019001",
         "SAIoutlet_miles" : 17.707560062408451,
         "SAIOnoutlet_miles" : 13.264819025993351,
         "SAIOffoutlet_miles" : 17.189498662948608,
@@ -12546,7 +12796,15 @@ var Cdata = {
         "SAIalc1_miles" : 20.161517381668091,
         "SAInarralc1_miles" : 15.4547358751297,
         "Shape_Length" : 0.040084998670028904,
-        "Shape_Area" : 6.0464925159562792e-05
+        "Shape_Area" : 6.0464925159562792e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 3,
+        "outlet_count" : 3,
+        "family_count" : 125,
+        "violent_count" : 119,
+        "alc1_count" : 4,
+        "narralc1_count" : 4,
+        "crash_count" : null
       }
     },
     {
@@ -12657,9 +12915,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 44,
-        "Join_Count" : 1,
-        "TARGET_FID" : 44,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130017003",
         "SAIoutlet_miles" : 16.077734589576721,
         "SAIOnoutlet_miles" : 8.6176238059997559,
         "SAIOffoutlet_miles" : 16.077734589576721,
@@ -12668,7 +12924,15 @@ var Cdata = {
         "SAIalc1_miles" : 28.192701578140259,
         "SAInarralc1_miles" : 22.44341778755188,
         "Shape_Length" : 0.023672137829781462,
-        "Shape_Area" : 2.7463869740074711e-05
+        "Shape_Area" : 2.7463869740074711e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 0,
+        "family_count" : 174,
+        "violent_count" : 18,
+        "alc1_count" : 2,
+        "narralc1_count" : 2,
+        "crash_count" : null
       }
     },
     {
@@ -12803,9 +13067,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 45,
-        "Join_Count" : 1,
-        "TARGET_FID" : 45,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130019002",
         "SAIoutlet_miles" : 20.989738821983341,
         "SAIOnoutlet_miles" : 10.738103270530701,
         "SAIOffoutlet_miles" : 20.571860313415531,
@@ -12814,7 +13076,15 @@ var Cdata = {
         "SAIalc1_miles" : 42.842448234558113,
         "SAInarralc1_miles" : 22.926333427429199,
         "Shape_Length" : 0.027889897877679905,
-        "Shape_Area" : 2.9328825383493307e-05
+        "Shape_Area" : 2.9328825383493307e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 3,
+        "outlet_count" : 3,
+        "family_count" : 161,
+        "violent_count" : 32,
+        "alc1_count" : 3,
+        "narralc1_count" : 0,
+        "crash_count" : 2
       }
     },
     {
@@ -13097,9 +13367,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 46,
-        "Join_Count" : 1,
-        "TARGET_FID" : 46,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130019003",
         "SAIoutlet_miles" : 48.293238639831543,
         "SAIOnoutlet_miles" : 48.293238639831543,
         "SAIOffoutlet_miles" : 11.99184942245483,
@@ -13108,7 +13376,15 @@ var Cdata = {
         "SAIalc1_miles" : 61.244553565978997,
         "SAInarralc1_miles" : 25.567025661468509,
         "Shape_Length" : 0.050923965756006752,
-        "Shape_Area" : 0.00010653672237441907
+        "Shape_Area" : 0.00010653672237441907,
+        "Onoutlet_count" : 21,
+        "Offoutlet_count" : 1,
+        "outlet_count" : 22,
+        "family_count" : 98,
+        "violent_count" : 30,
+        "alc1_count" : 283,
+        "narralc1_count" : 5,
+        "crash_count" : 9
       }
     },
     {
@@ -13339,9 +13615,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 47,
-        "Join_Count" : 1,
-        "TARGET_FID" : 47,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130024002",
         "SAIoutlet_miles" : 14.448478102684019,
         "SAIOnoutlet_miles" : 11.993727326393129,
         "SAIOffoutlet_miles" : 11.04657161235809,
@@ -13350,7 +13624,15 @@ var Cdata = {
         "SAIalc1_miles" : 15.673218011856081,
         "SAInarralc1_miles" : 14.470545411109921,
         "Shape_Length" : 0.045920748550671138,
-        "Shape_Area" : 7.7939848960681797e-05
+        "Shape_Area" : 7.7939848960681797e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 0,
+        "family_count" : 41,
+        "violent_count" : 2,
+        "alc1_count" : 1,
+        "narralc1_count" : 1,
+        "crash_count" : null
       }
     },
     {
@@ -13689,9 +13971,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 48,
-        "Join_Count" : 1,
-        "TARGET_FID" : 48,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130022002",
         "SAIoutlet_miles" : 21.4507303237915,
         "SAIOnoutlet_miles" : 17.789774179458622,
         "SAIOffoutlet_miles" : 15.34384381771088,
@@ -13700,7 +13980,15 @@ var Cdata = {
         "SAIalc1_miles" : 25.76993894577026,
         "SAInarralc1_miles" : 14.353805661201481,
         "Shape_Length" : 0.036039892311652895,
-        "Shape_Area" : 6.3604473679882071e-05
+        "Shape_Area" : 6.3604473679882071e-05,
+        "Onoutlet_count" : 1,
+        "Offoutlet_count" : 1,
+        "outlet_count" : 2,
+        "family_count" : 157,
+        "violent_count" : 16,
+        "alc1_count" : 5,
+        "narralc1_count" : 1,
+        "crash_count" : 3
       }
     },
     {
@@ -13843,9 +14131,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 49,
-        "Join_Count" : 1,
-        "TARGET_FID" : 49,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130023002",
         "SAIoutlet_miles" : 13.759994029998779,
         "SAIOnoutlet_miles" : 10.82927584648132,
         "SAIOffoutlet_miles" : 10.46944922208786,
@@ -13854,7 +14140,15 @@ var Cdata = {
         "SAIalc1_miles" : 14.27701783180237,
         "SAInarralc1_miles" : 13.28567004203796,
         "Shape_Length" : 0.034044265575468254,
-        "Shape_Area" : 6.7873512420407584e-05
+        "Shape_Area" : 6.7873512420407584e-05,
+        "Onoutlet_count" : 1,
+        "Offoutlet_count" : 1,
+        "outlet_count" : 2,
+        "family_count" : 48,
+        "violent_count" : 7,
+        "alc1_count" : 2,
+        "narralc1_count" : 2,
+        "crash_count" : null
       }
     },
     {
@@ -14137,9 +14431,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 50,
-        "Join_Count" : 1,
-        "TARGET_FID" : 50,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130024001",
         "SAIoutlet_miles" : 17.91993880271912,
         "SAIOnoutlet_miles" : 17.84312009811401,
         "SAIOffoutlet_miles" : 8.177496612071991,
@@ -14148,7 +14440,15 @@ var Cdata = {
         "SAIalc1_miles" : 13.598627328872681,
         "SAInarralc1_miles" : 9.7199438810348511,
         "Shape_Length" : 0.040998416365634019,
-        "Shape_Area" : 9.5624552823064823e-05
+        "Shape_Area" : 9.5624552823064823e-05,
+        "Onoutlet_count" : 5,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 5,
+        "family_count" : 53,
+        "violent_count" : 1,
+        "alc1_count" : 25,
+        "narralc1_count" : 0,
+        "crash_count" : 3
       }
     },
     {
@@ -14527,9 +14827,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 51,
-        "Join_Count" : 1,
-        "TARGET_FID" : 51,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130024003",
         "SAIoutlet_miles" : 10.10966646671295,
         "SAIOnoutlet_miles" : 9.7662477493286133,
         "SAIOffoutlet_miles" : 7.3767195343971252,
@@ -14538,7 +14836,15 @@ var Cdata = {
         "SAIalc1_miles" : 11.05559134483337,
         "SAInarralc1_miles" : 9.5243552923202515,
         "Shape_Length" : 0.077912784627374596,
-        "Shape_Area" : 0.00021233807109931595
+        "Shape_Area" : 0.00021233807109931595,
+        "Onoutlet_count" : 5,
+        "Offoutlet_count" : 4,
+        "outlet_count" : 9,
+        "family_count" : 128,
+        "violent_count" : 21,
+        "alc1_count" : 43,
+        "narralc1_count" : 9,
+        "crash_count" : 1
       }
     },
     {
@@ -14793,9 +15099,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 52,
-        "Join_Count" : 1,
-        "TARGET_FID" : 52,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130027001",
         "SAIoutlet_miles" : 14.35004806518555,
         "SAIOnoutlet_miles" : 14.35004806518555,
         "SAIOffoutlet_miles" : 7.7202810645103446,
@@ -14804,7 +15108,15 @@ var Cdata = {
         "SAIalc1_miles" : 14.77116012573242,
         "SAInarralc1_miles" : 10.77840518951416,
         "Shape_Length" : 0.065739253382852247,
-        "Shape_Area" : 0.00016857513078062452
+        "Shape_Area" : 0.00016857513078062452,
+        "Onoutlet_count" : 8,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 8,
+        "family_count" : 109,
+        "violent_count" : 18,
+        "alc1_count" : 31,
+        "narralc1_count" : 3,
+        "crash_count" : 2
       }
     },
     {
@@ -15059,9 +15371,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 53,
-        "Join_Count" : 1,
-        "TARGET_FID" : 53,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130025003",
         "SAIoutlet_miles" : 12.015016913414,
         "SAIOnoutlet_miles" : 11.435239195823669,
         "SAIOffoutlet_miles" : 7.0447964072227478,
@@ -15070,7 +15380,15 @@ var Cdata = {
         "SAIalc1_miles" : 15.82831788063049,
         "SAInarralc1_miles" : 9.945143461227417,
         "Shape_Length" : 0.038822630921010647,
-        "Shape_Area" : 7.6842227883825194e-05
+        "Shape_Area" : 7.6842227883825194e-05,
+        "Onoutlet_count" : 1,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 1,
+        "family_count" : 75,
+        "violent_count" : 9,
+        "alc1_count" : 7,
+        "narralc1_count" : 0,
+        "crash_count" : 2
       }
     },
     {
@@ -15289,9 +15607,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 54,
-        "Join_Count" : 1,
-        "TARGET_FID" : 54,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130026001",
         "SAIoutlet_miles" : 7.8236562013626099,
         "SAIOnoutlet_miles" : 7.6905463933944702,
         "SAIOffoutlet_miles" : 5.7989352345466614,
@@ -15300,7 +15616,15 @@ var Cdata = {
         "SAIalc1_miles" : 7.5019170045852661,
         "SAInarralc1_miles" : 5.9943057298660278,
         "Shape_Length" : 0.068382305252474768,
-        "Shape_Area" : 0.00020239004376775363
+        "Shape_Area" : 0.00020239004376775363,
+        "Onoutlet_count" : 2,
+        "Offoutlet_count" : 1,
+        "outlet_count" : 2,
+        "family_count" : 100,
+        "violent_count" : 15,
+        "alc1_count" : 2,
+        "narralc1_count" : 2,
+        "crash_count" : null
       }
     },
     {
@@ -15519,9 +15843,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 55,
-        "Join_Count" : 1,
-        "TARGET_FID" : 55,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130026002",
         "SAIoutlet_miles" : 39.519382953643799,
         "SAIOnoutlet_miles" : 38.615428924560547,
         "SAIOffoutlet_miles" : 14.583168148994449,
@@ -15530,7 +15852,15 @@ var Cdata = {
         "SAIalc1_miles" : 38.246160507202148,
         "SAInarralc1_miles" : 12.095956325531009,
         "Shape_Length" : 0.049341267879750024,
-        "Shape_Area" : 0.00010619078693167454
+        "Shape_Area" : 0.00010619078693167454,
+        "Onoutlet_count" : 11,
+        "Offoutlet_count" : 1,
+        "outlet_count" : 12,
+        "family_count" : 92,
+        "violent_count" : 13,
+        "alc1_count" : 33,
+        "narralc1_count" : 0,
+        "crash_count" : 3
       }
     },
     {
@@ -15825,9 +16155,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 56,
-        "Join_Count" : 1,
-        "TARGET_FID" : 56,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130025001",
         "SAIoutlet_miles" : 19.73836624622345,
         "SAIOnoutlet_miles" : 16.53921544551849,
         "SAIOffoutlet_miles" : 12.719564437866209,
@@ -15836,7 +16164,15 @@ var Cdata = {
         "SAIalc1_miles" : 22.471461772918701,
         "SAInarralc1_miles" : 14.968105435371401,
         "Shape_Length" : 0.046851557490005337,
-        "Shape_Area" : 8.9724156398298185e-05
+        "Shape_Area" : 8.9724156398298185e-05,
+        "Onoutlet_count" : 1,
+        "Offoutlet_count" : 2,
+        "outlet_count" : 3,
+        "family_count" : 67,
+        "violent_count" : 3,
+        "alc1_count" : 6,
+        "narralc1_count" : 5,
+        "crash_count" : 3
       }
     },
     {
@@ -16059,9 +16395,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 57,
-        "Join_Count" : 1,
-        "TARGET_FID" : 57,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130028001",
         "SAIoutlet_miles" : 16.95172202587128,
         "SAIOnoutlet_miles" : 5.5481351315975189,
         "SAIOffoutlet_miles" : 14.90311539173126,
@@ -16070,7 +16404,15 @@ var Cdata = {
         "SAIalc1_miles" : 19.51385760307312,
         "SAInarralc1_miles" : 17.766642093658451,
         "Shape_Length" : 0.046001655682445818,
-        "Shape_Area" : 8.3096747650785688e-05
+        "Shape_Area" : 8.3096747650785688e-05,
+        "Onoutlet_count" : 2,
+        "Offoutlet_count" : 3,
+        "outlet_count" : 5,
+        "family_count" : 34,
+        "violent_count" : 5,
+        "alc1_count" : 5,
+        "narralc1_count" : 3,
+        "crash_count" : null
       }
     },
     {
@@ -16381,9 +16723,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 58,
-        "Join_Count" : 1,
-        "TARGET_FID" : 58,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130028002",
         "SAIoutlet_miles" : 13.171760082244869,
         "SAIOnoutlet_miles" : 5.0251038074493408,
         "SAIOffoutlet_miles" : 12.57880121469498,
@@ -16392,7 +16732,15 @@ var Cdata = {
         "SAIalc1_miles" : 10.668086647987369,
         "SAInarralc1_miles" : 10.066798329353331,
         "Shape_Length" : 0.049474909801955201,
-        "Shape_Area" : 0.0001049877710246516
+        "Shape_Area" : 0.0001049877710246516,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 2,
+        "outlet_count" : 2,
+        "family_count" : 28,
+        "violent_count" : 7,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : 3
       }
     },
     {
@@ -17185,9 +17533,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 59,
-        "Join_Count" : 1,
-        "TARGET_FID" : 59,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130028003",
         "SAIoutlet_miles" : 3.476857036352158,
         "SAIOnoutlet_miles" : 2.6516140401363368,
         "SAIOffoutlet_miles" : 3.3679198622703548,
@@ -17196,7 +17542,15 @@ var Cdata = {
         "SAIalc1_miles" : 3.5315069556236272,
         "SAInarralc1_miles" : 3.493023544549942,
         "Shape_Length" : 0.24996900330398403,
-        "Shape_Area" : 0.00075784545408855597
+        "Shape_Area" : 0.00075784545408855597,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 0,
+        "family_count" : 34,
+        "violent_count" : 3,
+        "alc1_count" : 1,
+        "narralc1_count" : 1,
+        "crash_count" : 1
       }
     },
     {
@@ -17447,9 +17801,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 60,
-        "Join_Count" : 1,
-        "TARGET_FID" : 60,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130029001",
         "SAIoutlet_miles" : 21.47073316574097,
         "SAIOnoutlet_miles" : 21.069494843482971,
         "SAIOffoutlet_miles" : 5.0724045634269714,
@@ -17458,7 +17810,15 @@ var Cdata = {
         "SAIalc1_miles" : 6.0379754304885864,
         "SAInarralc1_miles" : 5.4696230888366699,
         "Shape_Length" : 0.0707815948135634,
-        "Shape_Area" : 0.00023577811784574273
+        "Shape_Area" : 0.00023577811784574273,
+        "Onoutlet_count" : 2,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 2,
+        "family_count" : 47,
+        "violent_count" : 1,
+        "alc1_count" : 1,
+        "narralc1_count" : 1,
+        "crash_count" : null
       }
     },
     {
@@ -17629,9 +17989,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 61,
-        "Join_Count" : 1,
-        "TARGET_FID" : 61,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130029002",
         "SAIoutlet_miles" : 10.003544569015499,
         "SAIOnoutlet_miles" : 8.9472763538360596,
         "SAIOffoutlet_miles" : 9.5918285846710205,
@@ -17640,7 +17998,15 @@ var Cdata = {
         "SAIalc1_miles" : 11.02232646942139,
         "SAInarralc1_miles" : 10.941914319992071,
         "Shape_Length" : 0.041811801481124365,
-        "Shape_Area" : 8.8147422503525338e-05
+        "Shape_Area" : 8.8147422503525338e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 1,
+        "outlet_count" : 1,
+        "family_count" : 40,
+        "violent_count" : 7,
+        "alc1_count" : 1,
+        "narralc1_count" : 1,
+        "crash_count" : 1
       }
     },
     {
@@ -17811,9 +18177,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 62,
-        "Join_Count" : 1,
-        "TARGET_FID" : 62,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130029003",
         "SAIoutlet_miles" : 37.662177801132202,
         "SAIOnoutlet_miles" : 13.947677135467529,
         "SAIOffoutlet_miles" : 33.239050388336182,
@@ -17822,7 +18186,15 @@ var Cdata = {
         "SAIalc1_miles" : 48.547157764434807,
         "SAInarralc1_miles" : 48.547157764434807,
         "Shape_Length" : 0.046186197271404356,
-        "Shape_Area" : 9.250269032205118e-05
+        "Shape_Area" : 9.250269032205118e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 3,
+        "outlet_count" : 3,
+        "family_count" : 147,
+        "violent_count" : 11,
+        "alc1_count" : 8,
+        "narralc1_count" : 8,
+        "crash_count" : 3
       }
     },
     {
@@ -18185,9 +18557,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 63,
-        "Join_Count" : 1,
-        "TARGET_FID" : 63,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130029004",
         "SAIoutlet_miles" : 9.9768211841583252,
         "SAIOnoutlet_miles" : 9.9768211841583252,
         "SAIOffoutlet_miles" : 5.6995736360549927,
@@ -18196,7 +18566,15 @@ var Cdata = {
         "SAIalc1_miles" : 9.0759528875350952,
         "SAInarralc1_miles" : 8.4382447004318237,
         "Shape_Length" : 0.098950771688178993,
-        "Shape_Area" : 0.00044670195506861185
+        "Shape_Area" : 0.00044670195506861185,
+        "Onoutlet_count" : 12,
+        "Offoutlet_count" : 1,
+        "outlet_count" : 13,
+        "family_count" : 159,
+        "violent_count" : 28,
+        "alc1_count" : 15,
+        "narralc1_count" : 8,
+        "crash_count" : 3
       }
     },
     {
@@ -18619,9 +18997,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 64,
-        "Join_Count" : 1,
-        "TARGET_FID" : 64,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130030011",
         "SAIoutlet_miles" : 4.6618374586105347,
         "SAIOnoutlet_miles" : 4.6618374586105347,
         "SAIOffoutlet_miles" : 3.7334476113319401,
@@ -18630,7 +19006,15 @@ var Cdata = {
         "SAIalc1_miles" : 5.3743481040000924,
         "SAInarralc1_miles" : 4.6402432918548584,
         "Shape_Length" : 0.090869873315382765,
-        "Shape_Area" : 0.00025105907441200735
+        "Shape_Area" : 0.00025105907441200735,
+        "Onoutlet_count" : 6,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 6,
+        "family_count" : 29,
+        "violent_count" : 8,
+        "alc1_count" : 5,
+        "narralc1_count" : 3,
+        "crash_count" : 2
       }
     },
     {
@@ -19243,9 +19627,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 65,
-        "Join_Count" : 1,
-        "TARGET_FID" : 65,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130030012",
         "SAIoutlet_miles" : 8.5670031905174255,
         "SAIOnoutlet_miles" : 6.0450969934463501,
         "SAIOffoutlet_miles" : 7.7302704453468323,
@@ -19254,7 +19636,15 @@ var Cdata = {
         "SAIalc1_miles" : 6.7394764423370361,
         "SAInarralc1_miles" : 6.4225540161132813,
         "Shape_Length" : 0.20975683250405597,
-        "Shape_Area" : 0.00062975938295619608
+        "Shape_Area" : 0.00062975938295619608,
+        "Onoutlet_count" : 3,
+        "Offoutlet_count" : 5,
+        "outlet_count" : 8,
+        "family_count" : 125,
+        "violent_count" : 16,
+        "alc1_count" : 4,
+        "narralc1_count" : 4,
+        "crash_count" : 4
       }
     },
     {
@@ -19745,9 +20135,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 66,
-        "Join_Count" : 1,
-        "TARGET_FID" : 66,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130030022",
         "SAIoutlet_miles" : 6.2850080132484436,
         "SAIOnoutlet_miles" : 4.3954996764659882,
         "SAIOffoutlet_miles" : 5.3333014249801636,
@@ -19756,7 +20144,15 @@ var Cdata = {
         "SAIalc1_miles" : 7.6592206954956046,
         "SAInarralc1_miles" : 6.8535350561141968,
         "Shape_Length" : 0.13918480233453012,
-        "Shape_Area" : 0.00070291963969182467
+        "Shape_Area" : 0.00070291963969182467,
+        "Onoutlet_count" : 2,
+        "Offoutlet_count" : 2,
+        "outlet_count" : 4,
+        "family_count" : 111,
+        "violent_count" : 43,
+        "alc1_count" : 21,
+        "narralc1_count" : 6,
+        "crash_count" : 6
       }
     },
     {
@@ -20219,9 +20615,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 67,
-        "Join_Count" : 1,
-        "TARGET_FID" : 67,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130030023",
         "SAIoutlet_miles" : 3.54583728313446,
         "SAIOnoutlet_miles" : 3.083888947963715,
         "SAIOffoutlet_miles" : 3.2410170137882228,
@@ -20230,7 +20624,15 @@ var Cdata = {
         "SAIalc1_miles" : 5.6400249004364014,
         "SAInarralc1_miles" : 5.2014626860618591,
         "Shape_Length" : 0.183771043458689,
-        "Shape_Area" : 0.0016553766338268155
+        "Shape_Area" : 0.0016553766338268155,
+        "Onoutlet_count" : 1,
+        "Offoutlet_count" : 1,
+        "outlet_count" : 2,
+        "family_count" : 124,
+        "violent_count" : 18,
+        "alc1_count" : 4,
+        "narralc1_count" : 3,
+        "crash_count" : 2
       }
     },
     {
@@ -20581,9 +20983,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 68,
-        "Join_Count" : 1,
-        "TARGET_FID" : 68,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130007001",
         "SAIoutlet_miles" : 11.45535838603973,
         "SAIOnoutlet_miles" : 11.45535838603973,
         "SAIOffoutlet_miles" : 7.3146110773086548,
@@ -20592,7 +20992,15 @@ var Cdata = {
         "SAIalc1_miles" : 12.88689815998077,
         "SAInarralc1_miles" : 9.2412950396537781,
         "Shape_Length" : 0.066149281939450272,
-        "Shape_Area" : 0.00016584807395516739
+        "Shape_Area" : 0.00016584807395516739,
+        "Onoutlet_count" : 4,
+        "Offoutlet_count" : 1,
+        "outlet_count" : 5,
+        "family_count" : 42,
+        "violent_count" : 11,
+        "alc1_count" : 2,
+        "narralc1_count" : 2,
+        "crash_count" : 2
       }
     },
     {
@@ -20795,9 +21203,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 69,
-        "Join_Count" : 1,
-        "TARGET_FID" : 69,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130008001",
         "SAIoutlet_miles" : 9.7115284204483032,
         "SAIOnoutlet_miles" : 7.8814511895179749,
         "SAIOffoutlet_miles" : 8.2198724746704102,
@@ -20806,7 +21212,15 @@ var Cdata = {
         "SAIalc1_miles" : 11.0111495256424,
         "SAInarralc1_miles" : 7.7418326139450073,
         "Shape_Length" : 0.050993222343484627,
-        "Shape_Area" : 0.00011336394957205284
+        "Shape_Area" : 0.00011336394957205284,
+        "Onoutlet_count" : 1,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 1,
+        "family_count" : 37,
+        "violent_count" : 5,
+        "alc1_count" : 5,
+        "narralc1_count" : 2,
+        "crash_count" : null
       }
     },
     {
@@ -21013,9 +21427,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 70,
-        "Join_Count" : 1,
-        "TARGET_FID" : 70,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130008003",
         "SAIoutlet_miles" : 9.5128019452095032,
         "SAIOnoutlet_miles" : 9.187292218208313,
         "SAIOffoutlet_miles" : 6.6832344532012939,
@@ -21024,7 +21436,15 @@ var Cdata = {
         "SAIalc1_miles" : 6.9993475079536438,
         "SAInarralc1_miles" : 6.648327648639679,
         "Shape_Length" : 0.049510375075494918,
-        "Shape_Area" : 0.00011573553499368117
+        "Shape_Area" : 0.00011573553499368117,
+        "Onoutlet_count" : 1,
+        "Offoutlet_count" : 1,
+        "outlet_count" : 2,
+        "family_count" : 47,
+        "violent_count" : 4,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : null
       }
     },
     {
@@ -21207,9 +21627,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 71,
-        "Join_Count" : 1,
-        "TARGET_FID" : 71,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130008004",
         "SAIoutlet_miles" : 14.561615228652951,
         "SAIOnoutlet_miles" : 12.765790224075319,
         "SAIOffoutlet_miles" : 13.444017291069031,
@@ -21218,7 +21636,15 @@ var Cdata = {
         "SAIalc1_miles" : 15.8866753578186,
         "SAInarralc1_miles" : 12.55156588554382,
         "Shape_Length" : 0.035700857269206056,
-        "Shape_Area" : 6.2195413610195501e-05
+        "Shape_Area" : 6.2195413610195501e-05,
+        "Onoutlet_count" : 2,
+        "Offoutlet_count" : 3,
+        "outlet_count" : 4,
+        "family_count" : 61,
+        "violent_count" : 8,
+        "alc1_count" : 2,
+        "narralc1_count" : 2,
+        "crash_count" : 2
       }
     },
     {
@@ -21497,9 +21923,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 72,
-        "Join_Count" : 1,
-        "TARGET_FID" : 72,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130010032",
         "SAIoutlet_miles" : 13.556205630302429,
         "SAIOnoutlet_miles" : 11.908591747283941,
         "SAIOffoutlet_miles" : 12.291447877883909,
@@ -21508,7 +21932,15 @@ var Cdata = {
         "SAIalc1_miles" : 13.857711791992189,
         "SAInarralc1_miles" : 13.646374940872191,
         "Shape_Length" : 0.054528604236792004,
-        "Shape_Area" : 8.9536400635800595e-05
+        "Shape_Area" : 8.9536400635800595e-05,
+        "Onoutlet_count" : 2,
+        "Offoutlet_count" : 1,
+        "outlet_count" : 3,
+        "family_count" : 24,
+        "violent_count" : 4,
+        "alc1_count" : 14,
+        "narralc1_count" : 0,
+        "crash_count" : null
       }
     },
     {
@@ -21759,9 +22191,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 73,
-        "Join_Count" : 1,
-        "TARGET_FID" : 73,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130010033",
         "SAIoutlet_miles" : 41.938633680343628,
         "SAIOnoutlet_miles" : 20.910275936126709,
         "SAIOffoutlet_miles" : 30.485358834266659,
@@ -21770,7 +22200,15 @@ var Cdata = {
         "SAIalc1_miles" : 88.364065170288086,
         "SAInarralc1_miles" : 16.798205256462101,
         "Shape_Length" : 0.057182888051041755,
-        "Shape_Area" : 0.0001212235101637168
+        "Shape_Area" : 0.0001212235101637168,
+        "Onoutlet_count" : 1,
+        "Offoutlet_count" : 6,
+        "outlet_count" : 7,
+        "family_count" : 153,
+        "violent_count" : 23,
+        "alc1_count" : 10,
+        "narralc1_count" : 3,
+        "crash_count" : 2
       }
     },
     {
@@ -22077,9 +22515,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 74,
-        "Join_Count" : 1,
-        "TARGET_FID" : 74,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130010034",
         "SAIoutlet_miles" : 20.506456971168522,
         "SAIOnoutlet_miles" : 10.298076510429381,
         "SAIOffoutlet_miles" : 18.922414779663089,
@@ -22088,7 +22524,15 @@ var Cdata = {
         "SAIalc1_miles" : 13.277112126350399,
         "SAInarralc1_miles" : 13.277112126350399,
         "Shape_Length" : 0.072809133988214411,
-        "Shape_Area" : 0.00021377510237403211
+        "Shape_Area" : 0.00021377510237403211,
+        "Onoutlet_count" : 3,
+        "Offoutlet_count" : 3,
+        "outlet_count" : 6,
+        "family_count" : 213,
+        "violent_count" : 21,
+        "alc1_count" : 4,
+        "narralc1_count" : 4,
+        "crash_count" : 4
       }
     },
     {
@@ -22331,9 +22775,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 75,
-        "Join_Count" : 1,
-        "TARGET_FID" : 75,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130011021",
         "SAIoutlet_miles" : 10.08802777528763,
         "SAIOnoutlet_miles" : 9.7584708333015442,
         "SAIOffoutlet_miles" : 3.3236595988273621,
@@ -22342,7 +22784,15 @@ var Cdata = {
         "SAIalc1_miles" : 5.0151382088661194,
         "SAInarralc1_miles" : 4.4501719176769257,
         "Shape_Length" : 0.087351834828601996,
-        "Shape_Area" : 0.00031670203419923289
+        "Shape_Area" : 0.00031670203419923289,
+        "Onoutlet_count" : 3,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 3,
+        "family_count" : 39,
+        "violent_count" : 2,
+        "alc1_count" : 2,
+        "narralc1_count" : 1,
+        "crash_count" : null
       }
     },
     {
@@ -22781,9 +23231,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 76,
-        "Join_Count" : 1,
-        "TARGET_FID" : 76,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130011011",
         "SAIoutlet_miles" : 6.3005781173706046,
         "SAIOnoutlet_miles" : 5.7562286853790283,
         "SAIOffoutlet_miles" : 5.0391522645950317,
@@ -22792,7 +23240,15 @@ var Cdata = {
         "SAIalc1_miles" : 5.8812101483345032,
         "SAInarralc1_miles" : 4.2430506348609924,
         "Shape_Length" : 0.06676318259259241,
-        "Shape_Area" : 0.0001078684408318855
+        "Shape_Area" : 0.0001078684408318855,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 0,
+        "family_count" : 35,
+        "violent_count" : 6,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : null
       }
     },
     {
@@ -23299,9 +23755,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 77,
-        "Join_Count" : 1,
-        "TARGET_FID" : 77,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130011012",
         "SAIoutlet_miles" : 7.7077851295471191,
         "SAIOnoutlet_miles" : 6.4676303863525391,
         "SAIOffoutlet_miles" : 6.7909834980964661,
@@ -23310,7 +23764,15 @@ var Cdata = {
         "SAIalc1_miles" : 8.2843335866928101,
         "SAInarralc1_miles" : 8.0811238884925842,
         "Shape_Length" : 0.06974744708835405,
-        "Shape_Area" : 9.7769517333336453e-05
+        "Shape_Area" : 9.7769517333336453e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 1,
+        "outlet_count" : 1,
+        "family_count" : 31,
+        "violent_count" : 5,
+        "alc1_count" : 2,
+        "narralc1_count" : 2,
+        "crash_count" : 1
       }
     },
     {
@@ -23485,9 +23947,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 78,
-        "Join_Count" : 1,
-        "TARGET_FID" : 78,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130012002",
         "SAIoutlet_miles" : 18.534296631813049,
         "SAIOnoutlet_miles" : 15.348525524139401,
         "SAIOffoutlet_miles" : 10.485100984573361,
@@ -23496,7 +23956,15 @@ var Cdata = {
         "SAIalc1_miles" : 13.222330570220951,
         "SAInarralc1_miles" : 6.6360521912574768,
         "Shape_Length" : 0.03830043405964207,
-        "Shape_Area" : 4.9513378409143537e-05
+        "Shape_Area" : 4.9513378409143537e-05,
+        "Onoutlet_count" : 1,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 1,
+        "family_count" : 20,
+        "violent_count" : 1,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : null
       }
     },
     {
@@ -23743,9 +24211,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 79,
-        "Join_Count" : 1,
-        "TARGET_FID" : 79,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130013001",
         "SAIoutlet_miles" : 12.998247385025021,
         "SAIOnoutlet_miles" : 10.52094924449921,
         "SAIOffoutlet_miles" : 11.058442354202271,
@@ -23754,7 +24220,15 @@ var Cdata = {
         "SAIalc1_miles" : 18.834651708602909,
         "SAInarralc1_miles" : 9.2759239673614502,
         "Shape_Length" : 0.047548859161911226,
-        "Shape_Area" : 8.918073585728183e-05
+        "Shape_Area" : 8.918073585728183e-05,
+        "Onoutlet_count" : 1,
+        "Offoutlet_count" : 2,
+        "outlet_count" : 3,
+        "family_count" : 75,
+        "violent_count" : 4,
+        "alc1_count" : 15,
+        "narralc1_count" : 3,
+        "crash_count" : 2
       }
     },
     {
@@ -23917,9 +24391,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 80,
-        "Join_Count" : 1,
-        "TARGET_FID" : 80,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130013002",
         "SAIoutlet_miles" : 24.458485722541809,
         "SAIOnoutlet_miles" : 24.191782832145691,
         "SAIOffoutlet_miles" : 7.7493548989295959,
@@ -23928,7 +24400,15 @@ var Cdata = {
         "SAIalc1_miles" : 8.9495143890380859,
         "SAInarralc1_miles" : 7.0582592487335214,
         "Shape_Length" : 0.03983311217137317,
-        "Shape_Area" : 8.1027885710256787e-05
+        "Shape_Area" : 8.1027885710256787e-05,
+        "Onoutlet_count" : 1,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 1,
+        "family_count" : 46,
+        "violent_count" : 5,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : 1
       }
     },
     {
@@ -24603,9 +25083,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 81,
-        "Join_Count" : 1,
-        "TARGET_FID" : 81,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130013003",
         "SAIoutlet_miles" : 13.90907752513885,
         "SAIOnoutlet_miles" : 13.798170685768129,
         "SAIOffoutlet_miles" : 5.962614119052887,
@@ -24614,7 +25092,15 @@ var Cdata = {
         "SAIalc1_miles" : 31.024164438247681,
         "SAInarralc1_miles" : 6.1516387462615967,
         "Shape_Length" : 0.12355842726429,
-        "Shape_Area" : 0.00039518741760354178
+        "Shape_Area" : 0.00039518741760354178,
+        "Onoutlet_count" : 4,
+        "Offoutlet_count" : 1,
+        "outlet_count" : 5,
+        "family_count" : 84,
+        "violent_count" : 6,
+        "alc1_count" : 11,
+        "narralc1_count" : 1,
+        "crash_count" : 5
       }
     },
     {
@@ -24801,9 +25287,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 82,
-        "Join_Count" : 1,
-        "TARGET_FID" : 82,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130002071",
         "SAIoutlet_miles" : 5.4803715348243713,
         "SAIOnoutlet_miles" : 5.1494460105895996,
         "SAIOffoutlet_miles" : 4.885935366153717,
@@ -24812,7 +25296,15 @@ var Cdata = {
         "SAIalc1_miles" : 5.3690807223320007,
         "SAInarralc1_miles" : 4.9949311017990112,
         "Shape_Length" : 0.027106267891969012,
-        "Shape_Area" : 3.6782426029830657e-05
+        "Shape_Area" : 3.6782426029830657e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 0,
+        "outlet_count" : 0,
+        "family_count" : 9,
+        "violent_count" : 0,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : null
       }
     },
     {
@@ -24947,9 +25439,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 83,
-        "Join_Count" : 1,
-        "TARGET_FID" : 83,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130016002",
         "SAIoutlet_miles" : 11.797087550163271,
         "SAIOnoutlet_miles" : 5.3079395294189453,
         "SAIOffoutlet_miles" : 10.89622592926025,
@@ -24958,7 +25448,15 @@ var Cdata = {
         "SAIalc1_miles" : 11.02625477313995,
         "SAInarralc1_miles" : 10.004225730896,
         "Shape_Length" : 0.033050751060446859,
-        "Shape_Area" : 6.7307059174243452e-05
+        "Shape_Area" : 6.7307059174243452e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 1,
+        "outlet_count" : 1,
+        "family_count" : 30,
+        "violent_count" : 0,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : 1
       }
     },
     {
@@ -25101,9 +25599,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 84,
-        "Join_Count" : 1,
-        "TARGET_FID" : 84,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130012001",
         "SAIoutlet_miles" : 18.156638145446781,
         "SAIOnoutlet_miles" : 10.79014378786087,
         "SAIOffoutlet_miles" : 13.367273807525629,
@@ -25112,7 +25608,15 @@ var Cdata = {
         "SAIalc1_miles" : 9.5408339500427246,
         "SAInarralc1_miles" : 5.1715692281723022,
         "Shape_Length" : 0.038850949804054478,
-        "Shape_Area" : 5.547653058673638e-05
+        "Shape_Area" : 5.547653058673638e-05,
+        "Onoutlet_count" : 0,
+        "Offoutlet_count" : 1,
+        "outlet_count" : 1,
+        "family_count" : 9,
+        "violent_count" : 0,
+        "alc1_count" : 0,
+        "narralc1_count" : 0,
+        "crash_count" : 1
       }
     },
     {
@@ -25283,9 +25787,7 @@ var Cdata = {
       },
       "properties" : {
         "OBJECTID" : 85,
-        "Join_Count" : 1,
-        "TARGET_FID" : 85,
-        "Join_Count_1" : 1,
+        "ACS_2019_5YR_BG_19_IOWA_GEOID" : "191130023001",
         "SAIoutlet_miles" : 29.44951772689819,
         "SAIOnoutlet_miles" : 21.963533163070679,
         "SAIOffoutlet_miles" : 20.48668193817139,
@@ -25294,7 +25796,15 @@ var Cdata = {
         "SAIalc1_miles" : 32.960312843322747,
         "SAInarralc1_miles" : 17.009228348731991,
         "Shape_Length" : 0.031345454938369474,
-        "Shape_Area" : 5.3897602440722175e-05
+        "Shape_Area" : 5.3897602440722175e-05,
+        "Onoutlet_count" : 2,
+        "Offoutlet_count" : 2,
+        "outlet_count" : 4,
+        "family_count" : 113,
+        "violent_count" : 11,
+        "alc1_count" : 7,
+        "narralc1_count" : 2,
+        "crash_count" : 1
       }
     }
   ]

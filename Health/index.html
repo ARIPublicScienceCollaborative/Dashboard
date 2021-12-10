@@ -296,7 +296,15 @@
                                     mouseout: resetHighlightCO
                                 });
                                 if (feature.properties) {
-                                    layer.bindPopup("<b>SAI Outlets: </b>" + feature.properties.SAIoutlet_miles.toFixed(2) );
+                                    layer.bindPopup("<b> Density Score of Outlets: </b>" + feature.properties.SAIoutlet_miles.toFixed(2) +
+                                                    "<br> <b> Number of Alcohol Outlets: </b> " + feature.properties.outlet_count +
+                                                    "<br> <b> Number of On-Premise Alcohol Outlets: </b> " + feature.properties.Onoutlet_count + 
+                                                    "<br> <b> Number of Off-Premise Alcohol Outlets: </b> " + feature.properties.Offoutlet_count + 
+                                                    "<br> <b> Number of Family Related Calls For Service: </b> " + feature.properties.family_count + 
+                                                    "<br> <b> Number of Violent Crime Related Calls For Service: </b> " + feature.properties.violent_count + 
+                                                    "<br> <b> Number of Alcohol Related Calls For Service: </b> " + feature.properties.alc1_count +
+                                                    "<br> <b> Number of Narrowed Alcohol Related Calls For Service: </b> " + feature.properties.narralc1_count + 
+                                                    "<br> <b> Number of Alcohol Related Car Crashes: </b> " + feature.properties.crash_count );
                                     }
                                     }
                         
@@ -412,7 +420,7 @@
                             layer.bindPopup("<br><b> Name: </b>" + feature.properties.feature_na)
                             },
                             } 
-                            ).setZIndex(1);;
+                            ).setZIndex(1);
 
                 var crashes = L.geoJSON(crashes,  { 
                             filter: function(feature, layer) {
@@ -431,7 +439,7 @@
                             layer.bindPopup("<br><b> Severity: </b>" + feature.properties.CSEVERITY )
                             },
                             } 
-                            ).setZIndex(1);;
+                            ).setZIndex(1);
                 
                 function getColorOn(d) {
                             return  d = 'On Premise' ? 'red':
