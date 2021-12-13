@@ -177,7 +177,7 @@
                             pointToLayer: function(feature, coordinates) {
                             return   L.shapeMarker(coordinates, {
                             color: "black",
-                            fillColor: "darkred",        
+                            fillColor: "purple"  ,        
                             shape: "diamond",
                             radius: 5,
                             weight: .5,
@@ -186,15 +186,22 @@
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<br><b>Inspection Result: </b>"+ feature.properties.inspection_result +
-                            "<br><b>Year: </b>" +feature.properties.approx_year)
+                            "<br><b>Year: </b>" +feature.properties.approx_year +
+                            "<br><b>Sale to Minor: </b>" + feature.properties.sale_to_minor)
                         }, style: function(feature) {
                               switch (feature.properties.inspection_result) {
                                  case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "diamond",
                             radius: 5,
                             weight: .5,
+                            fillOpacity: 0.8}}
+                            switch (feature.properties.sale_to_minor_tf) {
+                                 case 'TRUE': return {color: "black", fillColor: "darkred", shape: "diamond",
+                            radius: 5,
+                            weight: .5,
                             fillOpacity: 0.8};
                             }
                         }}).addTo(map1);
+                       
                 
                 var nineteen= L.geoJSON(inspections, { 
                             filter: function(feature, layer) {
@@ -203,7 +210,7 @@
                             pointToLayer: function(feature, coordinates) {
                             return   L.shapeMarker(coordinates, {
                             color: "black",
-                            fillColor: "darkred",        
+                            fillColor: "purple"  ,        
                             shape: "diamond",
                             radius: 5,
                             weight: .5,
@@ -212,15 +219,22 @@
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<br><b>Inspection Result: </b>"+ feature.properties.inspection_result +
-                            "<br><b>Year: </b>" +feature.properties.approx_year)
+                            "<br><b>Year: </b>" +feature.properties.approx_year +
+                            "<br><b>Sale to Minor: </b>" + feature.properties.sale_to_minor)
                         }, style: function(feature) {
                               switch (feature.properties.inspection_result) {
                                  case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "diamond",
                             radius: 5,
                             weight: .5,
+                            fillOpacity: 0.8}}
+                            switch (feature.properties.sale_to_minor_tf) {
+                                 case 'TRUE': return {color: "black", fillColor: "darkred", shape: "diamond",
+                            radius: 5,
+                            weight: .5,
                             fillOpacity: 0.8};
                             }
                         }}).addTo(map1);
+                       
                 
                 
                 var eighteen= L.geoJSON(inspections, { 
@@ -230,7 +244,7 @@
                             pointToLayer: function(feature, coordinates) {
                             return   L.shapeMarker(coordinates, {
                             color: "black",
-                            fillColor: "darkred",        
+                            fillColor: "purple"  ,        
                             shape: "diamond",
                             radius: 5,
                             weight: .5,
@@ -239,15 +253,22 @@
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<br><b>Inspection Result: </b>"+ feature.properties.inspection_result +
-                            "<br><b>Year: </b>" +feature.properties.approx_year)
+                            "<br><b>Year: </b>" +feature.properties.approx_year +
+                            "<br><b>Sale to Minor: </b>" + feature.properties.sale_to_minor)
                         }, style: function(feature) {
                               switch (feature.properties.inspection_result) {
                                  case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "diamond",
                             radius: 5,
                             weight: .5,
+                            fillOpacity: 0.8}}
+                            switch (feature.properties.sale_to_minor_tf) {
+                                 case 'TRUE': return {color: "black", fillColor: "darkred", shape: "diamond",
+                            radius: 5,
+                            weight: .5,
                             fillOpacity: 0.8};
                             }
                         }}).addTo(map1);
+                       
                 
                 var seventeen= L.geoJSON(inspections, { 
                             filter: function(feature, layer) {
@@ -256,7 +277,7 @@
                             pointToLayer: function(feature, coordinates) {
                             return   L.shapeMarker(coordinates, {
                             color: "black",
-                            fillColor: "darkred",        
+                            fillColor: "purple"  ,        
                             shape: "diamond",
                             radius: 5,
                             weight: .5,
@@ -265,15 +286,22 @@
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<br><b>Inspection Result: </b>"+ feature.properties.inspection_result +
-                            "<br><b>Year: </b>" +feature.properties.approx_year)
+                            "<br><b>Year: </b>" +feature.properties.approx_year +
+                            "<br><b>Sale to Minor: </b>" + feature.properties.sale_to_minor)
                         }, style: function(feature) {
                               switch (feature.properties.inspection_result) {
                                  case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "diamond",
                             radius: 5,
                             weight: .5,
+                            fillOpacity: 0.8}}
+                            switch (feature.properties.sale_to_minor_tf) {
+                                 case 'TRUE': return {color: "black", fillColor: "darkred", shape: "diamond",
+                            radius: 5,
+                            weight: .5,
                             fillOpacity: 0.8};
                             }
                         }}).addTo(map1);
+                       
 
                 var sixteen= L.geoJSON(inspections, { 
                             filter: function(feature, layer) {
@@ -282,7 +310,7 @@
                             pointToLayer: function(feature, coordinates) {
                             return   L.shapeMarker(coordinates, {
                             color: "black",
-                            fillColor: "darkred",        
+                            fillColor: "purple"  ,        
                             shape: "diamond",
                             radius: 5,
                             weight: .5,
@@ -291,10 +319,16 @@
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<br><b>Inspection Result: </b>"+ feature.properties.inspection_result +
-                            "<br><b>Year: </b>" +feature.properties.approx_year)
+                            "<br><b>Year: </b>" +feature.properties.approx_year +
+                            "<br><b>Sale to Minor: </b>" + feature.properties.sale_to_minor)
                         }, style: function(feature) {
                               switch (feature.properties.inspection_result) {
                                  case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "diamond",
+                            radius: 5,
+                            weight: .5,
+                            fillOpacity: 0.8}}
+                            switch (feature.properties.sale_to_minor_tf) {
+                                 case 'TRUE': return {color: "black", fillColor: "darkred", shape: "diamond",
                             radius: 5,
                             weight: .5,
                             fillOpacity: 0.8};
@@ -308,7 +342,7 @@
                             pointToLayer: function(feature, coordinates) {
                             return   L.shapeMarker(coordinates, {
                             color: "black",
-                            fillColor: "darkred",        
+                            fillColor: "purple"  ,        
                             shape: "diamond",
                             radius: 5,
                             weight: .5,
@@ -317,15 +351,22 @@
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<br><b>Inspection Result: </b>"+ feature.properties.inspection_result +
-                            "<br><b>Year: </b>" +feature.properties.approx_year)
+                            "<br><b>Year: </b>" +feature.properties.approx_year +
+                            "<br><b>Sale to Minor: </b>" + feature.properties.sale_to_minor)
                         }, style: function(feature) {
                               switch (feature.properties.inspection_result) {
                                  case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "diamond",
                             radius: 5,
                             weight: .5,
+                            fillOpacity: 0.8}}
+                            switch (feature.properties.sale_to_minor_tf) {
+                                 case 'TRUE': return {color: "black", fillColor: "darkred", shape: "diamond",
+                            radius: 5,
+                            weight: .5,
                             fillOpacity: 0.8};
                             }
                         }}).addTo(map1);
+                       
 
                     var fourteen= L.geoJSON(inspections, { 
                             filter: function(feature, layer) {
@@ -334,7 +375,7 @@
                             pointToLayer: function(feature, coordinates) {
                             return   L.shapeMarker(coordinates, {
                             color: "black",
-                            fillColor: "darkred",        
+                            fillColor: "purple"  ,        
                             shape: "diamond",
                             radius: 5,
                             weight: .5,
@@ -343,15 +384,22 @@
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<br><b>Inspection Result: </b>"+ feature.properties.inspection_result +
-                            "<br><b>Year: </b>" +feature.properties.approx_year)
+                            "<br><b>Year: </b>" +feature.properties.approx_year +
+                            "<br><b>Sale to Minor: </b>" + feature.properties.sale_to_minor)
                         }, style: function(feature) {
                               switch (feature.properties.inspection_result) {
                                  case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "diamond",
                             radius: 5,
                             weight: .5,
+                            fillOpacity: 0.8}}
+                            switch (feature.properties.sale_to_minor_tf) {
+                                 case 'TRUE': return {color: "black", fillColor: "darkred", shape: "diamond",
+                            radius: 5,
+                            weight: .5,
                             fillOpacity: 0.8};
                             }
                         }}).addTo(map1);
+                       
                        
                     var thirteen= L.geoJSON(inspections, { 
                             filter: function(feature, layer) {
@@ -360,7 +408,7 @@
                             pointToLayer: function(feature, coordinates) {
                             return   L.shapeMarker(coordinates, {
                             color: "black",
-                            fillColor: "darkred",        
+                            fillColor: "purple"  ,        
                             shape: "diamond",
                             radius: 5,
                             weight: .5,
@@ -369,15 +417,22 @@
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<br><b>Inspection Result: </b>"+ feature.properties.inspection_result +
-                            "<br><b>Year: </b>" +feature.properties.approx_year)
+                            "<br><b>Year: </b>" +feature.properties.approx_year +
+                            "<br><b>Sale to Minor: </b>" + feature.properties.sale_to_minor)
                         }, style: function(feature) {
                               switch (feature.properties.inspection_result) {
                                  case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "diamond",
                             radius: 5,
                             weight: .5,
+                            fillOpacity: 0.8}}
+                            switch (feature.properties.sale_to_minor_tf) {
+                                 case 'TRUE': return {color: "black", fillColor: "darkred", shape: "diamond",
+                            radius: 5,
+                            weight: .5,
                             fillOpacity: 0.8};
                             }
                         }}).addTo(map1);
+                       
 
                         var twelve= L.geoJSON(inspections, { 
                             filter: function(feature, layer) {
@@ -386,7 +441,7 @@
                             pointToLayer: function(feature, coordinates) {
                             return   L.shapeMarker(coordinates, {
                             color: "black",
-                            fillColor: "darkred",        
+                            fillColor: "purple"  ,        
                             shape: "diamond",
                             radius: 5,
                             weight: .5,
@@ -395,10 +450,16 @@
                             onEachFeature: function (feature, layer) {
                             popupOptions = {maxWidth: 200}; 
                             layer.bindPopup("<br><b>Inspection Result: </b>"+ feature.properties.inspection_result +
-                            "<br><b>Year: </b>" +feature.properties.approx_year)
+                            "<br><b>Year: </b>" +feature.properties.approx_year +
+                            "<br><b>Sale to Minor: </b>" + feature.properties.sale_to_minor)
                         }, style: function(feature) {
                               switch (feature.properties.inspection_result) {
                                  case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "diamond",
+                            radius: 5,
+                            weight: .5,
+                            fillOpacity: 0.8}}
+                            switch (feature.properties.sale_to_minor_tf) {
+                                 case 'TRUE': return {color: "black", fillColor: "darkred", shape: "diamond",
                             radius: 5,
                             weight: .5,
                             fillOpacity: 0.8};
@@ -431,7 +492,7 @@
                             labels = ["TLegend.png"];
                             for (var i = 0; i < grades.length; i++) {
                               div.innerHTML +=
-                              (" <img src="+ labels[i] +" height='120' width='320'>") + grades[i] +'<br>';
+                              (" <img src="+ labels[i] +" height='85' width='200'>") + grades[i] +'<br>';
                                 }
 
                          return div;
