@@ -28,7 +28,8 @@
                 <a href="https://kvanselous.github.io/ARIDashboard/Tobacco/">Tobacco</a>
                 <a href="https://kvanselous.github.io/ARIDashboard/Violations/">Violations</a>
                 <a href="https://kvanselous.github.io/ARIDashboard/Health/">Health & Safety</a>
-                <a href="https://kvanselous.github.io/ARIDashboard/Deliverables/">Deliverale List</a>
+                <a href="https://kvanselous.github.io/ARIDashboard/Deliverables/">Deliverable List</a>
+                <a href="https://kvanselous.github.io/ARIDashboard/Executive/">Executive Summary</a>
            
             
             </div>
@@ -173,23 +174,21 @@
                              
                     var circle1 = {
                         radius: 5,
-                        fillColor: "grey",
-                        color: "red",
-                        weight: 1,
+                        fillColor: "darkgreen",
+                        color: "black",
+                        weight: .5,
                         opacity: 1,
                         fillOpacity: 0.8
                         };   
 
                     var circle2 = {
                         radius: 5,
-                        fillColor: "grey",
-                        color: "blue",
-                        weight: 1,
+                        fillColor: "darkblue",
+                        color: "grey",
+                        weight: .5,
                         opacity: 1,
                         fillOpacity: 0.8
-                        };          
-                
-                                                
+                        };                  
 
 
                 var on= L.geoJSON(onoutlets, { 
@@ -224,6 +223,31 @@
                              )},
                         }).addTo(map1);
 
+                        function styleOn(feature) {
+                            return {
+                                fillColor: 'darkgreen',
+                                weight: 3,
+                                opacity: 1,
+                                radius: 10, 
+                                color: 'darkgreen',
+                                fillOpacity: 0.2
+                            };
+                        }
+
+                        function styleOff(feature) {
+                            return {
+                                fillColor: 'darkblue',
+                                weight: 3,
+                                opacity: 1,
+                                color: 'darkblue',
+                                fillOpacity: 0.2
+                            };
+                        }
+
+
+                var OnClusters =  L.geoJson(onoutletcluster, {style: styleOn})
+                var OffClusters =  L.geoJson(offoutletcluster, {style: styleOff})
+               
 
                 var basemap1 = {
                         "Open Street Map": osm1
@@ -232,20 +256,22 @@
 
 
                 var overlayMaps1 = {
-                        "On Premise Outlets": on,
-                        "Off Premise Outlets": off
+                        "On-Premise Outlets": on,
+                        "Off-Premise Outlets": off,
+                        "On-Premise Clusters": OnClusters,
+                        "Off=Premise Clusters": OffClusters
                     }; 
 
                     L.control.layers(basemap1, overlayMaps1).addTo(map1);	
 
-                var legend1 = L.control({position: 'bottomleft'}); 
+                    var legend1 = L.control({position: 'bottomleft'}); 
                         legend1.onAdd = function (map1) {
                             var div = L.DomUtil.create('div', 'info legend');
-                            grades = [" On Premise", " Off Premise"],
-                            labels = ["onMarker.png", "offMarker.png"];
+                            grades = [""],
+                            labels = ["pointLegendHome.png"];
                             for (var i = 0; i < grades.length; i++) {
                               div.innerHTML +=
-                              (" <img src="+ labels[i] +" height='20' width='20'>") + grades[i] +'<br>';
+                              (" <img src="+ labels[i] +" height='90' width='180'>") + grades[i] +'<br>';
                                 }
 
                          return div;

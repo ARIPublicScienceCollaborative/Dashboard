@@ -22,6 +22,9 @@
             
             <!--KVS geoJSON-->    
             <script src="violations.geojson"></script>
+            <script src="AlcRelatedCrashes"></script>
+            <script src="OnOutletCluster"></script>
+            <script src="OffOutletCluster"></script>
             
             <div class="navbar">
                 <a href="https://kvanselous.github.io/ARIDashboard/">Home</a>
@@ -29,7 +32,8 @@
                 <a href="https://kvanselous.github.io/ARIDashboard/Tobacco/">Tobacco</a>
                 <a href="https://kvanselous.github.io/ARIDashboard/Violations/">Violations</a>
                 <a href="https://kvanselous.github.io/ARIDashboard/Health/">Health & Safety</a>
-                <a href="https://kvanselous.github.io/ARIDashboard/Deliverables/">Deliverale List</a>
+                <a href="https://kvanselous.github.io/ARIDashboard/Deliverables/">Deliverable List</a>
+                <a href="https://kvanselous.github.io/ARIDashboard/Executive/">Executive Summary</a>
            
             
             </div>
@@ -37,6 +41,8 @@
             <!--Boot Strap-->
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+            <script src = "Leaflet.SvgShapeMarkers-gh-pages/dist/leaflet-svg-shape-markers.min.js"></script>
               
 
      
@@ -57,8 +63,8 @@
                     } 
 
 
-                    #map1container {border: 1px solid#0a0a0a; position:absolute; background-color:#ecf7fc; color:black; text-align:left; margin-right: 0px; margin-left:5px; width:600px; height:800px;padding 0; }
-                    #map1 {border: 1px solid#0a0a0a; position: relative; width:1250px; height:800px;margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
+                    #map1container {border: 1px solid#0a0a0a; position:relative; background-color:#ecf7fc; color:black; text-align:left; margin-right: 0px; margin-left:1250px; width:600px; height:800px;padding 0; }
+                    #map1 {border: 1px solid#0a0a0a; position: absolute; width:1250px; height:800px;margin-left:5px;border-left:2px; padding 0; overflow:hidden;}
 
                      /* The navigation bar */
                      .navbar {
@@ -142,11 +148,12 @@
         <img src="ARI.jpg" height=55% width=55% >
         <img src="logonew.jpg" height=35% width=35% class="top-left" >
         
+        <div id='map1' class="center"></div>
         <div id='map1container'>
         <h3>Violation Data <BR>
         <h4> 3. Create an interactive, dynamic map that projects the location and relevant descriptive information (e.g. date, time, retailer name) for each violation identified in the ABD violations database and a clean dataset for mapping and future analysis.
         </div>
-        <div id='map1' class="center"></div>
+  
 
 
  
@@ -175,6 +182,28 @@
                         opacity: 1,
                         fillOpacity: 0.8
                         };
+
+                
+                
+                var crashes = L.geoJSON(crashes,  { 
+                            filter: function(feature, layer) {
+                                return feature.type == "Feature";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.shapeMarker(coordinates, {
+                            color: "darkred",      
+                            shape: "x",
+	                    	radius: 10,
+                            weight: 2
+	                        });
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Severity: </b>" + feature.properties.CSEVERITY )
+                            },
+                            } 
+                            ).bringToFront(100);        
+                
                 
                 var nineteen= L.geoJSON(violations, { 
                             filter: function(feature, layer) {
@@ -398,7 +427,32 @@
                             }
                         }}).addTo(map1);
 
-               var basemapS1 = {
+                        function styleOn(feature) {
+                            return {
+                                fillColor: 'darkgreen',
+                                weight: 3,
+                                opacity: 1,
+                                radius: 10, 
+                                color: 'darkgreen',
+                                fillOpacity: 0.2
+                            };
+                        }
+
+                        function styleOff(feature) {
+                            return {
+                                fillColor: 'darkblue',
+                                weight: 3,
+                                opacity: 1,
+                                color: 'darkblue',
+                                fillOpacity: 0.2
+                            };
+                        }
+
+
+                var OnClusters =  L.geoJson(onoutletcluster, {style: styleOn})
+                var OffClusters =  L.geoJson(offoutletcluster, {style: styleOff})
+               
+                var basemapS1 = {
                     "Open Street Map" : osmS1,
                 };
                 var overlayMaps1 = {
@@ -413,7 +467,10 @@
                         "2011 Violations": eleven,
                         "2010 Violations": ten,
                         "2009 Violations": nine,
-                        "2008 Violations": eight
+                        "2008 Violations": eight,
+                        "Alcohol Outlet Clusters, On-Premise": OnClusters,
+                        "Alcohol Outlet Clusters, Off-Premise": OffClusters,
+                        "Alcohol-Related Automobile Crashes": crashes
                         };			
 
                     L.control.layers(basemapS1, overlayMaps1).addTo(map1);	
@@ -426,7 +483,7 @@
                             labels = ["minorMarker.png", "violationMarker.png",];
                             for (var i = 0; i < grades.length; i++) {
                               div.innerHTML +=
-                              (" <img src="+ labels[i] +" height='20' width='20'>") + grades[i] +'<br>';
+                              (" <img src="+ labels[i] +" height='10' width='10'>") + grades[i] +'<br>';
                                 }
 
                          return div;

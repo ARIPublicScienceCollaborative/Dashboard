@@ -42,27 +42,6 @@
              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
-      
-            <!--External CSS for Markers -->
-            <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">	-->
-            <!--<link rel="stylesheet" href="https://profseeger.github.io/LVM-Code/classes/Leaflet.awesome-markers/leaflet.awesome-markers.css">-->
-            <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">-->
-            <!--<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">-->
-            <!--<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />-->
-
-
-            <!--External JS for Markers-->	
-            <!--<script src="https://code.jquery.com/jquery-3.1.0.js"></script>-->
-            <!--<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>-->
-            <!--<script src="https://profseeger.github.io/LVM-Code/classes/Leaflet.awesome-markers/leaflet.awesome-markers.js"></script>-->
-
-            <!--AwesomeMarker-->
-           <!-- <link href=“http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css” rel=“stylesheet”> -->
-          <!--  <link rel=“stylesheet” href=“https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css”> -->
-         <!--  <link rel=“stylesheet” href=“ARIWebMapping/Home/Health/PlugIn/PlugIn/awesomemarkers/dist/leaflet.awesome-markers.css” /> -->
-       <!--     <script src= "PlugIn/PlugIn/awesomemarkers/dist/leaflet.awesome-markers.js"></script> -->
-        
-
         <script src = "Leaflet.SvgShapeMarkers-gh-pages/dist/leaflet-svg-shape-markers.min.js"></script>
             <!--Boot Strap-->
               <link rel=“stylesheet” href=“https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css”> 
@@ -75,6 +54,7 @@
                 <a href="https://kvanselous.github.io/ARIDashboard/Violations/">Violations</a>
                 <a href="https://kvanselous.github.io/ARIDashboard/Health/">Health & Safety</a>
                 <a href="https://kvanselous.github.io/ARIDashboard/Deliverables/">Deliverable List</a>
+                <a href="https://kvanselous.github.io/ARIDashboard/Executive/">Executive Summary</a>
             </div>
               
 
@@ -266,11 +246,11 @@
                             fillOpacity: 0.7
                         });
                         if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-                            layer.bringToFront();
+                            layer.bringToBack();
                         }
                     }
 
-                function resetHighlightCO(e) {
+                function resetHighlightCO(e){
                                 CSAI.resetStyle(e.target);
                                 }
                 function resetHighlightCF(e) {
@@ -279,7 +259,7 @@
                 function resetHighlightCV(e) {
                                 CSAI_violent.resetStyle(e.target);
                                 }   
-                function resetHighlightCA(e) {
+                function resetHighlightCA(e){
                                 CSAI_alc.resetStyle(e.target);
                                 }                              
                 function resetHighlightCNA(e) {
@@ -621,8 +601,8 @@
                         "Alcohol Outlets, Off-Premise": off,
                         "Alcohol Outlet Clusters, On-Premise": ConClusters,
                         "Alcohol Outlet Clusters, Off-Premise": CoffClusters,
-                        "K-12 Schools, Pubic & Private": schools, 
-                        "Alchol-Related Automobile Crashes": crashes
+                        "Schools": schools, 
+                        "Alcohol-Related Automobile Crashes": crashes
                         };			
 
                     L.control.layers(basemapC1, overlayMapsC1).addTo(map1);	
@@ -943,8 +923,8 @@ var legend1 = L.control({position: 'bottomleft'});
                         var ISAI_On= L.geoJson(Idata, {style: styleI6, onEachFeature: onEachFeatureIOn});
                         var ISAI_Off= L.geoJson(Idata, {style: styleI7, onEachFeature: onEachFeatureIOff});
                         var deselect = L.geoJson(Cdata, {style: styleC1, onEachFeature: onEachFeatureIO});
-                        var IonClusters =  L.geoJson(onoutletcluster, {style: styleOn})
-                        var IoffClusters =  L.geoJson(offoutletcluster)
+                        var IonClusters =  L.geoJson(onoutletcluster, {style: styleOn}) ;
+                        var IoffClusters =  L.geoJson(offoutletcluster, {style: styleOff}) ;
 
                         var basemapI1 = {
                         "Neighborhood Density, On & Off-Premise": ISAI,
@@ -962,8 +942,8 @@ var legend1 = L.control({position: 'bottomleft'});
                         "Alcohol Outlets, Off-Premise": off,
                         "Alcohol Outlet Clusters, On-Premise": IonClusters,
                         "Alcohol Outlet Clusters, Off-Premise": IoffClusters,
-                        "K-12 Schools, Pubic & Private": schools, 
-                        "Alchol-Related Automobile Crashes": crashes
+                        "Schools": schools, 
+                        "Alcohol-Related Automobile Crashes": crashes
                         };				
 
                     L.control.layers(basemapI1, overlayMapsI1).addTo(map2);	
@@ -1283,8 +1263,8 @@ var legend1 = L.control({position: 'bottomleft'});
                         "Alcohol Outlets, Off-Premise": off,
                         "Alcohol Outlet Clusters, On-Premise": MOnClusters,
                         "Alcohol Outlet Clusters, Off-Premise": MOffClusters,
-                        "K-12 Schools, Pubic & Private": schools, 
-                        "Alchol-Related Automobile Crashes": crashes
+                        "Schools": schools, 
+                        "Alcohol-Related Automobile Crashes": crashes
                         };			
 
 
@@ -1606,8 +1586,8 @@ var legend1 = L.control({position: 'bottomleft'});
                         "Alcohol Outlets, Off-Premise": off,
                         "Alcohol Outlet Clusters, On-Premise": BOnClusters,
                         "Alcohol Outlet Clusters, Off-Premise": BOffClusters,
-                        "K-12 Schools, Pubic & Private": schools, 
-                        "Alchol-Related Automobile Crashes": crashes
+                        "Schools": schools, 
+                        "Alcohol-Related Automobile Crashes": crashes
                         };			
 
 
