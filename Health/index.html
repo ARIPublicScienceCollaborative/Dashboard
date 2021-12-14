@@ -47,23 +47,22 @@
               <link rel=“stylesheet” href=“https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css”> 
               <link rel=“stylesheet” href=“https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css”> 
 
-             <div class="navbar">
+              <div class="navbar">
                 <a href="https://kvanselous.github.io/ARIDashboard/">Home</a>
                 <a href="https://kvanselous.github.io/ARIDashboard/Sales/">Sales</a>
-                <a href="https://kvanselous.github.io/ARIDashboard/Tobacco/">Tobacco</a>
                 <a href="https://kvanselous.github.io/ARIDashboard/Violations/">Violations</a>
                 <a href="https://kvanselous.github.io/ARIDashboard/Health/">Health & Safety</a>
-                <a href="https://kvanselous.github.io/ARIDashboard/Deliverables/">Deliverable List</a>
-                <a href="https://kvanselous.github.io/ARIDashboard/Executive/">Executive Summary</a>
+                <a href="https://kvanselous.github.io/ARIDashboard/Tobacco/">Tobacco</a>
             </div>
+
               
 
                 <style>
  
                     h1 {text-align: center; font-size: 50px}
                     h2 {text-align: center; margin-left: 10px}
-                    h3 {text-align: center; margin-left: 10px}
-                    h4 {margin-left: 10px}
+                    h3 {text-align: left; margin-left:auto;border-left:auto; padding: 5px}
+                    h4 {text-align: center; margin-left:auto;border-left:auto; margin-left: 10px; font-size: 20px}
                     h5 {margin-left: 10px}
 
                     .center {
@@ -73,14 +72,14 @@
                     width: 25%;
                     } 
                    
-                    #map1container {border: 1px solid#0a0a0a;  position:absolute; background-color:#ecf7fc; color:black; text-align:left; margin-right: 0px; margin-left:5px; width:600px; height:790px;padding 0; }
-                    #map1 {border: 1px solid#0a0a0a;  position: relative; width:1000px; height:790px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
-                    #map2container {border: 1px solid#0a0a0a; position:absolute; background-color:#fdfdfd; color:black; text-align:left; margin-right: 0px; margin-left:5px; width:600px; height:790px;padding 0; }
-                    #map2 {border: 1px solid#0a0a0a; position: relative; width:1000px; height:790px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;} 
-                    #map3container {border: 1px solid#0a0a0a; position:absolute; background-color:#ecf7fc; color:black; text-align:left; margin-right: 0px; margin-left:5px; width:600px; height:790px;padding 0; }
-                    #map3 {border: 1px solid#0a0a0a; position: relative; width:1000px; height:790px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}
-                    #map4container {border: 1px solid#0a0a0a; position:absolute; background-color:#fdfdfd; color:black; text-align:left; margin-right: 0px; margin-left:5px; width:600px; height:790px;padding 0; }
-                    #map4 {border: 1px solid#0a0a0a; position: relative; width:1000px; height:790px; margin-left:600px;border-left:2px; padding 0; overflow:hidden;}         
+/*                    #map1container {border: 1px solid#0a0a0a;  position:absolute; background-color:#ecf7fc; color:black; text-align:left; margin-right: 0px; margin-left:5px; width:600px; height:790px;padding 0; } */
+                    #map1 {border: 1px solid#0a0a0a; width:1000px; height:790px; margin-left:auto;border-left:auto; padding 0; overflow:hidden;}  
+/*                    #map2container {border: 1px solid#0a0a0a; position:absolute; background-color:#fdfdfd; color:black; text-align:left; margin-right: 0px; margin-left:5px; width:600px; height:790px;padding 0; } */
+                    #map2 {border: 1px solid#0a0a0a; width:1000px; height:790px; margin-left:auto;border-left:auto; padding 0; overflow:hidden;} 
+/*                     #map3container {border: 1px solid#0a0a0a; position:absolute; background-color:#ecf7fc; color:black; text-align:left; margin-right: 0px; margin-left:5px; width:600px; height:790px;padding 0; } */
+                    #map3 {border: 1px solid#0a0a0a; width:1000px; height:790px; margin-left:auto;border-left:auto; padding 0; overflow:hidden;}
+/*                     #map4container {border: 1px solid#0a0a0a; position:absolute; background-color:#fdfdfd; color:black; text-align:left; margin-right: 0px; margin-left:5px; width:600px; height:790px;padding 0; } */
+                    #map4 {border: 1px solid#0a0a0a;  width:1000px; height:790px; margin-left:auto;border-left:auto; padding 0; overflow:hidden;}         
 
 
                     /* The navigation bar */
@@ -160,53 +159,73 @@
            
         <!--Title-->
      
-             
-        <img src="ARI.jpg" height=55% width=55% >
-        <img src="logonew.jpg" height=35% width=35% class="top-left" >
+        <img src="ARI.jpg" height=30% width=30% >                                                                              
+        <img src="logonew.jpg" height=20% width=20% margin-right=100px >
+       
+       
+
         
       
         <!--Headings and Maps-->
-        <h3>Deliverable 7: Create choropleth maps that project spatial variation in health and safety data throughout Iowa. Linking these data with the data described in items 1-6 above, create layered maps that combine point-level data (e.g. the locations of compliance violations) with choropleth data that enable the spatial analysis of patterns of association between health and safety variables and liquor and tobacco data, including the identification of ‘hot spots’</h3>
-        <h2>Alcohol Outlets & Call for Service </h2>   
-        <div id='map1container'>
+        <h3><b>Deliverable 7:</b> Create choropleth maps that project spatial variation in health and safety data throughout Iowa. Linking these data with the data described in items 1-6 above, create layered maps that combine point-level data (e.g. the locations of compliance violations) with choropleth data that enable the spatial analysis of patterns of association between health and safety variables and liquor and tobacco data, including the identification of ‘hot spots’</h3>
+        <br>
+        <br>
+        <h4><b>Alcohol Outlet Density, Calls for Service, Alcohol Related Automobile Accidents, and Schools in Cedar Rapids </b> </h4>  
+        <br>
+        <br> 
+<!--        <div id='map1container'>
             <h2>Cedar Rapids Outlets </h2>   
             <h4><b>Background:</b> Alcohol Outlet Density </h4>
             <h4><b>Map:</b> The map to the right displays.   </h4>
             <h4><b>Interactivity:</b> Click on.  </h4>     
             <img src=CedarRapidsSummary.png>  
-            </div>
+            </div> -->
             
         <div id='map1' class="center">
         </div>
-        <div id='map2container'>
+        <br>
+        <br>
+        <h4><b>Alcohol Outlet Density, Calls for Service, Alcohol Related Automobile Accidents, and Schools in Iowa City </b> </h4>   
+        <br>
+        <br>
+<!--        <div id='map2container'>
             <h2>Iowa City Outlets </h2>   
             <h4><b>Background:</b> Alcohol Outlet Density</h4>  
             <h4><b>Map:</b> The map to the right displays.  </h4>
             <h4><b>Interactivity:</b> Click on.</h4> 
             <img src=IowaCitySummary.png>            
-            </div>
+            </div> -->
         <div id='map2' class="center">
         </div>
-       
-        <div id='map3container'>
+        <br>
+        <br>
+<!--        <div id='map3container'>
             <h2>Marshalltown Outlets </h2>   
             <h4><b>Background:</b> Alcohol Outlet Density</p>  
             <h4><b>Map:</b> The map to the right displays.  </h4>
             <h4><b>Interactivity:</b> Click on.</h4>  
             <img src=MarshalltownSummary.png>           
-            </div>
+            </div> -->
+        <h4><b>Alcohol Outlet Density, Calls for Service, Alcohol Related Automobile Accidents, and Schools in Marshalltown</b> </h4>  
+        <br>
+        <br> 
         <div id='map3' class="center"></div>
     
-
-        <div id='map4container'>
+        <br>
+        <br>
+        <h4><b>Alcohol Outlet Density, Calls for Service, Alcohol Related Automobile Accidents, and Schools in Burlington </b> </h4>   
+        <br>
+        <br>
+<!--        <div id='map4container'>
         <h2>Burlington Outlets </h2>   
         <h4><b>Background:</b> Alcohol Outlet Density</h4>  
         <h4><b>Map:</b> The map to the right displays.  </h4>
         <h4><b>Interactivity:</b> Click on.</h4> 
         <img src=BurlingtonSummary.png>           
-        </div>
+        </div> -->
         <div id='map4' class="center"></div>
-
+        <br>
+        <br>
             <script>   
                          
                     //Cedar Rapids Maps, Marker Information, Layers, & Layer Control
