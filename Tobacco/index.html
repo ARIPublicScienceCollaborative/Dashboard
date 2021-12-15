@@ -176,8 +176,8 @@
                             pointToLayer: function(feature, coordinates) {
                             return   L.shapeMarker(coordinates, {
                             color: "black",
-                            fillColor: "purple"  ,        
-                            shape: "diamond",
+                            fillColor: "green"  ,        
+                            shape: "square",
                             radius: 5,
                             weight: .5,
                             fillOpacity: 0.8
@@ -189,7 +189,7 @@
                             "<br><b>Sale to Minor: </b>" + feature.properties.sale_to_minor)
                         }, style: function(feature) {
                               switch (feature.properties.inspection_result) {
-                                 case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "diamond",
+                                 case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "circle",
                             radius: 5,
                             weight: .5,
                             fillOpacity: 0.8}}
@@ -209,8 +209,8 @@
                             pointToLayer: function(feature, coordinates) {
                             return   L.shapeMarker(coordinates, {
                             color: "black",
-                            fillColor: "purple"  ,        
-                            shape: "diamond",
+                            fillColor: "green"  ,        
+                            shape: "square",
                             radius: 5,
                             weight: .5,
                             fillOpacity: 0.8
@@ -222,7 +222,7 @@
                             "<br><b>Sale to Minor: </b>" + feature.properties.sale_to_minor)
                         }, style: function(feature) {
                               switch (feature.properties.inspection_result) {
-                                 case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "diamond",
+                                 case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "circle",
                             radius: 5,
                             weight: .5,
                             fillOpacity: 0.8}}
@@ -243,8 +243,8 @@
                             pointToLayer: function(feature, coordinates) {
                             return   L.shapeMarker(coordinates, {
                             color: "black",
-                            fillColor: "purple"  ,        
-                            shape: "diamond",
+                            fillColor: "green"  ,        
+                            shape: "square",
                             radius: 5,
                             weight: .5,
                             fillOpacity: 0.8
@@ -256,7 +256,7 @@
                             "<br><b>Sale to Minor: </b>" + feature.properties.sale_to_minor)
                         }, style: function(feature) {
                               switch (feature.properties.inspection_result) {
-                                 case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "diamond",
+                                 case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "circle",
                             radius: 5,
                             weight: .5,
                             fillOpacity: 0.8}}
@@ -268,6 +268,7 @@
                             }
                         }});
                        
+                       
                 
                 var seventeen= L.geoJSON(inspections, { 
                             filter: function(feature, layer) {
@@ -276,8 +277,8 @@
                             pointToLayer: function(feature, coordinates) {
                             return   L.shapeMarker(coordinates, {
                             color: "black",
-                            fillColor: "purple"  ,        
-                            shape: "diamond",
+                            fillColor: "green"  ,        
+                            shape: "square",
                             radius: 5,
                             weight: .5,
                             fillOpacity: 0.8
@@ -289,7 +290,7 @@
                             "<br><b>Sale to Minor: </b>" + feature.properties.sale_to_minor)
                         }, style: function(feature) {
                               switch (feature.properties.inspection_result) {
-                                 case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "diamond",
+                                 case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "circle",
                             radius: 5,
                             weight: .5,
                             fillOpacity: 0.8}}
@@ -309,8 +310,8 @@
                             pointToLayer: function(feature, coordinates) {
                             return   L.shapeMarker(coordinates, {
                             color: "black",
-                            fillColor: "purple"  ,        
-                            shape: "diamond",
+                            fillColor: "green"  ,        
+                            shape: "square",
                             radius: 5,
                             weight: .5,
                             fillOpacity: 0.8
@@ -322,7 +323,7 @@
                             "<br><b>Sale to Minor: </b>" + feature.properties.sale_to_minor)
                         }, style: function(feature) {
                               switch (feature.properties.inspection_result) {
-                                 case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "diamond",
+                                 case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "circle",
                             radius: 5,
                             weight: .5,
                             fillOpacity: 0.8}}
@@ -334,6 +335,7 @@
                             }
                         }});
                        
+                       
                  var fifteen= L.geoJSON(inspections, { 
                             filter: function(feature, layer) {
                                 return feature.properties.approx_year == "2015";
@@ -341,8 +343,8 @@
                             pointToLayer: function(feature, coordinates) {
                             return   L.shapeMarker(coordinates, {
                             color: "black",
-                            fillColor: "purple"  ,        
-                            shape: "diamond",
+                            fillColor: "green"  ,        
+                            shape: "square",
                             radius: 5,
                             weight: .5,
                             fillOpacity: 0.8
@@ -354,7 +356,7 @@
                             "<br><b>Sale to Minor: </b>" + feature.properties.sale_to_minor)
                         }, style: function(feature) {
                               switch (feature.properties.inspection_result) {
-                                 case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "diamond",
+                                 case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "circle",
                             radius: 5,
                             weight: .5,
                             fillOpacity: 0.8}}
@@ -365,6 +367,7 @@
                             fillOpacity: 0.8};
                             }
                         }});
+                       
                        
 
                     var fourteen= L.geoJSON(inspections, { 
@@ -374,8 +377,8 @@
                             pointToLayer: function(feature, coordinates) {
                             return   L.shapeMarker(coordinates, {
                             color: "black",
-                            fillColor: "purple"  ,        
-                            shape: "diamond",
+                            fillColor: "green"  ,        
+                            shape: "square",
                             radius: 5,
                             weight: .5,
                             fillOpacity: 0.8
@@ -387,7 +390,7 @@
                             "<br><b>Sale to Minor: </b>" + feature.properties.sale_to_minor)
                         }, style: function(feature) {
                               switch (feature.properties.inspection_result) {
-                                 case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "diamond",
+                                 case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "circle",
                             radius: 5,
                             weight: .5,
                             fillOpacity: 0.8}}
@@ -398,6 +401,7 @@
                             fillOpacity: 0.8};
                             }
                         }});
+                       
                        
                        
                     var thirteen= L.geoJSON(inspections, { 
@@ -407,8 +411,8 @@
                             pointToLayer: function(feature, coordinates) {
                             return   L.shapeMarker(coordinates, {
                             color: "black",
-                            fillColor: "purple"  ,        
-                            shape: "diamond",
+                            fillColor: "green"  ,        
+                            shape: "square",
                             radius: 5,
                             weight: .5,
                             fillOpacity: 0.8
@@ -420,7 +424,7 @@
                             "<br><b>Sale to Minor: </b>" + feature.properties.sale_to_minor)
                         }, style: function(feature) {
                               switch (feature.properties.inspection_result) {
-                                 case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "diamond",
+                                 case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "circle",
                             radius: 5,
                             weight: .5,
                             fillOpacity: 0.8}}
@@ -432,6 +436,7 @@
                             }
                         }});
                        
+                       
 
                         var twelve= L.geoJSON(inspections, { 
                             filter: function(feature, layer) {
@@ -440,8 +445,8 @@
                             pointToLayer: function(feature, coordinates) {
                             return   L.shapeMarker(coordinates, {
                             color: "black",
-                            fillColor: "purple"  ,        
-                            shape: "diamond",
+                            fillColor: "green"  ,        
+                            shape: "square",
                             radius: 5,
                             weight: .5,
                             fillOpacity: 0.8
@@ -453,7 +458,7 @@
                             "<br><b>Sale to Minor: </b>" + feature.properties.sale_to_minor)
                         }, style: function(feature) {
                               switch (feature.properties.inspection_result) {
-                                 case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "diamond",
+                                 case 'No Violations Observed': return {color: "black", fillColor: "gray", shape: "circle",
                             radius: 5,
                             weight: .5,
                             fillOpacity: 0.8}}
@@ -464,6 +469,7 @@
                             fillOpacity: 0.8};
                             }
                         }});
+                       
                        
                        
 

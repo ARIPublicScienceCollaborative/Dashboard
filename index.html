@@ -21,7 +21,7 @@
             crossorigin=""></script>
             
             
-            
+            <script src = "Leaflet.SvgShapeMarkers-gh-pages/dist/leaflet-svg-shape-markers.min.js"></script>
             <div class="navbar">
                 <a href="https://kvanselous.github.io/ARIDashboard/">Home</a>
                 <a href="https://kvanselous.github.io/ARIDashboard/Sales/">Sales</a>
@@ -39,6 +39,8 @@
             <script src = "StateOnOutlets_2019"></script>
             <script src = "OnOutletCluster"></script>
             <script src = "OffOutletCluster"></script>
+            <script src = "schools"></script>
+            <script src = "AlcRelatedCrashes"></script>
 
      
                 <style>
@@ -233,6 +235,46 @@
                              )},
                         }).addTo(map1);
 
+                var schools = L.geoJSON(schools,  { 
+                            filter: function(feature, layer) {
+                                return feature.type == "Feature";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                             return   L.shapeMarker(coordinates, {
+                            color: "black",
+                            fillColor: "purple",        
+                            shape: "triangle",
+                            radius: 5,
+                            weight: .5,
+                            fillOpacity: 0.8
+	                        });
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Name: </b>" + feature.properties.feature_na)
+                            },
+                            } 
+                            );
+
+                var crashes = L.geoJSON(crashes,  { 
+                            filter: function(feature, layer) {
+                                return feature.type == "Feature";
+                            },
+                            pointToLayer: function(feature, coordinates) {
+                            return L.shapeMarker(coordinates, {
+                            color: "darkred",      
+                            shape: "x",
+	                    	radius: 10,
+                            weight: 2
+	                        });
+                            },
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<br><b> Severity: </b>" + feature.properties.CSEVERITY )
+                            },
+                            } 
+                            );
+
                         function styleOn(feature) {
                             return {
                                 fillColor: 'darkgreen',
@@ -242,7 +284,7 @@
                                 color: 'darkgreen',
                                 fillOpacity: 0.2
                             };
-                        }
+                        };
 
                         function styleOff(feature) {
                             return {
@@ -269,7 +311,9 @@
                         "On-Premise Outlets": on,
                         "Off-Premise Outlets": off,
                         "On-Premise Clusters": OnClusters,
-                        "Off=Premise Clusters": OffClusters
+                        "Off=Premise Clusters": OffClusters,
+                        "Schools": schools, 
+                        "Alcohol-Related Automobile Crashes": crashes
                     }; 
 
                     L.control.layers(basemap1, overlayMaps1).addTo(map1);	
@@ -278,10 +322,10 @@
                         legend1.onAdd = function (map1) {
                             var div = L.DomUtil.create('div', 'info legend');
                             grades = [""],
-                            labels = ["pointLegendHome.png"];
+                            labels = ["pointLegendHome2.png"];
                             for (var i = 0; i < grades.length; i++) {
                               div.innerHTML +=
-                              (" <img src="+ labels[i] +" height='90' width='180'>") + grades[i] +'<br>';
+                              (" <img src="+ labels[i] +" height='120' width='140'>") + grades[i] +'<br>';
                                 }
 
                          return div;
