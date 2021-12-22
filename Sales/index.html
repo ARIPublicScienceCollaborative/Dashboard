@@ -26,6 +26,7 @@
 
             <!--KVS geoJSON-->    
             <script src="Totalsales.geojson"></script>
+            <script src="pop.geojson"></script>
 
              <!--Boot Strap-->
              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -138,8 +139,8 @@
                         fillColor: "green",
                         color: "#000",
                         weight: 1,
-                        opacity: .5,
-                        fillOpacity: 0.4
+                        opacity: .8,
+                        fillOpacity: 0.8
                         };
          
                var twenty= L.geoJSON(totsale, { 
@@ -161,7 +162,7 @@
                             radius: (feature.properties.sale_gallons/10000)*6,
                             };
                             } 
-                            }).addTo(map1);
+                            }).addTo(map1).bringToFront();
                 
                 var nineteen= L.geoJSON(totsale, { 
                             filter: function(feature, layer) {
@@ -183,7 +184,7 @@
                             radius: (feature.properties.sale_gallons/10000)*6,
                             };
                             } 
-                            });
+                            }).bringToFront();
                 
                 var eighteen= L.geoJSON(totsale, { 
                             filter: function(feature, layer) {
@@ -205,7 +206,7 @@
                             radius: (feature.properties.sale_gallons/10000)*6,
                             };
                             } 
-                            });
+                            }).bringToFront();
                 
                 var seventeen= L.geoJSON(totsale, { 
                             filter: function(feature, layer) {
@@ -227,7 +228,7 @@
                             radius: (feature.properties.sale_gallons/10000)*6,
                             };
                             } 
-                            });
+                            }).bringToFront();
               
                 
                 var sixteen= L.geoJSON(totsale, { 
@@ -250,7 +251,7 @@
                             radius: (feature.properties.sale_gallons/10000)*6,
                             };
                             } 
-                            });
+                            }).bringToFront();
                 
              var fifteen= L.geoJSON(totsale, { 
                             filter: function(feature, layer) {
@@ -272,7 +273,7 @@
                             radius: (feature.properties.sale_gallons/10000)*6,
                             };
                             } 
-                            });
+                            }).bringToFront();
                 
               var fourteen = L.geoJSON(totsale, { 
                             filter: function(feature, layer) {
@@ -294,7 +295,7 @@
                             radius: (feature.properties.sale_gallons/10000)*6,
                             };
                             } 
-                            });
+                            }).bringToFront();
 
                 var thirteen= L.geoJSON(totsale, { 
                             filter: function(feature, layer) {
@@ -316,7 +317,7 @@
                             radius: (feature.properties.sale_gallons/10000)*6,
                             };
                             } 
-                            });
+                            }).bringToFront();
                 
                 var twelve= L.geoJSON(totsale, { 
                             filter: function(feature, layer) {
@@ -338,7 +339,7 @@
                             radius: (feature.properties.sale_gallons/10000)*6,
                             };
                             } 
-                            });
+                            }).bringToFront();
                 
                     var eleven= L.geoJSON(totsale, { 
                             filter: function(feature, layer) {
@@ -360,7 +361,7 @@
                             radius: (feature.properties.sale_gallons/10000)*6,
                             };
                             } 
-                            });
+                            }).bringToFront();
 
                      var ten= L.geoJSON(totsale, { 
                             filter: function(feature, layer) {
@@ -382,10 +383,67 @@
                             radius: (feature.properties.sale_gallons/10000)*6,
                             };
                             } 
-                            });
-                
+                            }).bringToFront();
+
+                function getColorS1(d) {
+                            return   d > 25972? '#57318c' :
+                                d > 13380  ? '#7b5ba9' :
+                                d > 9556   ? '#a085c6' :
+                                d > 6862   ? '#c4afe2' :
+                                d > 0   ? '#d6c4f1' :
+                                            '#white';
+                                            }
+        
+                function getColorS2(d) {
+                            return   d > 25713? '#57318c' :
+                                d > 13354  ? '#7b5ba9' :
+                                d > 9309   ? '#a085c6' :
+                                d > 6720   ? '#c4afe2' :
+                                d > 0   ? '#d6c4f1' :
+                                            '#white';
+                                            }
+
+                function styleS1(feature) {
+                            return {
+                                fillColor: getColorS1((feature.properties.F2015_5YR_21Plus_1)),
+                                weight: 2,
+                                opacity: 1,
+                                color: 'black',
+                                fillOpacity: 0.5
+                            };
+                        }
+
+
+                function styleS2(feature) {
+                            return {
+                                fillColor: getColorS2((feature.properties.F2019_5YR_21Plus_1)),
+                                weight: 2,
+                                opacity: 1,
+                                color: 'black',
+                                fillOpacity: 0.5
+                            };
+                        }
+
+
+                var Pop2015 =  L.geoJson(pop, {
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<b>County Name: </b>" + feature.properties.NAME +  
+                            "<br><b>Year: </b> 2010-2015 5 Year Population Estimate" +
+                            "<br><b>Population 21 and over: </b>"+ feature.properties.F2015_5YR_21Plus_1)
+                            }, style: styleS1});
+                var Pop2019 =  L.geoJson(pop, {
+                            onEachFeature: function (feature, layer) {
+                            popupOptions = {maxWidth: 200}; 
+                            layer.bindPopup("<b>County Name: </b>" + feature.properties.NAME +  
+                            "<br><b>Year: </b> 2015-2019 5 Year Population Estimate" +
+                            "<br><b>Population 21 and over: </b>"+ feature.properties.F2019_5YR_21Plus_1)
+                            },style: styleS2});
+
                 var basemaps1 = {
-                        "Open Street Map": osm1
+                        "2015 5yr 21+ Pop": Pop2015,
+                        "2019 5yr 21+ Pop": Pop2019,
+                        "Deselect Pop Layer": osm1
                 };
 
                   var overlayMaps1 = {
@@ -405,6 +463,19 @@
                     L.control.layers(basemaps1, overlayMaps1).addTo(map1);	
 	             
                    
+var legend1 = L.control({position: 'bottomleft'}); 
+                        legend1.onAdd = function (map1) {
+                            var div = L.DomUtil.create('div', 'info legend');
+                            grades = [""],
+                            labels = ["salesLegend.png"];
+                            for (var i = 0; i < grades.length; i++) {
+                              div.innerHTML +=
+                              (" <img src="+ labels[i] +" height='200' width='280'>") + grades[i] +'<br>';
+                                }
+
+                         return div;
+                        } ;
+                        legend1.addTo(map1)
 		             
             </script>
         
