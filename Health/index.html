@@ -263,7 +263,7 @@
             <br> 
         <br>
         <br>
-        <h3> <b>Date Last Updated: February 2, 2022 </b></h3>
+        <h3> <b>Date Last Updated: February 11, 2022 </b></h3>
             <script>   
                          
                     //Cedar Rapids Maps, Marker Information, Layers, & Layer Control
@@ -1095,15 +1095,15 @@ var legend1 = L.control({position: 'bottomleft'});
                                     }
                                     }
 
-                        function onEachFeatureMA(feature, layer) {
-                                layer.on({
-                                    mouseover: highlightFeature,
-                                    mouseout: resetHighlightMA
-                                });
-                                if (feature.properties) {
-                                    layer.bindPopup("<b>SAI Alcohol Crime Calls for Service: </b>" + feature.properties.SAIalc1_miles.toFixed(2) );
-                                    }
-                                    }
+//                        function onEachFeatureMA(feature, layer) {
+//                                layer.on({
+//                                    mouseover: highlightFeature,
+//                                    mouseout: resetHighlightMA
+//                                });
+//                                if (feature.properties) {
+//                                    layer.bindPopup("<b>SAI Alcohol Crime Calls for Service: </b>" + feature.properties.SAIalc1_miles.toFixed(2) );
+//                                    }
+//                                    }
 
                         function onEachFeatureMNA(feature, layer) {
                                 layer.on({
@@ -1170,13 +1170,21 @@ var legend1 = L.control({position: 'bottomleft'});
 
                                 
 
+//                        function getColorm1(d) {
+//                            return  d > 15.056157 ? '#c67718' :
+//                                d > 9.340565   ? '#fbb664' :
+//                                d > 0   ? '#fed9ad80' :
+//                                            '#white';
+//                                            }
+
                         function getColorm1(d) {
-                            return  d > 15.056157 ? '#c67718' :
-                                d > 9.340565   ? '#fbb664' :
+                            return  d > 15.04344 ? '#c67718' :
+                                d > 9.347174  ? '#fbb664' :
                                 d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
-                        
+
+
                         
                         function getColorm2(d) {
                             return  d > 70.338594 ? '#c67718' :
@@ -1211,16 +1219,23 @@ var legend1 = L.control({position: 'bottomleft'});
                         
                        
                          function getColorm6(d) {
-                            return  d > 12.41227 ? '#c67718' :
-                                d > 8.577117   ? '#fbb664' :
+                            return  d > 12.412267 ? '#c67718' :
+                                d > 8.577115   ? '#fbb664' :
                                 d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
                         
+//                         function getColorm6(d) {
+//                            return  d > 12.41227 ? '#c67718' :
+//                                d > 8.577117   ? '#fbb664' :
+//                                d > 0   ? '#fed9ad80' :
+//                                            '#white';
+//                                            }
+                        
 
                         function getColorm7(d) {
-                            return  d > 12.124179 ? '#c67718' :
-                                d > 7.963968  ? '#fbb664' :
+                            return  d > 12.124178 ? '#c67718' :
+                                d > 7.963967 ? '#fbb664' :
                                 d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
@@ -1298,7 +1313,7 @@ var legend1 = L.control({position: 'bottomleft'});
                         var MSAI = L.geoJson(Mdata, {style: stylem1, onEachFeature: onEachFeatureMO}).addTo(map3);
                         var MSAI_family = L.geoJson(Mdata, {style: stylem2, onEachFeature: onEachFeatureMF});
                         var MSAI_violent= L.geoJson(Mdata, {style: stylem3, onEachFeature: onEachFeatureMV});
-                        var MSAI_alc= L.geoJson(Mdata, {style: stylem4, onEachFeature: onEachFeatureMA});
+ //                       var MSAI_alc= L.geoJson(Mdata, {style: stylem4, onEachFeature: onEachFeatureMA});
                         var MSAI_narralc= L.geoJson(Mdata, {style: stylem5, onEachFeature: onEachFeatureMNA});
                         var MSAI_On= L.geoJson(Mdata, {style: stylem6, onEachFeature: onEachFeatureMOn});
                         var MSAI_Off= L.geoJson(Mdata, {style: stylem7, onEachFeature: onEachFeatureMOff});
