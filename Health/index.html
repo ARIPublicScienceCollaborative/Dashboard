@@ -36,6 +36,12 @@
             <script src = "CedarRapidsSAI"></script>
             <script src = "OnOutletCluster"></script>
             <script src = "OffOutletCluster"></script>
+            <script src = "AVI_Target" ></script>
+            <script src = "AVIV2"></script>
+            <script src = "AVIV3"></script>
+            <script src = "AVIV4"></script>
+
+
 
 
              <!--Boot Strap-->
@@ -263,7 +269,7 @@
             <br> 
         <br>
         <br>
-        <h3> <b>Date Last Updated: April 21, 2022 </b></h3>
+        <h3> <b>Date Last Updated: May 2nd, 2022 </b></h3>
             <script>   
                          
                     //Cedar Rapids Maps, Marker Information, Layers, & Layer Control
@@ -327,7 +333,10 @@
                                 }        
                 function resetHighlightCOff(e) {
                                 CSAI_Off.resetStyle(e.target);
-                                }                           
+                                }         
+                function resetHighlightAVI(e) {
+                                AVI.resetStyle(e.target);
+                                }                            
                                             
                         function onEachFeatureCO(feature, layer) {
                                 layer.on({
@@ -405,6 +414,45 @@
                                 });
                                 if (feature.properties) {
                                     layer.bindPopup("<b>SAI Off-Premise Alcohol Outlets: </b>" + feature.properties.SAIOffoutlet_miles.toFixed(2) );
+                                    }
+                                    }
+                   
+                                    function onEachFeatureAVI(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightAVI
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>AVI: </b>" + feature.properties.AVI );
+                                    }
+                                    }
+
+                   
+                                    function onEachFeatureAVI2(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightAVI
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>AVI: </b>" + feature.properties.AVI );
+                                    }
+                                    }
+                                    function onEachFeatureAVI3(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightAVI
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>AVI: </b>" + feature.properties.AVI );
+                                    }
+                                    }
+                                    function onEachFeatureAVI4(feature, layer) {
+                                layer.on({
+                                    mouseover: highlightFeature,
+                                    mouseout: resetHighlightAVI
+                                });
+                                if (feature.properties) {
+                                    layer.bindPopup("<b>AVI: </b>" + feature.properties.AVI );
                                     }
                                     }
 
@@ -485,6 +533,8 @@
                             ).bringToFront(100);
                 
 
+
+
                 function getColorC1(d) {
                             return   d > 16.077736? '#c67718' :
                                 d > 9.313716   ? '#fbb664' :
@@ -538,7 +588,43 @@
                                 d > 0   ? '#fed9ad80' :
                                             '#white';
                                             }
+              function getColorAVI(d) {
+                            return   d > 4 ? '#c67718' :
+                                d > 3   ? '#f29526' :
+                                d > 2   ? '#fbb664' :
+                                d > 1   ? '#fdcc92' :
+                                d > 0   ? '#fed9ad80' :
+                                            '#white';
+                                            }
 
+              function getColorAVI2(d) {
+                            return   d > 4 ? '#c67718' :
+                                d > 3   ? '#f29526' :
+                                d > 2   ? '#fbb664' :
+                                d > 1   ? '#fdcc92' :
+                                d > 0   ? '#fed9ad80' :
+                                            '#white';
+                                            }
+
+                                            function getColorAVI3(d) {
+                            return   d > 4 ? '#c67718' :
+                                d > 3   ? '#f29526' :
+                                d > 2   ? '#fbb664' :
+                                d > 1   ? '#fdcc92' :
+                                d > 0   ? '#fed9ad80' :
+                                            '#white';
+                                            }
+                        
+                                            function getColorAVI4(d) {
+                            return   d > 4 ? '#c67718' :
+                                d > 3   ? '#f29526' :
+                                d > 2   ? '#fbb664' :
+                                d > 1   ? '#fdcc92' :
+                                d > 0   ? '#fed9ad80' :
+                                            '#white';
+                                            }
+                        
+                        
                         
                 function styleC1(feature) {
                             return {
@@ -631,22 +717,66 @@
                             };
                         }
 
+                        function styleAVI(feature) {
+                            return {
+                                fillColor: getColorAVI((feature.properties.AVI)),
+                                weight: 2,
+                                opacity: 1,
+                                color: 'black',
+                                fillOpacity: 0.9
+                            };
+                        }
 
-                        var CSAI = L.geoJson(Cdata, {style: styleC1, onEachFeature: onEachFeatureCO}).bringToBack(0).addTo(map1);
+                        function styleAVI2(feature) {
+                            return {
+                                fillColor: getColorAVI2((feature.properties.AVI)),
+                                weight: 2,
+                                opacity: 1,
+                                color: 'black',
+                                fillOpacity: 0.9
+                            };
+                        }
+
+                        function styleAVI3(feature) {
+                            return {
+                                fillColor: getColorAVI3((feature.properties.AVI)),
+                                weight: 2,
+                                opacity: 1,
+                                color: 'black',
+                                fillOpacity: 0.9
+                            };
+                        }
+                        function styleAVI4(feature) {
+                            return {
+                                fillColor: getColorAVI4((feature.properties.AVI)),
+                                weight: 2,
+                                opacity: 1,
+                                color: 'black',
+                                fillOpacity: 0.9
+                            };
+                        }
+
+
+
+              //          var CSAI = L.geoJson(Cdata, {style: styleC1, onEachFeature: onEachFeatureCO}).bringToBack(0).addTo(map1);
                         var CSAI_family = L.geoJson(Cdata, {style: styleC2, onEachFeature: onEachFeatureCF}).bringToBack(0);
                         var CSAI_violent= L.geoJson(Cdata, {style: styleC3, onEachFeature: onEachFeatureCV}).bringToBack(0);
                         var CSAI_alc= L.geoJson(Cdata, {style: styleC4, onEachFeature: onEachFeatureCA}).bringToBack(0);
                         var CSAI_narralc= L.geoJson(Cdata, {style: styleC5, onEachFeature: onEachFeatureCNA}).bringToBack(0);
-                        var CSAI_On= L.geoJson(Cdata, {style: styleC6, onEachFeature: onEachFeatureCOn}).bringToBack(0);
-                        var CSAI_Off= L.geoJson(Cdata, {style: styleC7, onEachFeature: onEachFeatureCOff}).bringToBack(0);
+               //         var CSAI_On= L.geoJson(Cdata, {style: styleC6, onEachFeature: onEachFeatureCOn}).bringToBack(0);
+               //         var CSAI_Off= L.geoJson(Cdata, {style: styleC7, onEachFeature: onEachFeatureCOff}).bringToBack(0);
+                        var AVI = L.geoJson(AVI, {style: styleAVI, onEachFeature: onEachFeatureAVI}).bringToBack(0).addTo(map1);
+
                         var deselect = L.geoJson(Mdata, {style: styleC1, onEachFeature: onEachFeatureCO}).bringToBack(0);
                         var ConClusters =  L.geoJson(onoutletcluster, {style: styleOn});
-                        var CoffClusters =  L.geoJson(offoutletcluster, {style: styleOff})
+                        var CoffClusters =  L.geoJson(offoutletcluster, {style: styleOff});
 
+                      
                         var basemapC1 = {
-                        "Neighborhood Density, On & Off-Premise": CSAI,
-                        "Neighborhood Density, On-Premise": CSAI_On,
-                        "Neighborhood Density, Off-Premise": CSAI_Off,    
+                //        "Neighborhood Density, On & Off-Premise": CSAI,
+                //        "Neighborhood Density, On-Premise": CSAI_On,
+                //        "Neighborhood Density, Off-Premise": CSAI_Off, 
+                        "Alcohol Use Disorder Risk Score (beta)" : AVI,   
                         "Calls Related to Families": CSAI_family,
                         "Calls Related to Violence": CSAI_violent,
                         "Calls Related to Alcohol": CSAI_alc,
@@ -974,25 +1104,28 @@ var legend1 = L.control({position: 'bottomleft'});
 
 
 
-                        var ISAI = L.geoJson(Idata, {style: styleI1, onEachFeature: onEachFeatureIO}).addTo(map2);
+                   //     var ISAI = L.geoJson(Idata, {style: styleI1, onEachFeature: onEachFeatureIO}).addTo(map2);
                         var ISAI_family = L.geoJson(Idata, {style: styleI2, onEachFeature: onEachFeatureIF});
                         var ISAI_violent= L.geoJson(Idata, {style: styleI3, onEachFeature: onEachFeatureIV});
                         var ISAI_alc= L.geoJson(Idata, {style: styleI4, onEachFeature: onEachFeatureIA});
                         var ISAI_narralc= L.geoJson(Idata, {style: styleI5, onEachFeature: onEachFeatureINA});
-                        var ISAI_On= L.geoJson(Idata, {style: styleI6, onEachFeature: onEachFeatureIOn});
-                        var ISAI_Off= L.geoJson(Idata, {style: styleI7, onEachFeature: onEachFeatureIOff});
+                   //     var ISAI_On= L.geoJson(Idata, {style: styleI6, onEachFeature: onEachFeatureIOn});
+                   //     var ISAI_Off= L.geoJson(Idata, {style: styleI7, onEachFeature: onEachFeatureIOff});
                         var deselect = L.geoJson(Cdata, {style: styleC1, onEachFeature: onEachFeatureIO});
                         var IonClusters =  L.geoJson(onoutletcluster, {style: styleOn}) ;
                         var IoffClusters =  L.geoJson(offoutletcluster, {style: styleOff}) ;
-
+                        var AVI2 = L.geoJson(AVI2, {style: styleAVI2, onEachFeature: onEachFeatureAVI2}).addTo(map2);
+               
                         var basemapI1 = {
-                        "Neighborhood Density, On & Off-Premise": ISAI,
-                        "Neighborhood Density, On-Premise": ISAI_On,
-                        "Neighborhood Density, Off-Premise": ISAI_Off,    
+                            "Alcohol Use Disorder Risk Score (beta)" : AVI2,
+                   //     "Neighborhood Density, On & Off-Premise": ISAI,
+                   //     "Neighborhood Density, On-Premise": ISAI_On,
+                   //     "Neighborhood Density, Off-Premise": ISAI_Off,    
                         "Calls Related to Families": ISAI_family,
                         "Calls Related to Violence": ISAI_violent,
                         "Calls Related to Alcohol": ISAI_alc,
                         "Calls Related to Off-premise Alcohol": ISAI_narralc,
+                  
                         "Deselect Census Block Data": deselect
                            };  
 
@@ -1313,20 +1446,22 @@ var legend1 = L.control({position: 'bottomleft'});
                             };
                         }
 
-                        var MSAI = L.geoJson(Mdata, {style: stylem1, onEachFeature: onEachFeatureMO}).addTo(map3);
+  //                      var MSAI = L.geoJson(Mdata, {style: stylem1, onEachFeature: onEachFeatureMO}).addTo(map3);
                         var MSAI_family = L.geoJson(Mdata, {style: stylem2, onEachFeature: onEachFeatureMF});
                         var MSAI_violent= L.geoJson(Mdata, {style: stylem3, onEachFeature: onEachFeatureMV});
  //                       var MSAI_alc= L.geoJson(Mdata, {style: stylem4, onEachFeature: onEachFeatureMA});
                         var MSAI_narralc= L.geoJson(Mdata, {style: stylem5, onEachFeature: onEachFeatureMNA});
-                        var MSAI_On= L.geoJson(Mdata, {style: stylem6, onEachFeature: onEachFeatureMOn});
-                        var MSAI_Off= L.geoJson(Mdata, {style: stylem7, onEachFeature: onEachFeatureMOff});
+  //                      var MSAI_On= L.geoJson(Mdata, {style: stylem6, onEachFeature: onEachFeatureMOn});
+   //                     var MSAI_Off= L.geoJson(Mdata, {style: stylem7, onEachFeature: onEachFeatureMOff});
                         var MOnClusters =  L.geoJson(onoutletcluster, {style: styleOn});
                         var MOffClusters =  L.geoJson(offoutletcluster, {style: styleOff});
+                        var AVI3 = L.geoJson(AVI3, {style: styleAVI3, onEachFeature: onEachFeatureAVI3}).bringToBack(0).addTo(map3);
+                      
 
-                        var basemapM1 = {
-                         "Neighborhood Density, On & Off-Premise": MSAI,
-                        "Neighborhood Density, On-Premise": MSAI_On,
-                        "Neighborhood Density, Off-Premise": MSAI_Off,    
+                        var basemapM1 = {  "Alcohol Use Disorder Risk Score (beta)" : AVI3,
+     //                    "Neighborhood Density, On & Off-Premise": MSAI,
+      //                  "Neighborhood Density, On-Premise": MSAI_On,
+       //                 "Neighborhood Density, Off-Premise": MSAI_Off,    
                         "Calls Related to Familie": MSAI_family,
                         "Calls Related to Violence": MSAI_violent,
                         "Calls Related to Off-premise Alcohol": MSAI_narralc,
@@ -1633,28 +1768,32 @@ var legend1 = L.control({position: 'bottomleft'});
                             };
                         }
 
-                        var BSAI = L.geoJson(Bdata, {style: styleb1, onEachFeature: onEachFeatureBO}).addTo(map4);
+          //              var BSAI = L.geoJson(Bdata, {style: styleb1, onEachFeature: onEachFeatureBO}).addTo(map4);
                         var BSAI_family = L.geoJson(Bdata, {style: styleb2, onEachFeature: onEachFeatureBF});
                         var BSAI_violent= L.geoJson(Bdata, {style: styleb3, onEachFeature: onEachFeatureBV});
                         var BSAI_alc= L.geoJson(Bdata, {style: styleb4, onEachFeature: onEachFeatureBA});
                         var BSAI_narralc= L.geoJson(Bdata, {style: styleb5, onEachFeature: onEachFeatureBNA});
-                        var BSAI_On= L.geoJson(Bdata, {style: styleb6, onEachFeature: onEachFeatureBOn});
-                        var BSAI_Off= L.geoJson(Bdata, {style: styleb7, onEachFeature: onEachFeatureBOff});
+           //             var BSAI_On= L.geoJson(Bdata, {style: styleb6, onEachFeature: onEachFeatureBOn});
+            //            var BSAI_Off= L.geoJson(Bdata, {style: styleb7, onEachFeature: onEachFeatureBOff});
                         var BOnClusters =  L.geoJson(onoutletcluster, {style: styleOn});
                         var BOffClusters =  L.geoJson(offoutletcluster, {style: styleOff});
+                        var AVI4 = L.geoJson(AVI4, {style: styleAVI4, onEachFeature: onEachFeatureAVI4}).bringToBack(0).addTo(map4);
+
 
 
                         var basemapB1 = {
-                            "Neighborhood Density, On & Off-Premise": BSAI,
-                        "Neighborhood Density, On-Premise": BSAI_On,
-                        "Neighborhood Density, Off-Premise": BSAI_Off,    
+            //                "Neighborhood Density, On & Off-Premise": BSAI,
+            //            "Neighborhood Density, On-Premise": BSAI_On,
+            //            "Neighborhood Density, Off-Premise": BSAI_Off,    
+                        "Alcohol Use Disorder Risk Scale (beta)" : AVI4, 
                         "Calls Related to Families": BSAI_family,
                         "Calls Related to Violence": BSAI_violent,
                         "Calls Related to Alcohol": BSAI_alc,
                         "Calls Related to Off-premise Alcohol": BSAI_narralc,
                         "Deselect Census Block Data": deselect
                            };  
-
+                        
+                      
 
                 var overlayMapsB1 = {
                          "Alcohol Outlets, On-Premise": on,
